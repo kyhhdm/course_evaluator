@@ -46,9 +46,9 @@ def test_grade5_math_real_coverage():
     c = load_course("curriculum/grade5_math", "schemas", "methodology", "standards")
     r = compute_coverage(c)
     assert r.total == 26
-    assert "CCSS.5.NF.A.1" in r.covered
-    assert "CCSS.5.G.A.1" in r.missing
+    assert len(r.covered) == 26
+    assert r.missing == []
+    assert r.percentage == 1.0
+    assert "CCSS.5.G.A.1" in r.covered
     assert "CCSS.4.NF.A.1" in r.out_of_scope
-    assert "CCSS.4.NF.A.1" not in r.missing
-    assert len(r.covered) == 6
-    assert r.percentage == pytest.approx(6 / 26)
+    assert "CCSS.4.NF.A.1" not in r.covered

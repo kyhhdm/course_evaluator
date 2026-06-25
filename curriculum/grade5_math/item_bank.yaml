@@ -165,3 +165,307 @@ items:
     type: numeric
     prompt: "5 - 2.35 = ?"
     answer: "2.65"
+  # --- g5-coordinate-system ---
+  - id: G-CS-1
+    points: [g5-coordinate-system]
+    difficulty: 1
+    type: mcq
+    prompt: "In the coordinate (x, y), which axis does the first number measure along?"
+    options: {A: "the x-axis", B: "the y-axis", C: "neither axis", D: "both axes"}
+    answer: "A"
+  - id: G-CS-2
+    points: [g5-coordinate-system]
+    difficulty: 2
+    type: mcq
+    prompt: "Where do the x-axis and y-axis meet?"
+    options: {A: "at the origin (0, 0)", B: "at (1, 1)", C: "at the top", D: "they never meet"}
+    answer: "A"
+  # --- g5-graph-points ---
+  - id: G-GP-1
+    points: [g5-graph-points]
+    difficulty: 1
+    type: numeric
+    prompt: "To plot the point (3, 2), you move right 3 from the origin, then up how many?"
+    answer: "2"
+  - id: G-GP-2
+    points: [g5-graph-points]
+    difficulty: 2
+    type: mcq
+    prompt: "A point is 4 right and 0 up from the origin. Its coordinates are?"
+    options: {A: "(4, 0)", B: "(0, 4)", C: "(4, 4)", D: "(0, 0)"}
+    answer: "A"
+  # --- g5-figure-hierarchy ---
+  - id: G-FH-1
+    points: [g5-figure-hierarchy]
+    difficulty: 1
+    type: mcq
+    prompt: "Every square is also a..."
+    options: {A: "rectangle", B: "triangle", C: "circle", D: "pentagon"}
+    answer: "A"
+  - id: G-FH-2
+    points: [g5-figure-hierarchy]
+    difficulty: 2
+    type: mcq
+    prompt: "Which statement is true?"
+    options: {A: "All rectangles are squares", B: "All squares are rectangles", C: "No square is a rectangle", D: "All rectangles are triangles"}
+    answer: "B"
+  # --- g5-classify-figures ---
+  - id: G-CF-1
+    points: [g5-classify-figures]
+    difficulty: 1
+    type: mcq
+    prompt: "A quadrilateral with exactly one pair of parallel sides is a..."
+    options: {A: "trapezoid", B: "square", C: "triangle", D: "pentagon"}
+    answer: "A"
+  - id: G-CF-2
+    points: [g5-classify-figures]
+    difficulty: 2
+    type: mcq
+    prompt: "Which figure is always a parallelogram?"
+    options: {A: "rectangle", B: "trapezoid", C: "triangle", D: "pentagon"}
+    answer: "A"
+  # --- g5-oa-eval-expressions ---
+  - id: OA-EV-1
+    points: [g5-oa-eval-expressions]
+    difficulty: 1
+    type: numeric
+    prompt: "Evaluate: 2 x (3 + 4)"
+    answer: "14"
+  - id: OA-EV-2
+    points: [g5-oa-eval-expressions]
+    difficulty: 2
+    type: numeric
+    prompt: "Evaluate: 3 + 4 x 2"
+    answer: "11"
+  - id: OA-EV-3
+    points: [g5-oa-eval-expressions]
+    difficulty: 3
+    type: numeric
+    prompt: "Evaluate: (8 - 3) x (2 + 1)"
+    answer: "15"
+  # --- g5-oa-write-expressions ---
+  - id: OA-WR-1
+    points: [g5-oa-write-expressions]
+    difficulty: 1
+    type: mcq
+    prompt: "Which expression means 'add 6 and 4, then multiply by 2'?"
+    options: {A: "2 x (6 + 4)", B: "2 x 6 + 4", C: "6 + 4 x 2", D: "6 + 4 + 2"}
+    answer: "A"
+  - id: OA-WR-2
+    points: [g5-oa-write-expressions]
+    difficulty: 2
+    type: mcq
+    prompt: "Without computing, 3 x (245 + 18) is ___ (245 + 18)."
+    options: {A: "3 times as large as", B: "equal to", C: "smaller than", D: "3 less than"}
+    answer: "A"
+  # --- g5-oa-patterns-graph ---
+  - id: OA-PG-1
+    points: [g5-oa-patterns-graph]
+    difficulty: 2
+    type: numeric
+    prompt: "Rule A 'add 2' from 0 gives 0,2,4,6. Rule B 'add 4' from 0 gives 0,4,8,12. The 4th B term divided by the 4th A term is?"
+    answer: "2"
+  - id: OA-PG-2
+    points: [g5-oa-patterns-graph]
+    difficulty: 2
+    type: mcq
+    prompt: "Pattern X adds 3 (0,3,6,9); pattern Y adds 6 (0,6,12,18). Each Y term is the ___ of the matching X term."
+    options: {A: "double", B: "half", C: "same", D: "triple"}
+    answer: "A"
+  # --- g5-nbt-place-value ---
+  - id: NBT-PV-1
+    points: [g5-nbt-place-value]
+    difficulty: 1
+    type: mcq
+    prompt: "In 4,400 the left 4 is worth how many times the right 4?"
+    options: {A: "10", B: "100", C: "1000", D: "2"}
+    answer: "A"
+  - id: NBT-PV-2
+    points: [g5-nbt-place-value]
+    difficulty: 2
+    type: mcq
+    prompt: "The 7 in 7,000 is how many times the 7 in 700?"
+    options: {A: "10", B: "100", C: "1/10", D: "1000"}
+    answer: "A"
+  # --- g5-nbt-powers-of-ten ---
+  - id: NBT-PT-1
+    points: [g5-nbt-powers-of-ten]
+    difficulty: 1
+    type: numeric
+    prompt: "How many zeros are in the product 6 x 1000?"
+    answer: "3"
+  - id: NBT-PT-2
+    points: [g5-nbt-powers-of-ten]
+    difficulty: 2
+    type: mcq
+    prompt: "What is 10 to the power 3 (10^3)?"
+    options: {A: "1000", B: "30", C: "100", D: "300"}
+    answer: "A"
+  - id: NBT-PT-3
+    points: [g5-nbt-powers-of-ten]
+    difficulty: 2
+    type: numeric
+    prompt: "3.5 x 100 = ?"
+    answer: "350"
+  # --- g5-nbt-round-decimals ---
+  - id: NBT-RD-1
+    points: [g5-nbt-round-decimals]
+    difficulty: 1
+    type: numeric
+    prompt: "Round 2.7 to the nearest whole number."
+    answer: "3"
+  - id: NBT-RD-2
+    points: [g5-nbt-round-decimals]
+    difficulty: 2
+    type: numeric
+    prompt: "Round 4.56 to the nearest tenth."
+    answer: "4.6"
+  # --- g5-nbt-mult-multidigit ---
+  - id: NBT-MM-1
+    points: [g5-nbt-mult-multidigit]
+    difficulty: 1
+    type: numeric
+    prompt: "23 x 4 = ?"
+    answer: "92"
+  - id: NBT-MM-2
+    points: [g5-nbt-mult-multidigit]
+    difficulty: 2
+    type: numeric
+    prompt: "34 x 12 = ?"
+    answer: "408"
+  - id: NBT-MM-3
+    points: [g5-nbt-mult-multidigit]
+    difficulty: 3
+    type: numeric
+    prompt: "125 x 16 = ?"
+    answer: "2000"
+  # --- g5-nbt-divide-multidigit ---
+  - id: NBT-DM-1
+    points: [g5-nbt-divide-multidigit]
+    difficulty: 1
+    type: numeric
+    prompt: "84 / 4 = ?"
+    answer: "21"
+  - id: NBT-DM-2
+    points: [g5-nbt-divide-multidigit]
+    difficulty: 2
+    type: numeric
+    prompt: "432 / 12 = ?"
+    answer: "36"
+  # --- g5-nf-fraction-as-division ---
+  - id: NF-FD-1
+    points: [g5-nf-fraction-as-division]
+    difficulty: 1
+    type: mcq
+    prompt: "3/4 means the same as which division?"
+    options: {A: "3 / 4", B: "4 / 3", C: "3 x 4", D: "4 - 3"}
+    answer: "A"
+  - id: NF-FD-2
+    points: [g5-nf-fraction-as-division]
+    difficulty: 2
+    type: numeric
+    prompt: "3 pizzas shared equally by 4 people: each person gets ?/4 of a pizza (enter the numerator)."
+    answer: "3"
+  # --- g5-nf-scaling ---
+  - id: NF-SC-1
+    points: [g5-nf-scaling]
+    difficulty: 1
+    type: mcq
+    prompt: "Multiplying 8 by 1/2 gives a result that is..."
+    options: {A: "smaller than 8", B: "larger than 8", C: "equal to 8", D: "zero"}
+    answer: "A"
+  - id: NF-SC-2
+    points: [g5-nf-scaling]
+    difficulty: 2
+    type: mcq
+    prompt: "5 x 3/2 is ___ 5."
+    options: {A: "greater than", B: "less than", C: "equal to", D: "half of"}
+    answer: "A"
+  # --- g5-nf-mult-realworld ---
+  - id: NF-MR-1
+    points: [g5-nf-mult-realworld]
+    difficulty: 2
+    type: numeric
+    prompt: "A recipe needs 3/4 cup of sugar. For half a recipe you need ?/8 cup (enter the numerator)."
+    answer: "3"
+  - id: NF-MR-2
+    points: [g5-nf-mult-realworld]
+    difficulty: 2
+    type: mcq
+    prompt: "How long is 2/3 of a 9-foot rope?"
+    options: {A: "6 feet", B: "3 feet", C: "9 feet", D: "18 feet"}
+    answer: "A"
+  # --- g5-md-unit-conversion ---
+  - id: MD-UC-1
+    points: [g5-md-unit-conversion]
+    difficulty: 1
+    type: numeric
+    prompt: "How many centimeters are in 2 meters?"
+    answer: "200"
+  - id: MD-UC-2
+    points: [g5-md-unit-conversion]
+    difficulty: 2
+    type: numeric
+    prompt: "Convert 3 kilometers to meters."
+    answer: "3000"
+  # --- g5-md-line-plots ---
+  - id: MD-LP-1
+    points: [g5-md-line-plots]
+    difficulty: 1
+    type: mcq
+    prompt: "A line plot displays data using marks above a..."
+    options: {A: "number line", B: "circle", C: "bar", D: "table"}
+    answer: "A"
+  - id: MD-LP-2
+    points: [g5-md-line-plots]
+    difficulty: 2
+    type: numeric
+    prompt: "Three items measure 1/4, 1/4, and 1/2 unit. Their total is ?/4 (enter the numerator)."
+    answer: "4"
+  # --- g5-md-volume-concept ---
+  - id: MD-VC-1
+    points: [g5-md-volume-concept]
+    difficulty: 1
+    type: mcq
+    prompt: "Volume is measured in..."
+    options: {A: "cubic units", B: "square units", C: "linear units", D: "degrees"}
+    answer: "A"
+  - id: MD-VC-2
+    points: [g5-md-volume-concept]
+    difficulty: 2
+    type: mcq
+    prompt: "A single unit cube has a volume of..."
+    options: {A: "1 cubic unit", B: "4 cubic units", C: "0 cubic units", D: "6 cubic units"}
+    answer: "A"
+  # --- g5-md-measure-volume ---
+  - id: MD-MV-1
+    points: [g5-md-measure-volume]
+    difficulty: 1
+    type: numeric
+    prompt: "A box is filled with 2 layers of 6 unit cubes each. How many cubes in all?"
+    answer: "12"
+  - id: MD-MV-2
+    points: [g5-md-measure-volume]
+    difficulty: 2
+    type: numeric
+    prompt: "A solid is packed with unit cubes: 3 long, 2 wide, 2 high. How many cubes?"
+    answer: "12"
+  # --- g5-md-volume-formulas ---
+  - id: MD-VF-1
+    points: [g5-md-volume-formulas]
+    difficulty: 1
+    type: numeric
+    prompt: "Volume of a box with l=4, w=3, h=2 (V = l x w x h)?"
+    answer: "24"
+  - id: MD-VF-2
+    points: [g5-md-volume-formulas]
+    difficulty: 2
+    type: numeric
+    prompt: "A prism has base area 10 and height 5. Its volume is?"
+    answer: "50"
+  - id: MD-VF-3
+    points: [g5-md-volume-formulas]
+    difficulty: 3
+    type: numeric
+    prompt: "Two stacked boxes have volumes 2x2x2 and 2x2x1. Their total volume is?"
+    answer: "12"
