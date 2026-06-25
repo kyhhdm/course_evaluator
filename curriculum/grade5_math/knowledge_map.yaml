@@ -119,3 +119,21 @@ points:
     description: Find whole-number quotients with up to four-digit dividends and two-digit divisors.
     prerequisites: [g5-nbt-mult-multidigit]
     standard_refs: [CCSS.5.NBT.B.6]
+  - id: g5-nf-fraction-as-division
+    strand: Number & Operations—Fractions
+    title: Fraction as division
+    description: Interpret a fraction a/b as a divided by b.
+    prerequisites: []
+    standard_refs: [CCSS.5.NF.B.3]
+  - id: g5-nf-scaling
+    strand: Number & Operations—Fractions
+    title: Multiplication as scaling
+    description: Interpret multiplication as resizing without computing.
+    prerequisites: [g5-mult-fraction-fraction]
+    standard_refs: [CCSS.5.NF.B.5]
+  - id: g5-nf-mult-realworld
+    strand: Number & Operations—Fractions
+    title: Real-world fraction multiplication
+    description: Solve real-world problems multiplying fractions and mixed numbers.
+    prerequisites: [g5-nf-scaling]
+    standard_refs: [CCSS.5.NF.B.6]
