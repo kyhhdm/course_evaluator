@@ -28,7 +28,7 @@ def test_cli_coverage_report(capsys):
     out = capsys.readouterr().out
     assert code == 0
     assert "CCSS-Math grade 5" in out
-    assert "6 / 26" in out
+    assert "10 / 26" in out
     assert "CCSS.5.NF.A.1" in out
 
 

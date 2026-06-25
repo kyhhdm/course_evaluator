@@ -47,3 +47,27 @@ points:
     description: Align place values to add and subtract decimals to hundredths.
     prerequisites: [g5-decimal-place-value]
     standard_refs: [CCSS.5.NBT.B.7]
+  - id: g5-coordinate-system
+    strand: Geometry
+    title: Coordinate system
+    description: Understand axes, the origin, and how an ordered pair locates a point.
+    prerequisites: []
+    standard_refs: [CCSS.5.G.A.1]
+  - id: g5-graph-points
+    strand: Geometry
+    title: Graph points in the first quadrant
+    description: Plot and interpret points given as ordered pairs in the first quadrant.
+    prerequisites: [g5-coordinate-system]
+    standard_refs: [CCSS.5.G.A.2]
+  - id: g5-figure-hierarchy
+    strand: Geometry
+    title: Hierarchy of two-dimensional figures
+    description: Attributes of a category of 2-D figures belong to all its subcategories.
+    prerequisites: []
+    standard_refs: [CCSS.5.G.B.3]
+  - id: g5-classify-figures
+    strand: Geometry
+    title: Classify two-dimensional figures
+    description: Classify 2-D figures in a hierarchy based on their properties.
+    prerequisites: [g5-figure-hierarchy]
+    standard_refs: [CCSS.5.G.B.4]

@@ -165,3 +165,62 @@ items:
     type: numeric
     prompt: "5 - 2.35 = ?"
     answer: "2.65"
+  # --- g5-coordinate-system ---
+  - id: G-CS-1
+    points: [g5-coordinate-system]
+    difficulty: 1
+    type: mcq
+    prompt: "In the coordinate (x, y), which axis does the first number measure along?"
+    options: {A: "the x-axis", B: "the y-axis", C: "neither axis", D: "both axes"}
+    answer: "A"
+  - id: G-CS-2
+    points: [g5-coordinate-system]
+    difficulty: 2
+    type: mcq
+    prompt: "Where do the x-axis and y-axis meet?"
+    options: {A: "at the origin (0, 0)", B: "at (1, 1)", C: "at the top", D: "they never meet"}
+    answer: "A"
+  # --- g5-graph-points ---
+  - id: G-GP-1
+    points: [g5-graph-points]
+    difficulty: 1
+    type: numeric
+    prompt: "To plot the point (3, 2), you move right 3 from the origin, then up how many?"
+    answer: "2"
+  - id: G-GP-2
+    points: [g5-graph-points]
+    difficulty: 2
+    type: mcq
+    prompt: "A point is 4 right and 0 up from the origin. Its coordinates are?"
+    options: {A: "(4, 0)", B: "(0, 4)", C: "(4, 4)", D: "(0, 0)"}
+    answer: "A"
+  # --- g5-figure-hierarchy ---
+  - id: G-FH-1
+    points: [g5-figure-hierarchy]
+    difficulty: 1
+    type: mcq
+    prompt: "Every square is also a..."
+    options: {A: "rectangle", B: "triangle", C: "circle", D: "pentagon"}
+    answer: "A"
+  - id: G-FH-2
+    points: [g5-figure-hierarchy]
+    difficulty: 2
+    type: mcq
+    prompt: "Which statement is true?"
+    options: {A: "All rectangles are squares", B: "All squares are rectangles", C: "No square is a rectangle", D: "All rectangles are triangles"}
+    answer: "B"
+  # --- g5-classify-figures ---
+  - id: G-CF-1
+    points: [g5-classify-figures]
+    difficulty: 1
+    type: mcq
+    prompt: "A quadrilateral with exactly one pair of parallel sides is a..."
+    options: {A: "trapezoid", B: "square", C: "triangle", D: "pentagon"}
+    answer: "A"
+  - id: G-CF-2
+    points: [g5-classify-figures]
+    difficulty: 2
+    type: mcq
+    prompt: "Which figure is always a parallelogram?"
+    options: {A: "rectangle", B: "trapezoid", C: "triangle", D: "pentagon"}
+    answer: "A"
