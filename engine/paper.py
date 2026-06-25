@@ -73,3 +73,20 @@ def render_answer_sheet_template(curriculum: Curriculum) -> str:
 def drop_blank_responses(raw: dict) -> dict:
     """Drop keys whose value is None or blank so unanswered items are not scored."""
     return {k: v for k, v in raw.items() if v is not None and str(v).strip() != ""}
+
+
+def render_report_html(
+    curriculum: Curriculum,
+    result: EvaluationResult,
+    path: list[PathStep],
+    templates_dir: str,
+    student_name: str = "Student",
+) -> str:
+    secure_count = sum(1 for s in result.strands if s.band == curriculum.bands[0].name)
+    tmpl = _env(templates_dir).get_template("report.html.j2")
+    return tmpl.render(
+        name=student_name,
+        strands=result.strands,
+        focus=path[:3],
+        secure_count=secure_count,
+    )

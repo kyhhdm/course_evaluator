@@ -76,3 +76,21 @@ def test_answer_sheet_template_round_trips_through_evaluate():
     # a filled-in pair scores the point (both A-items correct -> Secure)
     filled = drop_blank_responses({"A1": "B", "A2": "8", "B1": ""})
     assert filled == {"A1": "B", "A2": "8"}
+
+
+from engine.models import EvaluationResult, PathStep, PointResult, StrandResult
+
+
+def test_report_html_shows_name_band_and_focus():
+    from engine.paper import render_report_html
+    c = _curriculum()
+    pa = PointResult("a", 0.9, "Secure", "scored", 2)
+    pb = PointResult("b", 0.4, "Not yet", "scored", 2)
+    strand = StrandResult("Fractions", "Developing", 0.65, "b", [pa, pb])
+    result = EvaluationResult([strand], {"a": pa, "b": pb}, {"A1"})
+    path = [PathStep("b", "Add fractions", ["B1"])]
+    html = render_report_html(c, result, path, TEMPLATES, "Sam")
+    assert "Sam" in html
+    assert "Fractions" in html
+    assert "Developing" in html
+    assert "Add fractions" in html
