@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["standards"],
+  "properties": {
+    "standards": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["framework", "grade", "domain", "description"],
+        "properties": {
+          "framework": {"type": "string"},
+          "grade": {"type": ["string", "integer"]},
+          "domain": {"type": "string"},
+          "description": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

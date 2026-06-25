@@ -43,3 +43,18 @@ def test_standard_mapping_schema_requires_framework_and_description():
     v = _validator("standard_mapping.schema.json")
     v.validate({"standards": {"X": {"framework": "CC", "description": "d"}}})
     assert list(v.iter_errors({"standards": {"X": {"framework": "CC"}}}))
+
+
+def test_standards_catalog_schema_requires_all_fields():
+    v = _validator("standards_catalog.schema.json")
+    good = {"standards": {"CCSS.5.NF.A.1": {"framework": "CCSS-Math", "grade": 5,
+                                            "domain": "Fractions", "description": "d"}}}
+    v.validate(good)
+    bad = {"standards": {"CCSS.5.NF.A.1": {"framework": "CCSS-Math", "description": "d"}}}
+    assert list(v.iter_errors(bad))
+
+
+def test_course_schema_requires_manifest_fields():
+    v = _validator("course.schema.json")
+    v.validate({"id": "grade5_math", "name": "Grade 5 Math", "framework": "CCSS-Math", "grade": 5})
+    assert list(v.iter_errors({"id": "grade5_math", "name": "Grade 5 Math"}))
