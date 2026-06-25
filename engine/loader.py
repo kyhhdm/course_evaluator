@@ -101,22 +101,3 @@ def load_course(course_dir: str | Path, schemas_dir: str | Path,
 
     return Curriculum(points=_build_points(km), items=_build_items(ib),
                       bands=bands, standards=standards, meta=meta)
-
-
-def load_curriculum(curriculum_dir: str | Path, schemas_dir: str | Path) -> Curriculum:
-    cdir, sdir = Path(curriculum_dir), Path(schemas_dir)
-
-    km = load_yaml(cdir / "knowledge_map.yaml")
-    sm = load_yaml(cdir / "standard_mapping.yaml")
-    ib = load_yaml(cdir / "item_bank.yaml")
-    bd = load_yaml(cdir / "bands.yaml")
-
-    validate(km, sdir / "knowledge_map.schema.json")
-    validate(sm, sdir / "standard_mapping.schema.json")
-    validate(ib, sdir / "item_bank.schema.json")
-    validate(bd, sdir / "bands.schema.json")
-
-    points = _build_points(km)
-    items = _build_items(ib)
-    bands = _build_bands(bd)
-    return Curriculum(points=points, items=items, bands=bands, standards=sm["standards"])

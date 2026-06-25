@@ -1,14 +1,16 @@
 import pytest
 
-from engine.loader import load_curriculum
+from engine.loader import load_course
 
 CURRICULUM_DIR = "curriculum/grade5_math"
 SCHEMAS_DIR = "schemas"
+METHODOLOGY_DIR = "methodology"
+STANDARDS_DIR = "standards"
 
 
 @pytest.fixture(scope="module")
 def curriculum():
-    return load_curriculum(CURRICULUM_DIR, SCHEMAS_DIR)
+    return load_course(CURRICULUM_DIR, SCHEMAS_DIR, METHODOLOGY_DIR, STANDARDS_DIR)
 
 
 def test_prerequisites_reference_existing_points(curriculum):

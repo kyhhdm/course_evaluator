@@ -39,12 +39,6 @@ def test_bands_schema_requires_name_and_min_score():
     assert list(v.iter_errors({"bands": [{"name": "Secure"}]}))
 
 
-def test_standard_mapping_schema_requires_framework_and_description():
-    v = _validator("standard_mapping.schema.json")
-    v.validate({"standards": {"X": {"framework": "CC", "description": "d"}}})
-    assert list(v.iter_errors({"standards": {"X": {"framework": "CC"}}}))
-
-
 def test_standards_catalog_schema_requires_all_fields():
     v = _validator("standards_catalog.schema.json")
     good = {"standards": {"CCSS.5.NF.A.1": {"framework": "CCSS-Math", "grade": 5,

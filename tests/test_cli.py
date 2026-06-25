@@ -2,9 +2,7 @@ from engine.cli import main
 
 BASE = [
     "--curriculum", "curriculum/grade5_math",
-    "--schemas", "schemas",
     "--responses", "curriculum/grade5_math/sample_responses.yaml",
-    "--templates", "templates",
     "--name", "Sam",
 ]
 
@@ -23,3 +21,18 @@ def test_cli_student_report_includes_a_plan(capsys):
     assert code == 0
     assert "Your Learning Plan, Sam" in out
     assert "Step 1" in out
+
+
+def test_cli_coverage_report(capsys):
+    code = main(["--curriculum", "curriculum/grade5_math", "--coverage"])
+    out = capsys.readouterr().out
+    assert code == 0
+    assert "CCSS-Math grade 5" in out
+    assert "6 / 26" in out
+    assert "CCSS.5.NF.A.1" in out
+
+
+def test_cli_requires_responses_without_coverage():
+    import pytest
+    with pytest.raises(SystemExit):
+        main(["--curriculum", "curriculum/grade5_math"])

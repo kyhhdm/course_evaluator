@@ -1,7 +1,0 @@
-bands:
-  - name: Secure
-    min_score: 0.8
-  - name: Developing
-    min_score: 0.5
-  - name: "Not yet"
-    min_score: 0.0
