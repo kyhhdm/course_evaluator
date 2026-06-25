@@ -1,0 +1,16 @@
+@page { size: A4; margin: 18mm 16mm; }
+body { font-family: "DejaVu Sans", Arial, sans-serif; font-size: 12pt; color: #111; }
+h1 { font-size: 18pt; margin: 0 0 12pt; }
+h2 { font-size: 14pt; margin: 16pt 0 6pt; border-bottom: 1px solid #999; }
+h3 { font-size: 12pt; margin: 10pt 0 4pt; color: #444; }
+.item { margin: 0 0 10pt; page-break-inside: avoid; }
+.prompt { margin: 0 0 4pt; }
+.qid { font-weight: bold; }
+.options { list-style: none; padding-left: 18pt; margin: 0; }
+.options li { margin: 2pt 0; }
+.answer-blank { margin: 4pt 0 0; color: #333; }
+.answer { color: #064; }
+.feedback { font-size: 10pt; color: #555; padding-left: 18pt; }
+.answer-grid { width: 100%; border-collapse: collapse; }
+.answer-grid th, .answer-grid td { border: 1px solid #999; padding: 6pt 8pt; text-align: left; }
+.answer-grid td.blank { height: 18pt; }
