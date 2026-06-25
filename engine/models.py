@@ -64,11 +64,39 @@ class PathStep:
 
 
 @dataclass
+class Standard:
+    framework: str
+    grade: str
+    domain: str
+    description: str
+
+
+@dataclass
+class CourseMeta:
+    id: str
+    name: str
+    framework: str
+    grade: str
+
+
+@dataclass
+class CoverageReport:
+    framework: str
+    grade: str
+    total: int
+    covered: list[str]
+    missing: list[str]
+    out_of_scope: list[str]
+    percentage: float
+
+
+@dataclass
 class Curriculum:
     points: dict[str, KnowledgePoint]
     items: dict[str, Item]
     bands: tuple[Band, ...]  # sorted descending by min_score
-    standards: dict[str, dict]
+    standards: dict[str, Standard]
+    meta: CourseMeta | None = None
 
     def items_for_point(self, point_id: str) -> list[Item]:
         return [it for it in self.items.values() if point_id in it.points]

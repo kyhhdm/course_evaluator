@@ -1,6 +1,7 @@
 from engine.models import (
     KnowledgePoint, Item, Band, Curriculum,
     PointResult, StrandResult, EvaluationResult, PathStep,
+    Standard, CourseMeta, CoverageReport,
 )
 
 
@@ -44,3 +45,20 @@ def test_result_dataclasses_construct():
     ps = PathStep("a", "A", ["i2"])
     assert er.strands[0].weakest_point_id == "a"
     assert ps.practice_item_ids == ["i2"]
+
+
+def test_new_dataclasses_construct():
+    std = Standard("CCSS-Math", "5", "Number & Operations—Fractions", "Add unlike fractions")
+    meta = CourseMeta("grade5_math", "Grade 5 Mathematics", "CCSS-Math", "5")
+    rep = CoverageReport("CCSS-Math", "5", 26, ["a"], ["b"], ["c"], 0.5)
+    assert std.grade == "5"
+    assert meta.framework == "CCSS-Math"
+    assert rep.total == 26 and rep.percentage == 0.5
+
+
+def test_curriculum_accepts_meta_and_defaults_none():
+    c = Curriculum(points={}, items={}, bands=(Band("Secure", 0.8),), standards={})
+    assert c.meta is None
+    c2 = Curriculum(points={}, items={}, bands=(Band("Secure", 0.8),), standards={},
+                    meta=CourseMeta("i", "n", "CCSS-Math", "5"))
+    assert c2.meta.grade == "5"
