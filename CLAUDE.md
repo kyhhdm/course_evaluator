@@ -15,21 +15,26 @@ is a thin deterministic pipeline over it.
 Run everything from the repo root (the `pyproject.toml` sets `pythonpath = ["."]` and
 `testpaths = ["tests"]`, which is what makes `engine` importable without installation).
 
+**Use `uv` for all Python package management and execution.** Manage dependencies with
+`uv add` / `uv add --dev` (never edit `pyproject.toml` deps by hand or call `pip`), and run
+commands through `uv run` so they use the project environment. `uv sync` installs everything.
+
 ```bash
-python -m pytest                              # full suite
-python -m pytest tests/test_score.py -v       # one file
-python -m pytest tests/test_score.py::test_difficulty_weighted_mastery -v   # one test
+uv run pytest                                 # full suite
+uv run pytest tests/test_score.py -v          # one file
+uv run pytest tests/test_score.py::test_difficulty_weighted_mastery -v   # one test
 
 # Evaluate a student (parent is the default audience):
-python -m engine.cli --curriculum curriculum/grade5_math \
+uv run python -m engine.cli --curriculum curriculum/grade5_math \
   --responses curriculum/grade5_math/sample_responses.yaml --name Sam --audience student
 
 # Standards-coverage report for a course (no responses needed):
-python -m engine.cli --curriculum curriculum/grade5_math --coverage
+uv run python -m engine.cli --curriculum curriculum/grade5_math --coverage
 ```
 
 Runtime deps: `pyyaml`, `jsonschema`, `jinja2`. Dev: `pytest`. Python `>=3.10`. Keep
-dependencies limited to these — adding one is a deliberate decision, not a default.
+dependencies limited to these — adding one is a deliberate decision, not a default. Add deps
+with `uv add <pkg>`.
 
 ## Architecture
 
