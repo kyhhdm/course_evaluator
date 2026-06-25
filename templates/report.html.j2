@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Learning Report</title>
+<style>
+{% include "print.css" %}
+</style>
+</head>
+<body>
+<h1>Learning Report for {{ name }}</h1>
+<h2>Where {{ name }} stands</h2>
+<ul>
+{% for s in strands %}
+<li><strong>{{ s.strand }}:</strong> {{ s.band or "Not enough evidence yet" }}</li>
+{% endfor %}
+</ul>
+<h2>What this means</h2>
+<p>{{ name }} is Secure in {{ secure_count }} of {{ strands | length }} area(s).
+{% if focus %}The most useful next focus is <strong>{{ focus[0].title }}</strong>.{% else %}No specific gaps were found right now.{% endif %}</p>
+<h2>Focus next</h2>
+{% if focus %}
+<ol>
+{% for step in focus %}
+<li><strong>{{ step.title }}</strong></li>
+{% endfor %}
+</ol>
+{% else %}
+<p>Nothing specific to fix right now — keep practicing to stay sharp.</p>
+{% endif %}
+</body>
+</html>

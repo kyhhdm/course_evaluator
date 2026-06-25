@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Answer Sheet</title>
+<style>
+{% include "print.css" %}
+</style>
+</head>
+<body>
+<h1>{% if course %}{{ course.name }}{% else %}Diagnostic Test{% endif %} — Answer Sheet</h1>
+<p>Name: ____________________________  Date: ______________</p>
+<p>Write the child's final answer for each question below.</p>
+<table class="answer-grid">
+<thead><tr><th>Question</th><th>Child's answer</th></tr></thead>
+<tbody>
+{% for item in items %}
+<tr><td>{{ item.id }}</td><td class="blank"></td></tr>
+{% endfor %}
+</tbody>
+</table>
+</body>
+</html>

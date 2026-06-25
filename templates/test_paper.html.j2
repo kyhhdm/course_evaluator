@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Test Paper</title>
+<style>
+{% include "print.css" %}
+</style>
+</head>
+<body>
+<h1>{% if course %}{{ course.name }}{% else %}Diagnostic Test{% endif %} — Test Paper</h1>
+<p>Name: ____________________________  Date: ______________</p>
+{% for g in groups %}
+<section class="strand">
+<h2>{{ g.strand }}</h2>
+{% for pg in g.points %}
+{% for item in pg["items"] %}
+<div class="item">
+<p class="prompt"><span class="qid">{{ item.id }}.</span> {{ item.prompt }}</p>
+{% if item.type == "mcq" %}
+<ul class="options">
+{% for key in item.options | sort %}
+<li><strong>{{ key }}.</strong> {{ item.options[key] }}</li>
+{% endfor %}
+</ul>
+{% else %}
+<p class="answer-blank">Answer: ______________________</p>
+{% endif %}
+</div>
+{% endfor %}
+{% endfor %}
+</section>
+{% endfor %}
+</body>
+</html>

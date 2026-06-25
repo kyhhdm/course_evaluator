@@ -36,6 +36,32 @@ Run the tests:
 python -m pytest
 ```
 
+## Offline diagnostic (PDF)
+
+Generate a printable print pack (no responses needed):
+
+```bash
+uv run python -m engine.cli --curriculum curriculum/grade5_math --paper --out build/
+```
+
+This writes `test_paper.pdf`, `answer_sheet.pdf`, `answer_key.pdf`, and
+`answers_blank.yaml` into `build/`. The child completes the paper and records final
+answers on the answer sheet; the parent transcribes those answers into a copy of
+`answers_blank.yaml`, then generates the report:
+
+```bash
+uv run python -m engine.cli --curriculum curriculum/grade5_math \
+  --responses build/answers_filled.yaml --pdf --out build/
+```
+
+`report.pdf` contains the mastery bands and learning path. Blank lines in the answer
+file are treated as unanswered.
+
+PDF rendering uses [WeasyPrint](https://weasyprint.org/), which `uv sync` installs.
+WeasyPrint also needs system libraries (Pango, cairo, GDK-PixBuf); on Debian/Ubuntu:
+`sudo apt install libpango-1.0-0 libpangoft2-1.0-0 libcairo2 libgdk-pixbuf-2.0-0`.
+The non-PDF commands above (evaluation, `--coverage`) do not require it.
+
 ## Adding a course
 
 Copy `curriculum/_template/` and follow `curriculum/_template/AUTHORING.md`.

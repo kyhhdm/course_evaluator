@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Answer Key</title>
+<style>
+{% include "print.css" %}
+</style>
+</head>
+<body>
+<h1>{% if course %}{{ course.name }}{% else %}Diagnostic Test{% endif %} — Answer Key</h1>
+{% for g in groups %}
+<section class="strand">
+<h2>{{ g.strand }}</h2>
+{% for pg in g.points %}
+<h3>{{ pg.point.title }}</h3>
+{% for item in pg["items"] %}
+<div class="item">
+<p class="prompt"><span class="qid">{{ item.id }}.</span> {{ item.prompt }}</p>
+<p class="answer"><strong>Answer:</strong> {{ item.answer }}{% if item.type == "mcq" and item.answer in item.options %} — {{ item.options[item.answer] }}{% endif %}</p>
+{% if item.distractor_feedback %}
+<ul class="feedback">
+{% for key in item.distractor_feedback | sort %}
+<li><strong>{{ key }}:</strong> {{ item.distractor_feedback[key] }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+</div>
+{% endfor %}
+{% endfor %}
+</section>
+{% endfor %}
+</body>
+</html>
