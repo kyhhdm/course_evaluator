@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["items"],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "points", "difficulty", "type", "prompt", "answer"],
+        "properties": {
+          "id": {"type": "string"},
+          "points": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "difficulty": {"type": "integer", "minimum": 1, "maximum": 3},
+          "type": {"enum": ["mcq", "numeric"]},
+          "prompt": {"type": "string"},
+          "answer": {"type": "string"},
+          "options": {"type": "object", "additionalProperties": {"type": "string"}},
+          "distractor_feedback": {"type": "object", "additionalProperties": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
