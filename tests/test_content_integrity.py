@@ -61,3 +61,43 @@ def test_sample_responses_only_reference_real_items(curriculum):
     responses = load_yaml(f"{CURRICULUM_DIR}/sample_responses.yaml")["responses"]
     for item_id in responses:
         assert item_id in curriculum.items, f"response references unknown item {item_id}"
+
+
+def test_mcq_options_have_no_duplicate_values(curriculum):
+    def parse_option(s):
+        s = str(s).strip()
+        if "/" in s:
+            parts = s.split("/")
+            if len(parts) == 2:
+                try:
+                    return float(parts[0]) / float(parts[1])
+                except (ValueError, ZeroDivisionError):
+                    return None
+        try:
+            return float(s)
+        except ValueError:
+            return None
+
+    for item in curriculum.items.values():
+        if item.type != "mcq":
+            continue
+        option_pairs = []
+        for key, val in item.options.items():
+            numeric = parse_option(val)
+            if numeric is not None:
+                option_pairs.append((key, numeric, val))
+        # Find the numeric value of the keyed answer (if parseable)
+        answer_key = getattr(item, "answer", None)
+        answer_numeric = None
+        if answer_key and answer_key in item.options:
+            answer_numeric = parse_option(item.options[answer_key])
+        # Assert no distractor is numerically equal to the keyed answer
+        # (a distractor that equals the correct answer creates an ambiguous item)
+        if answer_numeric is not None:
+            for key, val, raw in option_pairs:
+                if key == answer_key:
+                    continue
+                assert abs(val - answer_numeric) >= 1e-9, (
+                    f"Item {item.id}: distractor {key}='{raw}' is numerically equal "
+                    f"to keyed answer {answer_key}='{item.options[answer_key]}'"
+                )
