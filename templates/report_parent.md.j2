@@ -1,0 +1,21 @@
+# Learning Report for {{ name }}
+
+## Where {{ name }} stands
+
+{% for s in strands -%}
+- **{{ s.strand }}**: {{ s.band or "Not enough evidence yet" }}
+{% endfor %}
+## What this means
+
+{{ name }} is Secure in {{ secure_count }} of {{ strands | length }} area(s).
+{% if focus %}The most useful next focus is **{{ focus[0].title }}**.{% else %}No specific gaps were found right now.{% endif %}
+
+## Focus next
+
+{% if focus -%}
+{% for step in focus -%}
+{{ loop.index }}. **{{ step.title }}**
+{% endfor -%}
+{% else -%}
+Nothing specific to fix right now — keep practicing to stay sharp.
+{% endif %}

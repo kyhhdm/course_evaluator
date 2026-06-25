@@ -1,0 +1,24 @@
+# Your Learning Plan, {{ name }}
+
+## Your results by area
+
+{% for s in strands -%}
+- **{{ s.strand }}**: {{ s.band or "Not enough evidence yet" }}
+{% endfor %}
+## Your step-by-step plan
+
+{% if path -%}
+{% for step in path %}
+### Step {{ loop.index }}: {{ step.title }}
+
+Practice these:
+{% for item_id in step.practice_item_ids -%}
+- {{ items[item_id].prompt }}
+{% endfor -%}
+{% if not step.practice_item_ids -%}
+- (No extra practice items available yet for this skill.)
+{% endif -%}
+{% endfor %}
+{% else -%}
+Great work — no gaps to fix right now.
+{% endif %}
