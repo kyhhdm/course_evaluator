@@ -51,3 +51,28 @@ def test_answer_sheet_html_lists_every_item_id():
     for item_id in ("A1", "A2", "B1"):
         assert item_id in html
     assert "42" not in html      # the sheet is blank — no answers
+
+
+import yaml
+
+from engine.score import evaluate
+
+
+def test_answer_sheet_template_round_trips_through_evaluate():
+    from engine.paper import drop_blank_responses, render_answer_sheet_template
+    c = _curriculum()
+    text = render_answer_sheet_template(c)
+    parsed = yaml.safe_load(text)
+
+    # every item id is present as a key in the responses map
+    assert set(parsed["responses"].keys()) == {"A1", "A2", "B1"}
+
+    # blank template -> all values empty -> filtered to nothing -> no scoring, no error
+    blank = drop_blank_responses(parsed["responses"])
+    assert blank == {}
+    result = evaluate(c, blank)
+    assert result.point_results["a"].status == "insufficient_evidence"
+
+    # a filled-in pair scores the point (both A-items correct -> Secure)
+    filled = drop_blank_responses({"A1": "B", "A2": "8", "B1": ""})
+    assert filled == {"A1": "B", "A2": "8"}

@@ -59,3 +59,17 @@ def render_answer_key_html(curriculum: Curriculum, templates_dir: str) -> str:
 def render_answer_sheet_html(curriculum: Curriculum, templates_dir: str) -> str:
     tmpl = _env(templates_dir).get_template("answer_sheet.html.j2")
     return tmpl.render(items=ordered_items(curriculum), course=curriculum.meta)
+
+
+def render_answer_sheet_template(curriculum: Curriculum) -> str:
+    """Emit a YAML responses skeleton: one blank entry per item, prompt as a comment."""
+    lines = ["responses:"]
+    for item in ordered_items(curriculum):
+        prompt = item.prompt.replace("\n", " ")
+        lines.append(f"  {item.id}:   # {prompt}")
+    return "\n".join(lines) + "\n"
+
+
+def drop_blank_responses(raw: dict) -> dict:
+    """Drop keys whose value is None or blank so unanswered items are not scored."""
+    return {k: v for k, v in raw.items() if v is not None and str(v).strip() != ""}
