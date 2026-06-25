@@ -124,7 +124,7 @@ standards:
     framework: CCSS-Math
     grade: 5
     domain: Geometry
-    description: "Understand a coordinate system; interpret coordinate values of points."
+    description: "Define a coordinate system with perpendicular axes meeting at the origin; understand how an ordered pair locates a point."
   CCSS.5.G.A.2:
     framework: CCSS-Math
     grade: 5
