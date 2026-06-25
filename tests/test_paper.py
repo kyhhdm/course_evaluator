@@ -31,3 +31,5 @@ def test_paper_html_shows_prompts_and_options_but_no_answers():
     assert "3/6" in html                      # mcq option text present
     assert "42" not in html                   # numeric answer NOT leaked
     assert "correct" not in html.lower()      # no correct-answer marker
+    assert "1/5 + 2/5 = ?/5" in html   # numeric item's prompt renders
+    assert "Answer:" in html            # numeric blank rendered (else-branch covered)
