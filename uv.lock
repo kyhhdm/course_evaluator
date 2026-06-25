@@ -201,11 +201,6 @@ dependencies = [
     { name = "weasyprint" },
 ]
 
-[package.optional-dependencies]
-dev = [
-    { name = "pytest" },
-]
-
 [package.dev-dependencies]
 dev = [
     { name = "pytest" },
@@ -215,11 +210,9 @@ dev = [
 requires-dist = [
     { name = "jinja2", specifier = ">=3.0" },
     { name = "jsonschema", specifier = ">=4.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0" },
     { name = "pyyaml", specifier = ">=6.0" },
     { name = "weasyprint", specifier = ">=69.0" },
 ]
-provides-extras = ["dev"]
 
 [package.metadata.requires-dev]
 dev = [{ name = "pytest", specifier = ">=9.1.1" }]
