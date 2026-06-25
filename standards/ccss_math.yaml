@@ -1,0 +1,142 @@
+standards:
+  # --- Grade 4 prerequisite referenced by Grade 5 ---
+  CCSS.4.NF.A.1:
+    framework: CCSS-Math
+    grade: 4
+    domain: Number & Operations—Fractions
+    description: "Explain why a/b equals (n*a)/(n*b); recognize and generate equivalent fractions."
+  # --- 5.OA Operations & Algebraic Thinking ---
+  CCSS.5.OA.A.1:
+    framework: CCSS-Math
+    grade: 5
+    domain: Operations & Algebraic Thinking
+    description: "Use parentheses, brackets, or braces in numerical expressions and evaluate them."
+  CCSS.5.OA.A.2:
+    framework: CCSS-Math
+    grade: 5
+    domain: Operations & Algebraic Thinking
+    description: "Write and interpret simple numerical expressions without evaluating them."
+  CCSS.5.OA.B.3:
+    framework: CCSS-Math
+    grade: 5
+    domain: Operations & Algebraic Thinking
+    description: "Generate two numerical patterns from two rules and graph the ordered pairs."
+  # --- 5.NBT Number & Operations in Base Ten ---
+  CCSS.5.NBT.A.1:
+    framework: CCSS-Math
+    grade: 5
+    domain: Number & Operations in Base Ten
+    description: "A digit represents 10x the place to its right and 1/10 the place to its left."
+  CCSS.5.NBT.A.2:
+    framework: CCSS-Math
+    grade: 5
+    domain: Number & Operations in Base Ten
+    description: "Explain patterns when multiplying/dividing by powers of 10; use exponents for 10."
+  CCSS.5.NBT.A.3:
+    framework: CCSS-Math
+    grade: 5
+    domain: Number & Operations in Base Ten
+    description: "Read, write, and compare decimals to thousandths."
+  CCSS.5.NBT.A.4:
+    framework: CCSS-Math
+    grade: 5
+    domain: Number & Operations in Base Ten
+    description: "Use place value understanding to round decimals to any place."
+  CCSS.5.NBT.B.5:
+    framework: CCSS-Math
+    grade: 5
+    domain: Number & Operations in Base Ten
+    description: "Fluently multiply multi-digit whole numbers using the standard algorithm."
+  CCSS.5.NBT.B.6:
+    framework: CCSS-Math
+    grade: 5
+    domain: Number & Operations in Base Ten
+    description: "Find whole-number quotients with up to four-digit dividends and two-digit divisors."
+  CCSS.5.NBT.B.7:
+    framework: CCSS-Math
+    grade: 5
+    domain: Number & Operations in Base Ten
+    description: "Add, subtract, multiply, and divide decimals to hundredths."
+  # --- 5.NF Number & Operations—Fractions ---
+  CCSS.5.NF.A.1:
+    framework: CCSS-Math
+    grade: 5
+    domain: Number & Operations—Fractions
+    description: "Add and subtract fractions with unlike denominators, including mixed numbers."
+  CCSS.5.NF.A.2:
+    framework: CCSS-Math
+    grade: 5
+    domain: Number & Operations—Fractions
+    description: "Solve word problems adding and subtracting fractions referring to the same whole."
+  CCSS.5.NF.B.3:
+    framework: CCSS-Math
+    grade: 5
+    domain: Number & Operations—Fractions
+    description: "Interpret a fraction as division of the numerator by the denominator (a/b = a / b)."
+  CCSS.5.NF.B.4:
+    framework: CCSS-Math
+    grade: 5
+    domain: Number & Operations—Fractions
+    description: "Multiply a fraction or whole number by a fraction."
+  CCSS.5.NF.B.5:
+    framework: CCSS-Math
+    grade: 5
+    domain: Number & Operations—Fractions
+    description: "Interpret multiplication as scaling (resizing)."
+  CCSS.5.NF.B.6:
+    framework: CCSS-Math
+    grade: 5
+    domain: Number & Operations—Fractions
+    description: "Solve real-world problems involving multiplication of fractions and mixed numbers."
+  CCSS.5.NF.B.7:
+    framework: CCSS-Math
+    grade: 5
+    domain: Number & Operations—Fractions
+    description: "Divide unit fractions by whole numbers and whole numbers by unit fractions."
+  # --- 5.MD Measurement & Data ---
+  CCSS.5.MD.A.1:
+    framework: CCSS-Math
+    grade: 5
+    domain: Measurement & Data
+    description: "Convert among different-sized standard measurement units within a system."
+  CCSS.5.MD.B.2:
+    framework: CCSS-Math
+    grade: 5
+    domain: Measurement & Data
+    description: "Make a line plot to display a data set of measurements in fractions of a unit."
+  CCSS.5.MD.C.3:
+    framework: CCSS-Math
+    grade: 5
+    domain: Measurement & Data
+    description: "Recognize volume as an attribute of solid figures and understand volume measurement."
+  CCSS.5.MD.C.4:
+    framework: CCSS-Math
+    grade: 5
+    domain: Measurement & Data
+    description: "Measure volumes by counting unit cubes."
+  CCSS.5.MD.C.5:
+    framework: CCSS-Math
+    grade: 5
+    domain: Measurement & Data
+    description: "Relate volume to multiplication and addition; solve real-world volume problems."
+  # --- 5.G Geometry ---
+  CCSS.5.G.A.1:
+    framework: CCSS-Math
+    grade: 5
+    domain: Geometry
+    description: "Understand a coordinate system; interpret coordinate values of points."
+  CCSS.5.G.A.2:
+    framework: CCSS-Math
+    grade: 5
+    domain: Geometry
+    description: "Represent real-world problems by graphing points in the first quadrant."
+  CCSS.5.G.B.3:
+    framework: CCSS-Math
+    grade: 5
+    domain: Geometry
+    description: "Attributes of a category of two-dimensional figures belong to all subcategories."
+  CCSS.5.G.B.4:
+    framework: CCSS-Math
+    grade: 5
+    domain: Geometry
+    description: "Classify two-dimensional figures in a hierarchy based on properties."

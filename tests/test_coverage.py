@@ -39,3 +39,16 @@ def test_format_coverage_is_deterministic_text():
     assert "F grade 5" in out
     assert "1 / 2 standards covered (50.0%)" in out
     assert "M.4.Z" in out
+
+
+def test_grade5_math_real_coverage():
+    from engine.loader import load_course
+    c = load_course("curriculum/grade5_math", "schemas", "methodology", "standards")
+    r = compute_coverage(c)
+    assert r.total == 26
+    assert "CCSS.5.NF.A.1" in r.covered
+    assert "CCSS.5.G.A.1" in r.missing
+    assert "CCSS.4.NF.A.1" in r.out_of_scope
+    assert "CCSS.4.NF.A.1" not in r.missing
+    assert len(r.covered) == 6
+    assert r.percentage == pytest.approx(6 / 26)
