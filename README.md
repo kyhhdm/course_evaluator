@@ -57,6 +57,11 @@ uv run python -m engine.cli --curriculum curriculum/grade5_math \
 `report.pdf` contains the mastery bands and learning path. Blank lines in the answer
 file are treated as unanswered.
 
+PDF rendering uses [WeasyPrint](https://weasyprint.org/), which `uv sync` installs.
+WeasyPrint also needs system libraries (Pango, cairo, GDK-PixBuf); on Debian/Ubuntu:
+`sudo apt install libpango-1.0-0 libpangoft2-1.0-0 libcairo2 libgdk-pixbuf-2.0-0`.
+The non-PDF commands above (evaluation, `--coverage`) do not require it.
+
 ## Adding a course
 
 Copy `curriculum/_template/` and follow `curriculum/_template/AUTHORING.md`.
