@@ -21,20 +21,20 @@ into status reports and improvement guidance. It is content-heavy and code-light
 single concrete slice, then replicate the *content* (not the engineering) for other
 strands, grades, and subjects.
 
-**First slice:** Grade 6 Math, one strand fully worked end-to-end —
-**Number & Operations (fractions / ratios)** — chosen because its prerequisite chains
+**First slice:** Grade 5 Math, one strand fully worked end-to-end —
+**Number & Operations (fractions / decimals)** — chosen because its prerequisite chains
 most clearly demonstrate the prioritized learning path. Roughly 8–12 knowledge points,
 ~30 items, the full engine, both report types, and the full test suite.
 
 The methodology is **curriculum-agnostic**. A specific standard (US Common Core, China
-MoE) is a pluggable mapping layer, not baked into the engine. Grade 6 Math is the first
+MoE) is a pluggable mapping layer, not baked into the engine. Grade 5 Math is the first
 concrete instantiation of that mapping.
 
 ## Status model — two layers
 
 - **Strands** (e.g. Number & Operations, Algebra, Geometry, Data) — the headline a
   parent/student sees. ~5–10 per grade.
-- **Knowledge points** under each strand (e.g. "divide fractions", "ratio tables") — the
+- **Knowledge points** under each strand (e.g. "add unlike fractions", "multiply fractions") — the
   actionable detail and the unit the "where to improve" output operates on.
 
 ## Evidence source
@@ -48,7 +48,7 @@ practice source for the improvement path. (No reliance on external exam data in 
 ```
 course_evaluator/
   curriculum/
-    grade6_math/
+    grade5_math/
       knowledge_map.yaml      # strands -> knowledge points + prerequisite links
       standard_mapping.yaml   # knowledge point -> CCSS / China MoE codes
       item_bank.yaml          # diagnostic + practice items, tagged & difficulty-rated
@@ -112,7 +112,7 @@ model is unchanged if we later graduate to IRT.)
 
 1. Collect all non-Secure knowledge points.
 2. **Topologically sort by prerequisites** so foundational gaps come first
-   (e.g. "fix fraction division before ratios").
+   (e.g. "fix equivalent fractions before adding unlike denominators").
 3. Break ties by **impact** = number of downstream points depending on this one.
 4. Each step links to **practice items** from the same bank, filtered by point +
    difficulty, excluding items already used diagnostically.
@@ -151,7 +151,7 @@ responses.yaml ─► score.py ─► results (point mastery + strand bands)
 
 ## What "done" means for the first slice
 
-Number & Operations strand for Grade 6 Math, fully authored and validated; the engine
+Number & Operations strand for Grade 5 Math, fully authored and validated; the engine
 produces correct per-point mastery, strand bands, and a prioritized learning path with
 linked practice; both parent and student reports render; all tests pass. At that point the
 remaining strands, grades, and subjects are content replication against a proven pattern.
