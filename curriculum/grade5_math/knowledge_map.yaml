@@ -1,0 +1,49 @@
+points:
+  - id: g5-equiv-fractions
+    strand: Number & Operations
+    title: Equivalent fractions
+    description: Recognize and generate equivalent fractions by scaling numerator and denominator.
+    prerequisites: []
+    standard_refs: [CCSS.4.NF.A.1]
+  - id: g5-add-like
+    strand: Number & Operations
+    title: Add and subtract fractions with like denominators
+    description: Add and subtract fractions that already share a denominator.
+    prerequisites: []
+    standard_refs: [CCSS.5.NF.A.1]
+  - id: g5-add-unlike
+    strand: Number & Operations
+    title: Add and subtract fractions with unlike denominators
+    description: Find a common denominator, then add or subtract.
+    prerequisites: [g5-equiv-fractions, g5-add-like]
+    standard_refs: [CCSS.5.NF.A.1, CCSS.5.NF.A.2]
+  - id: g5-mult-fraction-whole
+    strand: Number & Operations
+    title: Multiply a fraction by a whole number
+    description: Compute a whole number times a fraction as repeated addition / scaling.
+    prerequisites: [g5-add-like]
+    standard_refs: [CCSS.5.NF.B.4]
+  - id: g5-mult-fraction-fraction
+    strand: Number & Operations
+    title: Multiply a fraction by a fraction
+    description: Multiply numerators and denominators; interpret as a part of a part.
+    prerequisites: [g5-mult-fraction-whole]
+    standard_refs: [CCSS.5.NF.B.4]
+  - id: g5-divide-unit-fraction
+    strand: Number & Operations
+    title: Divide with unit fractions
+    description: Divide a unit fraction by a whole number and a whole number by a unit fraction.
+    prerequisites: [g5-mult-fraction-fraction]
+    standard_refs: [CCSS.5.NF.B.7]
+  - id: g5-decimal-place-value
+    strand: Number & Operations
+    title: Decimal place value to thousandths
+    description: Read, write, and compare decimals to the thousandths place.
+    prerequisites: []
+    standard_refs: [CCSS.5.NBT.A.3]
+  - id: g5-add-subtract-decimals
+    strand: Number & Operations
+    title: Add and subtract decimals
+    description: Align place values to add and subtract decimals to hundredths.
+    prerequisites: [g5-decimal-place-value]
+    standard_refs: [CCSS.5.NBT.B.7]
