@@ -395,3 +395,77 @@ items:
     prompt: "How long is 2/3 of a 9-foot rope?"
     options: {A: "6 feet", B: "3 feet", C: "9 feet", D: "18 feet"}
     answer: "A"
+  # --- g5-md-unit-conversion ---
+  - id: MD-UC-1
+    points: [g5-md-unit-conversion]
+    difficulty: 1
+    type: numeric
+    prompt: "How many centimeters are in 2 meters?"
+    answer: "200"
+  - id: MD-UC-2
+    points: [g5-md-unit-conversion]
+    difficulty: 2
+    type: numeric
+    prompt: "Convert 3 kilometers to meters."
+    answer: "3000"
+  # --- g5-md-line-plots ---
+  - id: MD-LP-1
+    points: [g5-md-line-plots]
+    difficulty: 1
+    type: mcq
+    prompt: "A line plot displays data using marks above a..."
+    options: {A: "number line", B: "circle", C: "bar", D: "table"}
+    answer: "A"
+  - id: MD-LP-2
+    points: [g5-md-line-plots]
+    difficulty: 2
+    type: numeric
+    prompt: "Three items measure 1/4, 1/4, and 1/2 unit. Their total is ?/4 (enter the numerator)."
+    answer: "4"
+  # --- g5-md-volume-concept ---
+  - id: MD-VC-1
+    points: [g5-md-volume-concept]
+    difficulty: 1
+    type: mcq
+    prompt: "Volume is measured in..."
+    options: {A: "cubic units", B: "square units", C: "linear units", D: "degrees"}
+    answer: "A"
+  - id: MD-VC-2
+    points: [g5-md-volume-concept]
+    difficulty: 2
+    type: mcq
+    prompt: "A single unit cube has a volume of..."
+    options: {A: "1 cubic unit", B: "4 cubic units", C: "0 cubic units", D: "6 cubic units"}
+    answer: "A"
+  # --- g5-md-measure-volume ---
+  - id: MD-MV-1
+    points: [g5-md-measure-volume]
+    difficulty: 1
+    type: numeric
+    prompt: "A box is filled with 2 layers of 6 unit cubes each. How many cubes in all?"
+    answer: "12"
+  - id: MD-MV-2
+    points: [g5-md-measure-volume]
+    difficulty: 2
+    type: numeric
+    prompt: "A solid is packed with unit cubes: 3 long, 2 wide, 2 high. How many cubes?"
+    answer: "12"
+  # --- g5-md-volume-formulas ---
+  - id: MD-VF-1
+    points: [g5-md-volume-formulas]
+    difficulty: 1
+    type: numeric
+    prompt: "Volume of a box with l=4, w=3, h=2 (V = l x w x h)?"
+    answer: "24"
+  - id: MD-VF-2
+    points: [g5-md-volume-formulas]
+    difficulty: 2
+    type: numeric
+    prompt: "A prism has base area 10 and height 5. Its volume is?"
+    answer: "50"
+  - id: MD-VF-3
+    points: [g5-md-volume-formulas]
+    difficulty: 3
+    type: numeric
+    prompt: "Two stacked boxes have volumes 2x2x2 and 2x2x1. Their total volume is?"
+    answer: "12"

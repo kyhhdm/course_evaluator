@@ -137,3 +137,33 @@ points:
     description: Solve real-world problems multiplying fractions and mixed numbers.
     prerequisites: [g5-nf-scaling]
     standard_refs: [CCSS.5.NF.B.6]
+  - id: g5-md-unit-conversion
+    strand: Measurement & Data
+    title: Convert measurement units
+    description: Convert among different-sized standard units within one system.
+    prerequisites: []
+    standard_refs: [CCSS.5.MD.A.1]
+  - id: g5-md-line-plots
+    strand: Measurement & Data
+    title: Line plots with fractions
+    description: Make and use line plots of measurements in fractions of a unit.
+    prerequisites: [g5-add-unlike]
+    standard_refs: [CCSS.5.MD.B.2]
+  - id: g5-md-volume-concept
+    strand: Measurement & Data
+    title: Concept of volume
+    description: Recognize volume as an attribute of solid figures, measured in cubic units.
+    prerequisites: []
+    standard_refs: [CCSS.5.MD.C.3]
+  - id: g5-md-measure-volume
+    strand: Measurement & Data
+    title: Measure volume by counting cubes
+    description: Measure volumes by counting unit cubes.
+    prerequisites: [g5-md-volume-concept]
+    standard_refs: [CCSS.5.MD.C.4]
+  - id: g5-md-volume-formulas
+    strand: Measurement & Data
+    title: Volume formulas
+    description: Relate volume to multiplication and addition; apply V = l x w x h.
+    prerequisites: [g5-md-measure-volume]
+    standard_refs: [CCSS.5.MD.C.5]
