@@ -49,3 +49,8 @@ def ordered_items(curriculum: Curriculum) -> list[Item]:
 def render_paper_html(curriculum: Curriculum, templates_dir: str) -> str:
     tmpl = _env(templates_dir).get_template("test_paper.html.j2")
     return tmpl.render(groups=ordered_groups(curriculum), course=curriculum.meta)
+
+
+def render_answer_key_html(curriculum: Curriculum, templates_dir: str) -> str:
+    tmpl = _env(templates_dir).get_template("answer_key.html.j2")
+    return tmpl.render(groups=ordered_groups(curriculum), course=curriculum.meta)

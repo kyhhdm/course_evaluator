@@ -33,3 +33,13 @@ def test_paper_html_shows_prompts_and_options_but_no_answers():
     assert "correct" not in html.lower()      # no correct-answer marker
     assert "1/5 + 2/5 = ?/5" in html   # numeric item's prompt renders
     assert "Answer:" in html            # numeric blank rendered (else-branch covered)
+
+
+def test_answer_key_html_shows_answers_and_feedback():
+    from engine.paper import render_answer_key_html
+    c = _curriculum()
+    c.items["A1"].distractor_feedback = {"A": "Scale numerator and denominator together."}
+    html = render_answer_key_html(c, TEMPLATES)
+    assert "Equivalent fractions" in html          # point title shown on the key
+    assert "42" in html                             # numeric answer shown
+    assert "Scale numerator" in html                # distractor feedback shown
