@@ -71,3 +71,21 @@ points:
     description: Classify 2-D figures in a hierarchy based on their properties.
     prerequisites: [g5-figure-hierarchy]
     standard_refs: [CCSS.5.G.B.4]
+  - id: g5-oa-eval-expressions
+    strand: Operations & Algebraic Thinking
+    title: Evaluate numerical expressions
+    description: Use parentheses, brackets, or braces and evaluate expressions with them.
+    prerequisites: []
+    standard_refs: [CCSS.5.OA.A.1]
+  - id: g5-oa-write-expressions
+    strand: Operations & Algebraic Thinking
+    title: Write and interpret expressions
+    description: Write simple expressions and interpret them without evaluating.
+    prerequisites: [g5-oa-eval-expressions]
+    standard_refs: [CCSS.5.OA.A.2]
+  - id: g5-oa-patterns-graph
+    strand: Operations & Algebraic Thinking
+    title: Generate and graph patterns
+    description: Generate two numerical patterns from rules and graph the ordered pairs.
+    prerequisites: [g5-coordinate-system]
+    standard_refs: [CCSS.5.OA.B.3]

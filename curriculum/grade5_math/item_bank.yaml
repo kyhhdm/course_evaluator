@@ -224,3 +224,51 @@ items:
     prompt: "Which figure is always a parallelogram?"
     options: {A: "rectangle", B: "trapezoid", C: "triangle", D: "pentagon"}
     answer: "A"
+  # --- g5-oa-eval-expressions ---
+  - id: OA-EV-1
+    points: [g5-oa-eval-expressions]
+    difficulty: 1
+    type: numeric
+    prompt: "Evaluate: 2 x (3 + 4)"
+    answer: "14"
+  - id: OA-EV-2
+    points: [g5-oa-eval-expressions]
+    difficulty: 2
+    type: numeric
+    prompt: "Evaluate: 3 + 4 x 2"
+    answer: "11"
+  - id: OA-EV-3
+    points: [g5-oa-eval-expressions]
+    difficulty: 3
+    type: numeric
+    prompt: "Evaluate: (8 - 3) x (2 + 1)"
+    answer: "15"
+  # --- g5-oa-write-expressions ---
+  - id: OA-WR-1
+    points: [g5-oa-write-expressions]
+    difficulty: 1
+    type: mcq
+    prompt: "Which expression means 'add 6 and 4, then multiply by 2'?"
+    options: {A: "2 x (6 + 4)", B: "2 x 6 + 4", C: "6 + 4 x 2", D: "6 + 4 + 2"}
+    answer: "A"
+  - id: OA-WR-2
+    points: [g5-oa-write-expressions]
+    difficulty: 2
+    type: mcq
+    prompt: "Without computing, 3 x (245 + 18) is ___ (245 + 18)."
+    options: {A: "3 times as large as", B: "equal to", C: "smaller than", D: "3 less than"}
+    answer: "A"
+  # --- g5-oa-patterns-graph ---
+  - id: OA-PG-1
+    points: [g5-oa-patterns-graph]
+    difficulty: 2
+    type: numeric
+    prompt: "Rule A 'add 2' from 0 gives 0,2,4,6. Rule B 'add 4' from 0 gives 0,4,8,12. The 4th B term divided by the 4th A term is?"
+    answer: "2"
+  - id: OA-PG-2
+    points: [g5-oa-patterns-graph]
+    difficulty: 2
+    type: mcq
+    prompt: "Pattern X adds 3 (0,3,6,9); pattern Y adds 6 (0,6,12,18). Each Y term is the ___ of the matching X term."
+    options: {A: "double", B: "half", C: "same", D: "triple"}
+    answer: "A"
