@@ -89,3 +89,33 @@ points:
     description: Generate two numerical patterns from rules and graph the ordered pairs.
     prerequisites: [g5-coordinate-system]
     standard_refs: [CCSS.5.OA.B.3]
+  - id: g5-nbt-place-value
+    strand: Number & Operations in Base Ten
+    title: Place value (10x relationship)
+    description: A digit represents 10 times the place to its right and 1/10 the place to its left.
+    prerequisites: []
+    standard_refs: [CCSS.5.NBT.A.1]
+  - id: g5-nbt-powers-of-ten
+    strand: Number & Operations in Base Ten
+    title: Powers of ten
+    description: Patterns when multiplying or dividing by powers of 10; whole-number exponents.
+    prerequisites: [g5-nbt-place-value]
+    standard_refs: [CCSS.5.NBT.A.2]
+  - id: g5-nbt-round-decimals
+    strand: Number & Operations in Base Ten
+    title: Round decimals
+    description: Use place value understanding to round decimals to any place.
+    prerequisites: [g5-decimal-place-value]
+    standard_refs: [CCSS.5.NBT.A.4]
+  - id: g5-nbt-mult-multidigit
+    strand: Number & Operations in Base Ten
+    title: Multiply multi-digit whole numbers
+    description: Fluently multiply multi-digit whole numbers using the standard algorithm.
+    prerequisites: []
+    standard_refs: [CCSS.5.NBT.B.5]
+  - id: g5-nbt-divide-multidigit
+    strand: Number & Operations in Base Ten
+    title: Divide multi-digit whole numbers
+    description: Find whole-number quotients with up to four-digit dividends and two-digit divisors.
+    prerequisites: [g5-nbt-mult-multidigit]
+    standard_refs: [CCSS.5.NBT.B.6]

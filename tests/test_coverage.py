@@ -50,6 +50,6 @@ def test_grade5_math_real_coverage():
     assert "CCSS.5.G.A.1" in r.covered
     assert "CCSS.4.NF.A.1" in r.out_of_scope
     assert "CCSS.4.NF.A.1" not in r.missing
-    assert len(r.covered) == 13
-    assert len(r.missing) == 13
-    assert r.percentage == pytest.approx(13 / 26)
+    assert len(r.covered) == 18
+    assert len(r.missing) == 8
+    assert r.percentage == pytest.approx(18 / 26)

@@ -272,3 +272,83 @@ items:
     prompt: "Pattern X adds 3 (0,3,6,9); pattern Y adds 6 (0,6,12,18). Each Y term is the ___ of the matching X term."
     options: {A: "double", B: "half", C: "same", D: "triple"}
     answer: "A"
+  # --- g5-nbt-place-value ---
+  - id: NBT-PV-1
+    points: [g5-nbt-place-value]
+    difficulty: 1
+    type: mcq
+    prompt: "In 4,400 the left 4 is worth how many times the right 4?"
+    options: {A: "10", B: "100", C: "1000", D: "2"}
+    answer: "A"
+  - id: NBT-PV-2
+    points: [g5-nbt-place-value]
+    difficulty: 2
+    type: mcq
+    prompt: "The 7 in 7,000 is how many times the 7 in 700?"
+    options: {A: "10", B: "100", C: "1/10", D: "1000"}
+    answer: "A"
+  # --- g5-nbt-powers-of-ten ---
+  - id: NBT-PT-1
+    points: [g5-nbt-powers-of-ten]
+    difficulty: 1
+    type: numeric
+    prompt: "How many zeros are in the product 6 x 1000?"
+    answer: "3"
+  - id: NBT-PT-2
+    points: [g5-nbt-powers-of-ten]
+    difficulty: 2
+    type: mcq
+    prompt: "What is 10 to the power 3 (10^3)?"
+    options: {A: "1000", B: "30", C: "100", D: "300"}
+    answer: "A"
+  - id: NBT-PT-3
+    points: [g5-nbt-powers-of-ten]
+    difficulty: 2
+    type: numeric
+    prompt: "3.5 x 100 = ?"
+    answer: "350"
+  # --- g5-nbt-round-decimals ---
+  - id: NBT-RD-1
+    points: [g5-nbt-round-decimals]
+    difficulty: 1
+    type: numeric
+    prompt: "Round 2.7 to the nearest whole number."
+    answer: "3"
+  - id: NBT-RD-2
+    points: [g5-nbt-round-decimals]
+    difficulty: 2
+    type: numeric
+    prompt: "Round 4.56 to the nearest tenth."
+    answer: "4.6"
+  # --- g5-nbt-mult-multidigit ---
+  - id: NBT-MM-1
+    points: [g5-nbt-mult-multidigit]
+    difficulty: 1
+    type: numeric
+    prompt: "23 x 4 = ?"
+    answer: "92"
+  - id: NBT-MM-2
+    points: [g5-nbt-mult-multidigit]
+    difficulty: 2
+    type: numeric
+    prompt: "34 x 12 = ?"
+    answer: "408"
+  - id: NBT-MM-3
+    points: [g5-nbt-mult-multidigit]
+    difficulty: 3
+    type: numeric
+    prompt: "125 x 16 = ?"
+    answer: "2000"
+  # --- g5-nbt-divide-multidigit ---
+  - id: NBT-DM-1
+    points: [g5-nbt-divide-multidigit]
+    difficulty: 1
+    type: numeric
+    prompt: "84 / 4 = ?"
+    answer: "21"
+  - id: NBT-DM-2
+    points: [g5-nbt-divide-multidigit]
+    difficulty: 2
+    type: numeric
+    prompt: "432 / 12 = ?"
+    answer: "36"
