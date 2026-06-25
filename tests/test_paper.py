@@ -43,3 +43,11 @@ def test_answer_key_html_shows_answers_and_feedback():
     assert "Equivalent fractions" in html          # point title shown on the key
     assert "42" in html                             # numeric answer shown
     assert "Scale numerator" in html                # distractor feedback shown
+
+
+def test_answer_sheet_html_lists_every_item_id():
+    from engine.paper import render_answer_sheet_html
+    html = render_answer_sheet_html(_curriculum(), TEMPLATES)
+    for item_id in ("A1", "A2", "B1"):
+        assert item_id in html
+    assert "42" not in html      # the sheet is blank — no answers

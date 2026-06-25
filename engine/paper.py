@@ -54,3 +54,8 @@ def render_paper_html(curriculum: Curriculum, templates_dir: str) -> str:
 def render_answer_key_html(curriculum: Curriculum, templates_dir: str) -> str:
     tmpl = _env(templates_dir).get_template("answer_key.html.j2")
     return tmpl.render(groups=ordered_groups(curriculum), course=curriculum.meta)
+
+
+def render_answer_sheet_html(curriculum: Curriculum, templates_dir: str) -> str:
+    tmpl = _env(templates_dir).get_template("answer_sheet.html.j2")
+    return tmpl.render(items=ordered_items(curriculum), course=curriculum.meta)
