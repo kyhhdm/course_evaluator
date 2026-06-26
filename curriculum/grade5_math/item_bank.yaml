@@ -1,6 +1,7 @@
 items:
   # --- g5-equiv-fractions ---
   - id: EQF-1
+    role: diagnostic
     points: [g5-equiv-fractions]
     difficulty: 1
     type: mcq
@@ -9,6 +10,7 @@ items:
     answer: "B"
     distractor_feedback: {A: "Numerator and denominator must scale by the same factor."}
   - id: EQF-2
+    role: diagnostic
     points: [g5-equiv-fractions]
     difficulty: 2
     type: mcq
@@ -16,6 +18,7 @@ items:
     options: {A: "6/8", B: "9/12", C: "12/16", D: "4/5"}
     answer: "D"
   - id: EQF-3
+    role: diagnostic
     points: [g5-equiv-fractions]
     difficulty: 3
     type: numeric
@@ -23,12 +26,14 @@ items:
     answer: "8"
   # --- g5-add-like ---
   - id: ALK-1
+    role: diagnostic
     points: [g5-add-like]
     difficulty: 1
     type: numeric
     prompt: "1/5 + 2/5 = ?/5  (enter the numerator)"
     answer: "3"
   - id: ALK-2
+    role: diagnostic
     points: [g5-add-like]
     difficulty: 2
     type: mcq
@@ -36,6 +41,7 @@ items:
     options: {A: "4/8", B: "4/0", C: "10/8", D: "4/16"}
     answer: "A"
   - id: ALK-3
+    role: diagnostic
     points: [g5-add-like]
     difficulty: 3
     type: numeric
@@ -43,6 +49,7 @@ items:
     answer: "3"
   # --- g5-add-unlike ---
   - id: ALU-1
+    role: diagnostic
     points: [g5-add-unlike]
     difficulty: 1
     type: mcq
@@ -50,6 +57,7 @@ items:
     options: {A: "2/6", B: "3/4", C: "1/6", D: "2/4"}
     answer: "B"
   - id: ALU-2
+    role: diagnostic
     points: [g5-add-unlike]
     difficulty: 2
     type: mcq
@@ -57,6 +65,7 @@ items:
     options: {A: "1/3", B: "1/2", C: "5/6", D: "1/6"}
     answer: "B"
   - id: ALU-3
+    role: diagnostic
     points: [g5-add-unlike]
     difficulty: 3
     type: numeric
@@ -64,12 +73,14 @@ items:
     answer: "11"
   # --- g5-mult-fraction-whole ---
   - id: MFW-1
+    role: diagnostic
     points: [g5-mult-fraction-whole]
     difficulty: 1
     type: numeric
     prompt: "3 x 1/4 = ?/4  (enter the numerator)"
     answer: "3"
   - id: MFW-2
+    role: diagnostic
     points: [g5-mult-fraction-whole]
     difficulty: 2
     type: mcq
@@ -77,6 +88,7 @@ items:
     options: {A: "8/5", B: "6/5", C: "8/20", D: "2/20"}
     answer: "A"
   - id: MFW-3
+    role: diagnostic
     points: [g5-mult-fraction-whole]
     difficulty: 3
     type: mcq
@@ -85,6 +97,7 @@ items:
     answer: "A"
   # --- g5-mult-fraction-fraction ---
   - id: MFF-1
+    role: diagnostic
     points: [g5-mult-fraction-fraction]
     difficulty: 1
     type: mcq
@@ -92,12 +105,14 @@ items:
     options: {A: "1/6", B: "2/3", C: "1/5", D: "2/6"}
     answer: "A"
   - id: MFF-2
+    role: diagnostic
     points: [g5-mult-fraction-fraction]
     difficulty: 2
     type: numeric
     prompt: "2/3 x 3/4 = ?/12  (enter the numerator)"
     answer: "6"
   - id: MFF-3
+    role: diagnostic
     points: [g5-mult-fraction-fraction]
     difficulty: 3
     type: mcq
@@ -106,6 +121,7 @@ items:
     answer: "A"
   # --- g5-divide-unit-fraction ---
   - id: DUF-1
+    role: diagnostic
     points: [g5-divide-unit-fraction]
     difficulty: 1
     type: mcq
@@ -113,12 +129,14 @@ items:
     options: {A: "1/6", B: "2/3", C: "1/5", D: "3/2"}
     answer: "A"
   - id: DUF-2
+    role: diagnostic
     points: [g5-divide-unit-fraction]
     difficulty: 2
     type: numeric
     prompt: "6 divided by 1/2 = ?"
     answer: "12"
   - id: DUF-3
+    role: diagnostic
     points: [g5-divide-unit-fraction]
     difficulty: 3
     type: mcq
@@ -127,6 +145,7 @@ items:
     answer: "A"
   # --- g5-decimal-place-value ---
   - id: DPV-1
+    role: diagnostic
     points: [g5-decimal-place-value]
     difficulty: 1
     type: mcq
@@ -134,6 +153,7 @@ items:
     options: {A: "7 tenths", B: "7 hundredths", C: "7 thousandths", D: "7 ones"}
     answer: "B"
   - id: DPV-2
+    role: diagnostic
     points: [g5-decimal-place-value]
     difficulty: 2
     type: mcq
@@ -141,6 +161,7 @@ items:
     options: {A: "0.4", B: "0.38", C: "they are equal", D: "cannot tell"}
     answer: "A"
   - id: DPV-3
+    role: diagnostic
     points: [g5-decimal-place-value]
     difficulty: 3
     type: numeric
@@ -148,18 +169,21 @@ items:
     answer: "0.312"
   # --- g5-add-subtract-decimals ---
   - id: ASD-1
+    role: diagnostic
     points: [g5-add-subtract-decimals]
     difficulty: 1
     type: numeric
     prompt: "0.3 + 0.4 = ?"
     answer: "0.7"
   - id: ASD-2
+    role: diagnostic
     points: [g5-add-subtract-decimals]
     difficulty: 2
     type: numeric
     prompt: "1.25 + 0.6 = ?"
     answer: "1.85"
   - id: ASD-3
+    role: diagnostic
     points: [g5-add-subtract-decimals]
     difficulty: 3
     type: numeric
@@ -167,6 +191,7 @@ items:
     answer: "2.65"
   # --- g5-coordinate-system ---
   - id: G-CS-1
+    role: diagnostic
     points: [g5-coordinate-system]
     difficulty: 1
     type: mcq
@@ -174,6 +199,7 @@ items:
     options: {A: "the x-axis", B: "the y-axis", C: "neither axis", D: "both axes"}
     answer: "A"
   - id: G-CS-2
+    role: diagnostic
     points: [g5-coordinate-system]
     difficulty: 2
     type: mcq
@@ -182,12 +208,14 @@ items:
     answer: "A"
   # --- g5-graph-points ---
   - id: G-GP-1
+    role: diagnostic
     points: [g5-graph-points]
     difficulty: 1
     type: numeric
     prompt: "To plot the point (3, 2), you move right 3 from the origin, then up how many?"
     answer: "2"
   - id: G-GP-2
+    role: diagnostic
     points: [g5-graph-points]
     difficulty: 2
     type: mcq
@@ -196,6 +224,7 @@ items:
     answer: "A"
   # --- g5-figure-hierarchy ---
   - id: G-FH-1
+    role: diagnostic
     points: [g5-figure-hierarchy]
     difficulty: 1
     type: mcq
@@ -203,6 +232,7 @@ items:
     options: {A: "rectangle", B: "triangle", C: "circle", D: "pentagon"}
     answer: "A"
   - id: G-FH-2
+    role: diagnostic
     points: [g5-figure-hierarchy]
     difficulty: 2
     type: mcq
@@ -211,6 +241,7 @@ items:
     answer: "B"
   # --- g5-classify-figures ---
   - id: G-CF-1
+    role: diagnostic
     points: [g5-classify-figures]
     difficulty: 1
     type: mcq
@@ -218,6 +249,7 @@ items:
     options: {A: "trapezoid", B: "square", C: "triangle", D: "pentagon"}
     answer: "A"
   - id: G-CF-2
+    role: diagnostic
     points: [g5-classify-figures]
     difficulty: 2
     type: mcq
@@ -226,18 +258,21 @@ items:
     answer: "A"
   # --- g5-oa-eval-expressions ---
   - id: OA-EV-1
+    role: diagnostic
     points: [g5-oa-eval-expressions]
     difficulty: 1
     type: numeric
     prompt: "Evaluate: 2 x (3 + 4)"
     answer: "14"
   - id: OA-EV-2
+    role: diagnostic
     points: [g5-oa-eval-expressions]
     difficulty: 2
     type: numeric
     prompt: "Evaluate: 3 + 4 x 2"
     answer: "11"
   - id: OA-EV-3
+    role: diagnostic
     points: [g5-oa-eval-expressions]
     difficulty: 3
     type: numeric
@@ -245,6 +280,7 @@ items:
     answer: "15"
   # --- g5-oa-write-expressions ---
   - id: OA-WR-1
+    role: diagnostic
     points: [g5-oa-write-expressions]
     difficulty: 1
     type: mcq
@@ -252,6 +288,7 @@ items:
     options: {A: "2 x (6 + 4)", B: "2 x 6 + 4", C: "6 + 4 x 2", D: "6 + 4 + 2"}
     answer: "A"
   - id: OA-WR-2
+    role: diagnostic
     points: [g5-oa-write-expressions]
     difficulty: 2
     type: mcq
@@ -260,12 +297,14 @@ items:
     answer: "A"
   # --- g5-oa-patterns-graph ---
   - id: OA-PG-1
+    role: diagnostic
     points: [g5-oa-patterns-graph]
     difficulty: 2
     type: numeric
     prompt: "Rule A 'add 2' from 0 gives 0,2,4,6. Rule B 'add 4' from 0 gives 0,4,8,12. The 4th B term divided by the 4th A term is?"
     answer: "2"
   - id: OA-PG-2
+    role: diagnostic
     points: [g5-oa-patterns-graph]
     difficulty: 2
     type: mcq
@@ -274,6 +313,7 @@ items:
     answer: "A"
   # --- g5-nbt-place-value ---
   - id: NBT-PV-1
+    role: diagnostic
     points: [g5-nbt-place-value]
     difficulty: 1
     type: mcq
@@ -281,6 +321,7 @@ items:
     options: {A: "10", B: "100", C: "1000", D: "2"}
     answer: "A"
   - id: NBT-PV-2
+    role: diagnostic
     points: [g5-nbt-place-value]
     difficulty: 2
     type: mcq
@@ -289,12 +330,14 @@ items:
     answer: "A"
   # --- g5-nbt-powers-of-ten ---
   - id: NBT-PT-1
+    role: diagnostic
     points: [g5-nbt-powers-of-ten]
     difficulty: 1
     type: numeric
     prompt: "How many zeros are in the product 6 x 1000?"
     answer: "3"
   - id: NBT-PT-2
+    role: diagnostic
     points: [g5-nbt-powers-of-ten]
     difficulty: 2
     type: mcq
@@ -302,6 +345,7 @@ items:
     options: {A: "1000", B: "30", C: "100", D: "300"}
     answer: "A"
   - id: NBT-PT-3
+    role: diagnostic
     points: [g5-nbt-powers-of-ten]
     difficulty: 2
     type: numeric
@@ -309,12 +353,14 @@ items:
     answer: "350"
   # --- g5-nbt-round-decimals ---
   - id: NBT-RD-1
+    role: diagnostic
     points: [g5-nbt-round-decimals]
     difficulty: 1
     type: numeric
     prompt: "Round 2.7 to the nearest whole number."
     answer: "3"
   - id: NBT-RD-2
+    role: diagnostic
     points: [g5-nbt-round-decimals]
     difficulty: 2
     type: numeric
@@ -322,18 +368,21 @@ items:
     answer: "4.6"
   # --- g5-nbt-mult-multidigit ---
   - id: NBT-MM-1
+    role: diagnostic
     points: [g5-nbt-mult-multidigit]
     difficulty: 1
     type: numeric
     prompt: "23 x 4 = ?"
     answer: "92"
   - id: NBT-MM-2
+    role: diagnostic
     points: [g5-nbt-mult-multidigit]
     difficulty: 2
     type: numeric
     prompt: "34 x 12 = ?"
     answer: "408"
   - id: NBT-MM-3
+    role: diagnostic
     points: [g5-nbt-mult-multidigit]
     difficulty: 3
     type: numeric
@@ -341,12 +390,14 @@ items:
     answer: "2000"
   # --- g5-nbt-divide-multidigit ---
   - id: NBT-DM-1
+    role: diagnostic
     points: [g5-nbt-divide-multidigit]
     difficulty: 1
     type: numeric
     prompt: "84 / 4 = ?"
     answer: "21"
   - id: NBT-DM-2
+    role: diagnostic
     points: [g5-nbt-divide-multidigit]
     difficulty: 2
     type: numeric
@@ -354,6 +405,7 @@ items:
     answer: "36"
   # --- g5-nf-fraction-as-division ---
   - id: NF-FD-1
+    role: diagnostic
     points: [g5-nf-fraction-as-division]
     difficulty: 1
     type: mcq
@@ -361,6 +413,7 @@ items:
     options: {A: "3 / 4", B: "4 / 3", C: "3 x 4", D: "4 - 3"}
     answer: "A"
   - id: NF-FD-2
+    role: diagnostic
     points: [g5-nf-fraction-as-division]
     difficulty: 2
     type: numeric
@@ -368,6 +421,7 @@ items:
     answer: "3"
   # --- g5-nf-scaling ---
   - id: NF-SC-1
+    role: diagnostic
     points: [g5-nf-scaling]
     difficulty: 1
     type: mcq
@@ -375,6 +429,7 @@ items:
     options: {A: "smaller than 8", B: "larger than 8", C: "equal to 8", D: "zero"}
     answer: "A"
   - id: NF-SC-2
+    role: diagnostic
     points: [g5-nf-scaling]
     difficulty: 2
     type: mcq
@@ -383,12 +438,14 @@ items:
     answer: "A"
   # --- g5-nf-mult-realworld ---
   - id: NF-MR-1
+    role: diagnostic
     points: [g5-nf-mult-realworld]
     difficulty: 2
     type: numeric
     prompt: "A recipe needs 3/4 cup of sugar. For half a recipe you need ?/8 cup (enter the numerator)."
     answer: "3"
   - id: NF-MR-2
+    role: diagnostic
     points: [g5-nf-mult-realworld]
     difficulty: 2
     type: mcq
@@ -397,12 +454,14 @@ items:
     answer: "A"
   # --- g5-md-unit-conversion ---
   - id: MD-UC-1
+    role: diagnostic
     points: [g5-md-unit-conversion]
     difficulty: 1
     type: numeric
     prompt: "How many centimeters are in 2 meters?"
     answer: "200"
   - id: MD-UC-2
+    role: diagnostic
     points: [g5-md-unit-conversion]
     difficulty: 2
     type: numeric
@@ -410,6 +469,7 @@ items:
     answer: "3000"
   # --- g5-md-line-plots ---
   - id: MD-LP-1
+    role: diagnostic
     points: [g5-md-line-plots]
     difficulty: 1
     type: mcq
@@ -417,6 +477,7 @@ items:
     options: {A: "number line", B: "circle", C: "bar", D: "table"}
     answer: "A"
   - id: MD-LP-2
+    role: diagnostic
     points: [g5-md-line-plots]
     difficulty: 2
     type: numeric
@@ -424,6 +485,7 @@ items:
     answer: "4"
   # --- g5-md-volume-concept ---
   - id: MD-VC-1
+    role: diagnostic
     points: [g5-md-volume-concept]
     difficulty: 1
     type: mcq
@@ -431,6 +493,7 @@ items:
     options: {A: "cubic units", B: "square units", C: "linear units", D: "degrees"}
     answer: "A"
   - id: MD-VC-2
+    role: diagnostic
     points: [g5-md-volume-concept]
     difficulty: 2
     type: mcq
@@ -439,12 +502,14 @@ items:
     answer: "A"
   # --- g5-md-measure-volume ---
   - id: MD-MV-1
+    role: diagnostic
     points: [g5-md-measure-volume]
     difficulty: 1
     type: numeric
     prompt: "A box is filled with 2 layers of 6 unit cubes each. How many cubes in all?"
     answer: "12"
   - id: MD-MV-2
+    role: diagnostic
     points: [g5-md-measure-volume]
     difficulty: 2
     type: numeric
@@ -452,18 +517,21 @@ items:
     answer: "12"
   # --- g5-md-volume-formulas ---
   - id: MD-VF-1
+    role: diagnostic
     points: [g5-md-volume-formulas]
     difficulty: 1
     type: numeric
     prompt: "Volume of a box with l=4, w=3, h=2 (V = l x w x h)?"
     answer: "24"
   - id: MD-VF-2
+    role: diagnostic
     points: [g5-md-volume-formulas]
     difficulty: 2
     type: numeric
     prompt: "A prism has base area 10 and height 5. Its volume is?"
     answer: "50"
   - id: MD-VF-3
+    role: diagnostic
     points: [g5-md-volume-formulas]
     difficulty: 3
     type: numeric
