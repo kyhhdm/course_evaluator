@@ -52,8 +52,8 @@ def test_every_point_has_at_least_two_practice_items(curriculum):
 
 
 def test_every_item_has_explicit_role(curriculum):
-    import yaml
-    raw = yaml.safe_load(open(f"{CURRICULUM_DIR}/item_bank.yaml"))["items"]
+    from engine.loader import load_yaml
+    raw = load_yaml(f"{CURRICULUM_DIR}/item_bank.yaml")["items"]
     for it in raw:
         assert it.get("role") in ("diagnostic", "practice"), \
             f"item {it['id']} is missing an explicit role"
