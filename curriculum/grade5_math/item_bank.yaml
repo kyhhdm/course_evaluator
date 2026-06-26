@@ -505,6 +505,54 @@ items:
     prompt: "Pattern X adds 3 (0,3,6,9); pattern Y adds 6 (0,6,12,18). Each Y term is the ___ of the matching X term."
     options: {A: "double", B: "half", C: "same", D: "triple"}
     answer: "A"
+  # --- g5-oa-eval-expressions (practice) ---
+  - id: OA-EV-P1
+    points: [g5-oa-eval-expressions]
+    difficulty: 1
+    type: numeric
+    role: practice
+    prompt: "Evaluate: 4 x (1 + 5)"
+    answer: "24"
+  - id: OA-EV-P2
+    points: [g5-oa-eval-expressions]
+    difficulty: 2
+    type: numeric
+    role: practice
+    prompt: "Evaluate: 12 - 4 / 2"
+    answer: "10"
+  # --- g5-oa-write-expressions (practice) ---
+  - id: OA-WR-P1
+    points: [g5-oa-write-expressions]
+    difficulty: 1
+    type: mcq
+    role: practice
+    prompt: "Which expression means 'subtract 3 from 10, then double the result'?"
+    options: {A: "2 x 10 - 3", B: "2 x (10 - 3)", C: "10 - 3 x 2", D: "10 - 3 + 2"}
+    answer: "B"
+  - id: OA-WR-P2
+    points: [g5-oa-write-expressions]
+    difficulty: 2
+    type: mcq
+    role: practice
+    prompt: "Which expression means '5 more than the product of 3 and 4'?"
+    options: {A: "(5 + 3) x 4", B: "5 x (3 + 4)", C: "3 x 4 + 5", D: "3 + 4 x 5"}
+    answer: "C"
+  # --- g5-oa-patterns-graph (practice) ---
+  - id: OA-PG-P1
+    points: [g5-oa-patterns-graph]
+    difficulty: 1
+    type: numeric
+    role: practice
+    prompt: "Starting at 0, applying the rule 'add 3' gives the sequence 0, 3, 6, 9, … What is the 5th term?"
+    answer: "12"
+  - id: OA-PG-P2
+    points: [g5-oa-patterns-graph]
+    difficulty: 2
+    type: mcq
+    role: practice
+    prompt: "Rule A 'add 4' from 0 gives 0,4,8,12. Rule B 'add 8' from 0 gives 0,8,16,24. Each B term is the ___ of the matching A term."
+    options: {A: "half", B: "double", C: "triple", D: "same"}
+    answer: "B"
   # --- g5-nbt-place-value ---
   - id: NBT-PV-1
     role: diagnostic
