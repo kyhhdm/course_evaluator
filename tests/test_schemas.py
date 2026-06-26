@@ -52,3 +52,16 @@ def test_course_schema_requires_manifest_fields():
     v = _validator("course.schema.json")
     v.validate({"id": "grade5_math", "name": "Grade 5 Math", "framework": "CCSS-Math", "grade": 5})
     assert list(v.iter_errors({"id": "grade5_math", "name": "Grade 5 Math"}))
+
+
+def test_item_bank_schema_accepts_role_and_rejects_bad_role():
+    v = _validator("item_bank.schema.json")
+    good = {"items": [{"id": "i1", "points": ["a"], "difficulty": 2,
+                       "type": "mcq", "prompt": "?", "answer": "A", "role": "practice"}]}
+    v.validate(good)
+    no_role = {"items": [{"id": "i1", "points": ["a"], "difficulty": 2,
+                          "type": "mcq", "prompt": "?", "answer": "A"}]}
+    v.validate(no_role)  # role is optional
+    bad = {"items": [{"id": "i1", "points": ["a"], "difficulty": 2,
+                      "type": "mcq", "prompt": "?", "answer": "A", "role": "warmup"}]}
+    assert list(v.iter_errors(bad))
