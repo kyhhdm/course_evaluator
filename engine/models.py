@@ -23,6 +23,7 @@ class Item:
     answer: str
     options: dict[str, str] = field(default_factory=dict)
     distractor_feedback: dict[str, str] = field(default_factory=dict)
+    role: str = "diagnostic"
 
 
 @dataclass

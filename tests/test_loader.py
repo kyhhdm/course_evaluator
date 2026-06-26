@@ -61,3 +61,11 @@ def test_load_course_wires_everything(tmp_path):
     assert set(c.points) == {"a"}
     assert c.standards["CCSS.5.NF.A.1"].grade == "5"
     assert [b.name for b in c.bands] == ["Secure", "Developing", "Not yet"]
+
+
+def test_items_get_role_with_default_diagnostic():
+    from engine.loader import load_course
+    c = load_course("curriculum/grade5_math", "schemas", "methodology", "standards")
+    # every loaded item exposes a role; current content has none yet -> default
+    assert all(it.role in ("diagnostic", "practice") for it in c.items.values())
+    assert any(it.role == "diagnostic" for it in c.items.values())
