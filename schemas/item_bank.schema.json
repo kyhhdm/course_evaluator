@@ -16,7 +16,8 @@
           "prompt": {"type": "string"},
           "answer": {"type": "string"},
           "options": {"type": "object", "additionalProperties": {"type": "string"}},
-          "distractor_feedback": {"type": "object", "additionalProperties": {"type": "string"}}
+          "distractor_feedback": {"type": "object", "additionalProperties": {"type": "string"}},
+          "role": {"enum": ["diagnostic", "practice"]}
         },
         "additionalProperties": false
       }

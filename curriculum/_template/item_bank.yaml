@@ -1,1 +1,9 @@
-items: []
+items:
+  - id: EXAMPLE_ITEM_01
+    points: [EXAMPLE_POINT_01]
+    difficulty: 1
+    role: diagnostic   # diagnostic (on the test, scored) | practice (learning-path only)
+    type: mcq
+    prompt: "Example prompt text"
+    options: {A: "option A", B: "option B", C: "option C", D: "option D"}
+    answer: A

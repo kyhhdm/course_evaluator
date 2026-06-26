@@ -38,8 +38,8 @@ def build_path(curriculum: Curriculum, result: EvaluationResult) -> list[PathSte
     for pid in ordered:
         practice = [
             it.id
-            for it in sorted(curriculum.items_for_point(pid), key=lambda i: i.difficulty)
-            if it.id not in result.answered_item_ids
+            for it in sorted(curriculum.practice_items_for_point(pid),
+                             key=lambda i: (i.difficulty, i.id))
         ]
         steps.append(PathStep(pid, curriculum.points[pid].title, practice))
     return steps

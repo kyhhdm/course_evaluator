@@ -23,6 +23,7 @@ class Item:
     answer: str
     options: dict[str, str] = field(default_factory=dict)
     distractor_feedback: dict[str, str] = field(default_factory=dict)
+    role: str = "diagnostic"
 
 
 @dataclass
@@ -98,8 +99,17 @@ class Curriculum:
     standards: dict[str, Standard]
     meta: CourseMeta | None = None
 
-    def items_for_point(self, point_id: str) -> list[Item]:
-        return [it for it in self.items.values() if point_id in it.points]
+    def items_for_point(self, point_id: str, role: str | None = None) -> list[Item]:
+        return [
+            it for it in self.items.values()
+            if point_id in it.points and (role is None or it.role == role)
+        ]
+
+    def diagnostic_items_for_point(self, point_id: str) -> list[Item]:
+        return self.items_for_point(point_id, role="diagnostic")
+
+    def practice_items_for_point(self, point_id: str) -> list[Item]:
+        return self.items_for_point(point_id, role="practice")
 
     def points_in_strand(self, strand: str) -> list[KnowledgePoint]:
         return [p for p in self.points.values() if p.strand == strand]

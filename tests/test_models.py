@@ -62,3 +62,16 @@ def test_curriculum_accepts_meta_and_defaults_none():
     c2 = Curriculum(points={}, items={}, bands=(Band("Secure", 0.8),), standards={},
                     meta=CourseMeta("i", "n", "CCSS-Math", "5"))
     assert c2.meta.grade == "5"
+
+
+def test_items_for_point_filters_by_role():
+    points = {"a": KnowledgePoint("a", "Number", "A", "d", (), ("X",))}
+    items = {
+        "d1": Item("d1", ("a",), 1, "mcq", "?", "A", {}, {}),                    # default diagnostic
+        "d2": Item("d2", ("a",), 2, "mcq", "?", "A", {}, {}, role="diagnostic"),
+        "p1": Item("p1", ("a",), 1, "mcq", "?", "A", {}, {}, role="practice"),
+    }
+    c = Curriculum(points=points, items=items, bands=(Band("Secure", 0.8),), standards={})
+    assert [it.id for it in c.items_for_point("a")] == ["d1", "d2", "p1"]
+    assert [it.id for it in c.diagnostic_items_for_point("a")] == ["d1", "d2"]
+    assert [it.id for it in c.practice_items_for_point("a")] == ["p1"]

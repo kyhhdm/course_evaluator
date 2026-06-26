@@ -39,9 +39,24 @@ def test_no_prerequisite_cycles(curriculum):
             visit(pid)
 
 
-def test_every_point_has_at_least_two_items(curriculum):
+def test_every_point_has_at_least_two_diagnostic_items(curriculum):
     for pid in curriculum.points:
-        assert len(curriculum.items_for_point(pid)) >= 2, f"{pid} has < 2 items"
+        assert len(curriculum.diagnostic_items_for_point(pid)) >= 2, \
+            f"{pid} has < 2 diagnostic items"
+
+
+def test_every_point_has_at_least_two_practice_items(curriculum):
+    for pid in curriculum.points:
+        assert len(curriculum.practice_items_for_point(pid)) >= 2, \
+            f"{pid} has < 2 practice items"
+
+
+def test_every_item_has_explicit_role(curriculum):
+    from engine.loader import load_yaml
+    raw = load_yaml(f"{CURRICULUM_DIR}/item_bank.yaml")["items"]
+    for it in raw:
+        assert it.get("role") in ("diagnostic", "practice"), \
+            f"item {it['id']} is missing an explicit role"
 
 
 def test_every_item_references_existing_points(curriculum):

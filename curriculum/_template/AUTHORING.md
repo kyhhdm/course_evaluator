@@ -16,6 +16,9 @@ Copy this `_template/` directory to `curriculum/<your_course_id>/` and fill it i
 4. **item_bank.yaml** — author at least 2 items per knowledge point. Each item needs
    `id`, `points`, `difficulty` (1–3), `type` (`mcq`|`numeric`), `prompt`, `answer`,
    and (for mcq) `options`. No distractor may equal the keyed answer.
+   Each item has a `role`: `diagnostic` items appear on the printed test and are scored;
+   `practice` items are reserved for the learning-path practice links. Author at least 2 of
+   each per knowledge point. A missing `role` defaults to `diagnostic`.
 5. **bands.yaml** (optional) — only add one here if this course needs thresholds
    different from `methodology/bands.yaml`; otherwise the shared default is used.
 6. **Verify** — run `python -m pytest` (the content-integrity tests validate
