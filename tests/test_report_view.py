@@ -38,6 +38,7 @@ def test_groups_points_by_band_and_marks_unassessed():
     assert frac.not_yet == ["Divide fractions"]
     assert frac.not_assessed == []
     geo = view.strand_groups[1]
+    assert geo.band == "Secure"
     assert geo.secure == ["Coordinate system"]
     assert geo.not_assessed == ["Classify figures"]
 

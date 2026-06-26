@@ -42,7 +42,8 @@ def build_parent_view(
 ) -> ParentReportView:
     bands = curriculum.bands
     assert len(bands) == 3, "report_view targets the default three-band model"
-    secure_name, developing_name, not_yet_name = (bands[0].name, bands[1].name, bands[2].name)
+    # bands[2] (Not yet) is the implicit catch-all below, so it needs no local name.
+    secure_name, developing_name, _ = (bands[0].name, bands[1].name, bands[2].name)
 
     strand_groups: list[StrandGroup] = []
     secure_skill_count = assessed_skill_count = unassessed_skill_count = 0
