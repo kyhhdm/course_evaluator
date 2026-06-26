@@ -60,3 +60,19 @@ def test_strand_rollup_averages_and_flags_weakest():
     assert strand.strand == "Number"
     assert strand.average_mastery == pytest.approx(0.875)
     assert strand.weakest_point_id == "a"
+
+
+def test_practice_responses_are_ignored_by_scoring():
+    points = {"a": KnowledgePoint("a", "Number", "A", "d", (), ("X",))}
+    items = {
+        "a1": Item("a1", ("a",), 1, "numeric", "?", "1", {}, {}),
+        "a2": Item("a2", ("a",), 1, "numeric", "?", "2", {}, {}),
+        "ap": Item("ap", ("a",), 1, "numeric", "?", "9", {}, {}, role="practice"),
+    }
+    bands = (Band("Secure", 0.8), Band("Developing", 0.5), Band("Not yet", 0.0))
+    c = Curriculum(points=points, items=items, bands=bands, standards={"X": {}})
+    # 'ap' is a practice item; even if (wrongly) present in responses it must not be scored
+    result = evaluate(c, {"a1": "1", "a2": "2", "ap": "0"})
+    pa = result.point_results["a"]
+    assert pa.answered_count == 2           # only the two diagnostic items
+    assert pa.mastery == 1.0                # 'ap' wrong answer did not drag it down

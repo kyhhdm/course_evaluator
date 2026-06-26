@@ -27,7 +27,7 @@ def is_correct(item: Item, response: str | None) -> bool:
 def evaluate(curriculum: Curriculum, responses: dict[str, str]) -> EvaluationResult:
     point_results: dict[str, PointResult] = {}
     for pid, point in curriculum.points.items():
-        answered = [it for it in curriculum.items_for_point(pid) if it.id in responses]
+        answered = [it for it in curriculum.diagnostic_items_for_point(pid) if it.id in responses]
         if len(answered) < MIN_ITEMS:
             point_results[pid] = PointResult(pid, None, None, "insufficient_evidence", len(answered))
             continue
