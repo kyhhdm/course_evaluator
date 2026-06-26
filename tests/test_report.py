@@ -46,6 +46,25 @@ def test_reports_handle_empty_path():
     assert "no gaps" in out.lower()
 
 
+def test_student_plan_caps_at_five_steps_with_remainder_note():
+    from engine.models import PathStep
+    curriculum, result, _ = _setup()
+    path = [PathStep(f"x{i}", f"Skill {i}", []) for i in range(8)]
+    out = render_student(curriculum, result, path, TEMPLATES, "Sam")
+    assert "Step 5" in out
+    assert "Step 6" not in out                       # capped at 5
+    assert "3 more" in out                           # 8 - 5 = 3 remainder note
+
+
+def test_student_plan_no_remainder_note_when_within_cap():
+    from engine.models import PathStep
+    curriculum, result, _ = _setup()
+    path = [PathStep(f"x{i}", f"Skill {i}", []) for i in range(3)]
+    out = render_student(curriculum, result, path, TEMPLATES, "Sam")
+    assert "Step 3" in out
+    assert "more area" not in out                     # no remainder note
+
+
 def test_parent_report_shows_per_point_groups_and_strengths():
     curriculum, result, path = _setup()
     out = render_parent(curriculum, result, path, TEMPLATES, "Sam")
