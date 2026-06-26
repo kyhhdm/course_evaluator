@@ -16,6 +16,8 @@ def _curriculum():
         "a2": Item("a2", ("a",), 3, "mcq", "?", "A", {}, {}),
         "b1": Item("b1", ("b",), 2, "mcq", "?", "A", {}, {}),
         "d1": Item("d1", ("d",), 1, "mcq", "?", "A", {}, {}),
+        "ap1": Item("ap1", ("a",), 2, "mcq", "?", "A", {}, {}, role="practice"),
+        "ap2": Item("ap2", ("a",), 1, "mcq", "?", "A", {}, {}, role="practice"),
     }
     bands = (Band("Secure", 0.8), Band("Developing", 0.5), Band("Not yet", 0.0))
     return Curriculum(points=points, items=items, bands=bands, standards={"X": {}})
@@ -60,9 +62,16 @@ def test_path_tie_break_by_impact_then_id():
     assert order == ["a", "d"]
 
 
-def test_practice_items_exclude_diagnostic_items_and_sort_by_difficulty():
+def test_practice_items_come_from_practice_pool_sorted_by_difficulty():
     c = _curriculum()
     result = _weak_result({"a"})
-    result.answered_item_ids.add("a1")  # a1 already used diagnostically
+    result.answered_item_ids.add("a1")  # answering a diagnostic item must NOT change practice
     step = build_path(c, result)[0]
-    assert step.practice_item_ids == ["a2"]  # a1 excluded, a2 kept
+    assert step.practice_item_ids == ["ap2", "ap1"]  # difficulty 1 before 2; diagnostics excluded
+
+
+def test_practice_items_empty_when_no_practice_pool():
+    c = _curriculum()
+    result = _weak_result({"d"})  # point d has no practice items
+    step = build_path(c, result)[0]
+    assert step.practice_item_ids == []
