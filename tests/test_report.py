@@ -44,3 +44,12 @@ def test_reports_handle_empty_path():
     curriculum, result, _ = _setup()
     out = render_student(curriculum, result, [], TEMPLATES, "Sam")
     assert "no gaps" in out.lower()
+
+
+def test_parent_report_shows_per_point_groups_and_strengths():
+    curriculum, result, path = _setup()
+    out = render_parent(curriculum, result, path, TEMPLATES, "Sam")
+    assert "Secure:" in out and "Equivalent fractions" in out   # per-point group
+    assert "Not yet:" in out and "Add fractions" in out
+    assert "Strengths" in out
+    assert "assessed skills are secure" in out                  # strengths sentence
