@@ -84,11 +84,8 @@ def render_report_html(
     templates_dir: str,
     student_name: str = "Student",
 ) -> str:
-    secure_count = sum(1 for s in result.strands if s.band == curriculum.bands[0].name)
+    from engine.report_view import build_parent_view
+
+    view = build_parent_view(curriculum, result, path, student_name)
     tmpl = _env(templates_dir).get_template("report.html.j2")
-    return tmpl.render(
-        name=student_name,
-        strands=result.strands,
-        focus=path[:3],
-        secure_count=secure_count,
-    )
+    return tmpl.render(view=view)
