@@ -24,6 +24,22 @@ items:
     type: numeric
     prompt: "Fill in the blank: 2/5 = ?/20"
     answer: "8"
+  # --- g5-equiv-fractions (practice) ---
+  - id: EQF-P1
+    points: [g5-equiv-fractions]
+    difficulty: 1
+    type: mcq
+    role: practice
+    prompt: "Which fraction is equal to 2/3?"
+    options: {A: "4/6", B: "2/6", C: "3/4", D: "4/9"}
+    answer: "A"
+  - id: EQF-P2
+    points: [g5-equiv-fractions]
+    difficulty: 2
+    type: numeric
+    role: practice
+    prompt: "Fill in the blank: 5/6 = ?/18  (enter the numerator)"
+    answer: "15"
   # --- g5-add-like ---
   - id: ALK-1
     role: diagnostic
@@ -47,6 +63,22 @@ items:
     type: numeric
     prompt: "5/6 - 1/6 - 1/6 = ?/6  (enter the numerator)"
     answer: "3"
+  # --- g5-add-like (practice) ---
+  - id: ALK-P1
+    points: [g5-add-like]
+    difficulty: 1
+    type: numeric
+    role: practice
+    prompt: "2/9 + 4/9 = ?/9  (enter the numerator)"
+    answer: "6"
+  - id: ALK-P2
+    points: [g5-add-like]
+    difficulty: 2
+    type: mcq
+    role: practice
+    prompt: "5/6 - 2/6 = ?"
+    options: {A: "3/6", B: "7/6", C: "3/12", D: "1/3"}
+    answer: "A"
   # --- g5-add-unlike ---
   - id: ALU-1
     role: diagnostic
@@ -71,6 +103,22 @@ items:
     type: numeric
     prompt: "3/4 + 1/6 = ?/12  (enter the numerator)"
     answer: "11"
+  # --- g5-add-unlike (practice) ---
+  - id: ALU-P1
+    points: [g5-add-unlike]
+    difficulty: 1
+    type: mcq
+    role: practice
+    prompt: "1/4 + 1/2 = ?"
+    options: {A: "3/4", B: "2/6", C: "1/6", D: "2/8"}
+    answer: "A"
+  - id: ALU-P2
+    points: [g5-add-unlike]
+    difficulty: 2
+    type: numeric
+    role: practice
+    prompt: "3/4 - 1/3 = ?/12  (enter the numerator)"
+    answer: "5"
   # --- g5-mult-fraction-whole ---
   - id: MFW-1
     role: diagnostic
@@ -94,6 +142,22 @@ items:
     type: mcq
     prompt: "A recipe needs 2/3 cup of flour. How much for 3 batches?"
     options: {A: "2 cups", B: "6/3 cup but not 2", C: "2/9 cup", D: "5/3 cup"}
+    answer: "A"
+  # --- g5-mult-fraction-whole (practice) ---
+  - id: MFW-P1
+    points: [g5-mult-fraction-whole]
+    difficulty: 1
+    type: numeric
+    role: practice
+    prompt: "4 x 1/3 = ?/3  (enter the numerator)"
+    answer: "4"
+  - id: MFW-P2
+    points: [g5-mult-fraction-whole]
+    difficulty: 2
+    type: mcq
+    role: practice
+    prompt: "6 x 3/4 = ?"
+    options: {A: "18/4", B: "9/4", C: "3/2", D: "12/4"}
     answer: "A"
   # --- g5-mult-fraction-fraction ---
   - id: MFF-1
@@ -119,6 +183,22 @@ items:
     prompt: "What is 3/5 of 2/3?"
     options: {A: "6/15", B: "5/8", C: "6/8", D: "3/5"}
     answer: "A"
+  # --- g5-mult-fraction-fraction (practice) ---
+  - id: MFF-P1
+    points: [g5-mult-fraction-fraction]
+    difficulty: 1
+    type: mcq
+    role: practice
+    prompt: "1/3 x 1/4 = ?"
+    options: {A: "1/12", B: "1/7", C: "4/3", D: "2/12"}
+    answer: "A"
+  - id: MFF-P2
+    points: [g5-mult-fraction-fraction]
+    difficulty: 3
+    type: numeric
+    role: practice
+    prompt: "3/4 x 2/5 = ?/20  (enter the numerator)"
+    answer: "6"
   # --- g5-divide-unit-fraction ---
   - id: DUF-1
     role: diagnostic
@@ -143,6 +223,22 @@ items:
     prompt: "How many 1/4-cup scoops are in 3 cups?"
     options: {A: "12", B: "7", C: "3/4", D: "4"}
     answer: "A"
+  # --- g5-divide-unit-fraction (practice) ---
+  - id: DUF-P1
+    points: [g5-divide-unit-fraction]
+    difficulty: 1
+    type: mcq
+    role: practice
+    prompt: "1/4 divided by 3 = ?"
+    options: {A: "1/12", B: "3/4", C: "1/7", D: "4/3"}
+    answer: "A"
+  - id: DUF-P2
+    points: [g5-divide-unit-fraction]
+    difficulty: 2
+    type: numeric
+    role: practice
+    prompt: "4 divided by 1/3 = ?"
+    answer: "12"
   # --- g5-decimal-place-value ---
   - id: DPV-1
     role: diagnostic
@@ -419,6 +515,22 @@ items:
     type: numeric
     prompt: "3 pizzas shared equally by 4 people: each person gets ?/4 of a pizza (enter the numerator)."
     answer: "3"
+  # --- g5-nf-fraction-as-division (practice) ---
+  - id: NF-FD-P1
+    points: [g5-nf-fraction-as-division]
+    difficulty: 1
+    type: mcq
+    role: practice
+    prompt: "Which division is the same as 5/8?"
+    options: {A: "5 / 8", B: "8 / 5", C: "5 x 8", D: "8 - 5"}
+    answer: "A"
+  - id: NF-FD-P2
+    points: [g5-nf-fraction-as-division]
+    difficulty: 2
+    type: numeric
+    role: practice
+    prompt: "4 cookies shared equally among 5 people: each person gets ?/5 of a cookie (enter the numerator)."
+    answer: "4"
   # --- g5-nf-scaling ---
   - id: NF-SC-1
     role: diagnostic
@@ -436,6 +548,23 @@ items:
     prompt: "5 x 3/2 is ___ 5."
     options: {A: "greater than", B: "less than", C: "equal to", D: "half of"}
     answer: "A"
+  # --- g5-nf-scaling (practice) ---
+  - id: NF-SC-P1
+    points: [g5-nf-scaling]
+    difficulty: 1
+    type: mcq
+    role: practice
+    prompt: "Multiplying 10 by 3/4 gives a result that is..."
+    options: {A: "smaller than 10", B: "larger than 10", C: "equal to 10", D: "zero"}
+    answer: "A"
+  - id: NF-SC-P2
+    points: [g5-nf-scaling]
+    difficulty: 2
+    type: mcq
+    role: practice
+    prompt: "7 x 5/4 is ___ 7."
+    options: {A: "greater than", B: "less than", C: "equal to", D: "double"}
+    answer: "A"
   # --- g5-nf-mult-realworld ---
   - id: NF-MR-1
     role: diagnostic
@@ -451,6 +580,22 @@ items:
     type: mcq
     prompt: "How long is 2/3 of a 9-foot rope?"
     options: {A: "6 feet", B: "3 feet", C: "9 feet", D: "18 feet"}
+    answer: "A"
+  # --- g5-nf-mult-realworld (practice) ---
+  - id: NF-MR-P1
+    points: [g5-nf-mult-realworld]
+    difficulty: 1
+    type: numeric
+    role: practice
+    prompt: "A bag has 12 apples. You take 1/3 of them. How many apples is that?"
+    answer: "4"
+  - id: NF-MR-P2
+    points: [g5-nf-mult-realworld]
+    difficulty: 2
+    type: mcq
+    role: practice
+    prompt: "A garden is 3/5 of an acre. You plant crops on 1/2 of the garden. How many acres are planted?"
+    options: {A: "3/10", B: "1/2", C: "3/5", D: "1/5"}
     answer: "A"
   # --- g5-md-unit-conversion ---
   - id: MD-UC-1
