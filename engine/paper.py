@@ -22,6 +22,8 @@ def ordered_groups(curriculum: Curriculum) -> list[dict]:
     """
     buckets: dict[str, list[Item]] = {pid: [] for pid in curriculum.points}
     for item in curriculum.items.values():  # item-bank (insertion) order
+        if item.role != "diagnostic":
+            continue
         if not item.points:
             continue
         primary = item.points[0]

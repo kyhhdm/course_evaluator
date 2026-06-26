@@ -94,3 +94,21 @@ def test_report_html_shows_name_band_and_focus():
     assert "Fractions" in html
     assert "Developing" in html
     assert "Add fractions" in html
+
+
+def test_print_surfaces_exclude_practice_items():
+    from engine.paper import ordered_items, render_paper_html, render_answer_sheet_template
+    points = {"a": KnowledgePoint("a", "Fractions", "Equivalent fractions", "d", (), ())}
+    items = {
+        "D1": Item("D1", ("a",), 1, "numeric", "Diagnostic prompt one", "1", {}, {}),
+        "D2": Item("D2", ("a",), 2, "numeric", "Diagnostic prompt two", "2", {}, {}),
+        "P1": Item("P1", ("a",), 1, "numeric", "Practice prompt hidden", "9", {}, {}, role="practice"),
+    }
+    bands = (Band("Secure", 0.8),)
+    c = Curriculum(points=points, items=items, bands=bands, standards={})
+    assert [it.id for it in ordered_items(c)] == ["D1", "D2"]   # practice excluded
+    html = render_paper_html(c, TEMPLATES)
+    assert "Diagnostic prompt one" in html
+    assert "Practice prompt hidden" not in html
+    blank = render_answer_sheet_template(c)
+    assert "P1" not in blank and "D1" in blank
