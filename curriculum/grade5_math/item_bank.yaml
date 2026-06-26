@@ -263,6 +263,22 @@ items:
     type: numeric
     prompt: "Write 'three hundred twelve thousandths' as a decimal."
     answer: "0.312"
+  # --- g5-decimal-place-value (practice) ---
+  - id: DPV-P1
+    points: [g5-decimal-place-value]
+    difficulty: 1
+    type: mcq
+    role: practice
+    prompt: "What is the value of the 5 in 0.356?"
+    options: {A: "5 tenths", B: "5 hundredths", C: "5 thousandths", D: "5 ones"}
+    answer: "B"
+  - id: DPV-P2
+    points: [g5-decimal-place-value]
+    difficulty: 2
+    type: numeric
+    role: practice
+    prompt: "Write 'forty-two hundredths' as a decimal."
+    answer: "0.42"
   # --- g5-add-subtract-decimals ---
   - id: ASD-1
     role: diagnostic
@@ -285,6 +301,21 @@ items:
     type: numeric
     prompt: "5 - 2.35 = ?"
     answer: "2.65"
+  # --- g5-add-subtract-decimals (practice) ---
+  - id: ASD-P1
+    points: [g5-add-subtract-decimals]
+    difficulty: 1
+    type: numeric
+    role: practice
+    prompt: "0.6 + 0.2 = ?"
+    answer: "0.8"
+  - id: ASD-P2
+    points: [g5-add-subtract-decimals]
+    difficulty: 2
+    type: numeric
+    role: practice
+    prompt: "3.4 - 1.15 = ?"
+    answer: "2.25"
   # --- g5-coordinate-system ---
   - id: G-CS-1
     role: diagnostic
@@ -424,6 +455,23 @@ items:
     prompt: "The 7 in 7,000 is how many times the 7 in 700?"
     options: {A: "10", B: "100", C: "1/10", D: "1000"}
     answer: "A"
+  # --- g5-nbt-place-value (practice) ---
+  - id: NBT-PV-P1
+    points: [g5-nbt-place-value]
+    difficulty: 1
+    type: mcq
+    role: practice
+    prompt: "In 8,800 the left 8 is worth how many times the right 8?"
+    options: {A: "10", B: "100", C: "2", D: "1000"}
+    answer: "A"
+  - id: NBT-PV-P2
+    points: [g5-nbt-place-value]
+    difficulty: 2
+    type: mcq
+    role: practice
+    prompt: "The 3 in 3,000 is how many times the 3 in 30?"
+    options: {A: "100", B: "10", C: "1000", D: "1/10"}
+    answer: "A"
   # --- g5-nbt-powers-of-ten ---
   - id: NBT-PT-1
     role: diagnostic
@@ -447,6 +495,22 @@ items:
     type: numeric
     prompt: "3.5 x 100 = ?"
     answer: "350"
+  # --- g5-nbt-powers-of-ten (practice) ---
+  - id: NBT-PT-P1
+    points: [g5-nbt-powers-of-ten]
+    difficulty: 1
+    type: numeric
+    role: practice
+    prompt: "What is 10 to the power 4 (10^4)?"
+    answer: "10000"
+  - id: NBT-PT-P2
+    points: [g5-nbt-powers-of-ten]
+    difficulty: 2
+    type: mcq
+    role: practice
+    prompt: "2.4 x 1000 = ?"
+    options: {A: "2400", B: "240", C: "24000", D: "2.4"}
+    answer: "A"
   # --- g5-nbt-round-decimals ---
   - id: NBT-RD-1
     role: diagnostic
@@ -462,6 +526,22 @@ items:
     type: numeric
     prompt: "Round 4.56 to the nearest tenth."
     answer: "4.6"
+  # --- g5-nbt-round-decimals (practice) ---
+  - id: NBT-RD-P1
+    points: [g5-nbt-round-decimals]
+    difficulty: 1
+    type: numeric
+    role: practice
+    prompt: "Round 6.83 to the nearest tenth."
+    answer: "6.8"
+  - id: NBT-RD-P2
+    points: [g5-nbt-round-decimals]
+    difficulty: 2
+    type: mcq
+    role: practice
+    prompt: "Round 5.249 to the nearest tenth."
+    options: {A: "5.2", B: "5.3", C: "5.25", D: "5.0"}
+    answer: "A"
   # --- g5-nbt-mult-multidigit ---
   - id: NBT-MM-1
     role: diagnostic
@@ -484,6 +564,21 @@ items:
     type: numeric
     prompt: "125 x 16 = ?"
     answer: "2000"
+  # --- g5-nbt-mult-multidigit (practice) ---
+  - id: NBT-MM-P1
+    points: [g5-nbt-mult-multidigit]
+    difficulty: 1
+    type: numeric
+    role: practice
+    prompt: "32 x 3 = ?"
+    answer: "96"
+  - id: NBT-MM-P2
+    points: [g5-nbt-mult-multidigit]
+    difficulty: 2
+    type: numeric
+    role: practice
+    prompt: "42 x 13 = ?"
+    answer: "546"
   # --- g5-nbt-divide-multidigit ---
   - id: NBT-DM-1
     role: diagnostic
@@ -499,6 +594,21 @@ items:
     type: numeric
     prompt: "432 / 12 = ?"
     answer: "36"
+  # --- g5-nbt-divide-multidigit (practice) ---
+  - id: NBT-DM-P1
+    points: [g5-nbt-divide-multidigit]
+    difficulty: 1
+    type: numeric
+    role: practice
+    prompt: "72 / 6 = ?"
+    answer: "12"
+  - id: NBT-DM-P2
+    points: [g5-nbt-divide-multidigit]
+    difficulty: 2
+    type: numeric
+    role: practice
+    prompt: "288 / 12 = ?"
+    answer: "24"
   # --- g5-nf-fraction-as-division ---
   - id: NF-FD-1
     role: diagnostic
