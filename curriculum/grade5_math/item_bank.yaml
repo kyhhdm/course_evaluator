@@ -383,6 +383,73 @@ items:
     prompt: "Which figure is always a parallelogram?"
     options: {A: "rectangle", B: "trapezoid", C: "triangle", D: "pentagon"}
     answer: "A"
+  # --- g5-coordinate-system (practice) ---
+  - id: G-CS-P1
+    points: [g5-coordinate-system]
+    difficulty: 1
+    type: mcq
+    role: practice
+    prompt: "In the coordinate (x, y), which number tells how far UP to move?"
+    options: {A: "the second number (y)", B: "the first number (x)", C: "neither", D: "both"}
+    answer: "A"
+  - id: G-CS-P2
+    points: [g5-coordinate-system]
+    difficulty: 2
+    type: mcq
+    role: practice
+    prompt: "The point (0, 0) is called the..."
+    options: {A: "origin", B: "x-axis label", C: "y-axis label", D: "first quadrant"}
+    answer: "A"
+  # --- g5-graph-points (practice) ---
+  - id: G-GP-P1
+    points: [g5-graph-points]
+    difficulty: 1
+    type: numeric
+    role: practice
+    prompt: "To plot the point (5, 1), you move right 5 from the origin, then up how many?"
+    answer: "1"
+  - id: G-GP-P2
+    points: [g5-graph-points]
+    difficulty: 2
+    type: mcq
+    role: practice
+    prompt: "Which point is located 2 units to the right and 6 units up from the origin?"
+    options: {A: "(2, 6)", B: "(6, 2)", C: "(2, 2)", D: "(6, 6)"}
+    answer: "A"
+  # --- g5-figure-hierarchy (practice) ---
+  - id: G-FH-P1
+    points: [g5-figure-hierarchy]
+    difficulty: 1
+    type: mcq
+    role: practice
+    prompt: "Every square is also a rhombus. Why?"
+    options: {A: "A square has 4 equal sides, and so does a rhombus", B: "A square has 4 right angles, so it is any quadrilateral", C: "Rhombuses always have 4 right angles", D: "Squares and rhombuses are the same shape"}
+    answer: "A"
+  - id: G-FH-P2
+    points: [g5-figure-hierarchy]
+    difficulty: 3
+    type: mcq
+    role: practice
+    prompt: "Which statement about quadrilaterals is TRUE?"
+    options: {A: "Every rhombus is a square", B: "Every square is a rhombus", C: "Every rectangle is a square", D: "Every parallelogram is a rectangle"}
+    answer: "B"
+  # --- g5-classify-figures (practice) ---
+  - id: G-CF-P1
+    points: [g5-classify-figures]
+    difficulty: 1
+    type: mcq
+    role: practice
+    prompt: "A quadrilateral with two pairs of parallel sides is called a..."
+    options: {A: "parallelogram", B: "trapezoid", C: "circle", D: "pentagon"}
+    answer: "A"
+  - id: G-CF-P2
+    points: [g5-classify-figures]
+    difficulty: 2
+    type: mcq
+    role: practice
+    prompt: "A parallelogram with 4 right angles is always a..."
+    options: {A: "rectangle", B: "rhombus", C: "trapezoid", D: "triangle"}
+    answer: "A"
   # --- g5-oa-eval-expressions ---
   - id: OA-EV-1
     role: diagnostic
