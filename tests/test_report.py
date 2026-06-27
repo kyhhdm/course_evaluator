@@ -72,3 +72,4 @@ def test_parent_report_shows_per_point_groups_and_strengths():
     assert "Not yet:" in out and "Add fractions" in out
     assert "Strengths" in out
     assert "assessed skills are secure" in out                  # strengths sentence
+    assert "fully Secure in" in out                             # strand-count headline disambiguated

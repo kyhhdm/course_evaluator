@@ -7,7 +7,7 @@
 {% include "print.css" %}
 </style>
 </head>
-<body>
+<body class="report">
 <h1>Learning Report for {{ view.student_name }}</h1>
 <h2>Where {{ view.student_name }} stands</h2>
 {% for g in view.strand_groups %}
@@ -30,10 +30,11 @@
 </div>
 {% endfor %}
 <h2>What this means</h2>
-<p>{{ view.student_name }} is Secure in {{ view.secure_strand_count }} of {{ view.total_strand_count }} area(s).
+<p>{{ view.student_name }} is fully Secure in {{ view.secure_strand_count }} of {{ view.total_strand_count }} area(s) (every skill in the area secure). See Strengths below for skill-by-skill wins.
 {% if view.unassessed_skill_count %} {{ view.unassessed_skill_count }} skill(s) couldn't be assessed — too few answers there.{% endif %}</p>
 <h2>Strengths</h2>
 <p>{% if view.strengths.strong_strands %}Strongest in {{ view.strengths.strong_strands | join(" and ") }}. {% endif %}{{ view.secure_skill_count }} of {{ view.assessed_skill_count }} assessed skills are secure{% if view.strengths.highlight_points %}, including {{ view.strengths.highlight_points | join(", ") }}{% endif %}.</p>
+<section class="focus">
 <h2>Focus next</h2>
 {% if view.focus %}
 <ol>
@@ -44,5 +45,6 @@
 {% else %}
 <p>Nothing specific to fix right now — keep practicing to stay sharp.</p>
 {% endif %}
+</section>
 </body>
 </html>

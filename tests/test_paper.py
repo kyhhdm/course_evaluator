@@ -107,6 +107,8 @@ def test_report_html_shows_per_point_groups_and_strengths():
     html = render_report_html(c, result, path, TEMPLATES, "Sam")
     assert "Secure:" in html and "Strengths" in html
     assert "assessed skills are secure" in html
+    assert "fully Secure in" in html                # strand-count headline disambiguated
+    assert 'class="focus"' in html                  # Focus section wrapped (page-break guard)
 
 
 def test_print_surfaces_exclude_practice_items():
