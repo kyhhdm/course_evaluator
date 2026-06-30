@@ -77,6 +77,11 @@ def drop_blank_responses(raw: dict) -> dict:
     return {k: v for k, v in raw.items() if v is not None and str(v).strip() != ""}
 
 
+def render_parent_view(view, templates_dir: str) -> str:
+    tmpl = _env(templates_dir).get_template("report.html.j2")
+    return tmpl.render(view=view)
+
+
 def render_report_html(
     curriculum: Curriculum,
     result: EvaluationResult,
@@ -87,5 +92,4 @@ def render_report_html(
     from engine.report_view import build_parent_view
 
     view = build_parent_view(curriculum, result, path, student_name)
-    tmpl = _env(templates_dir).get_template("report.html.j2")
-    return tmpl.render(view=view)
+    return render_parent_view(view, templates_dir)
