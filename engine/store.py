@@ -95,7 +95,9 @@ def save_attempt(
         row = conn.execute(
             "SELECT name FROM students WHERE id = ?", (student_id,)
         ).fetchone()
-        name = row["name"] if row else "Student"
+        if row is None:
+            raise ValueError(f"unknown student_id {student_id}")
+        name = row["name"]
 
         view = build_parent_view(curriculum, result, learning_path, name)
         student_plan = {
@@ -110,7 +112,11 @@ def save_attempt(
                 for step in learning_path
             ],
         }
-        snapshot = {"parent_view": dataclasses.asdict(view), "student_plan": student_plan}
+        snapshot = {
+            "version": 1,  # snapshot schema version; lets future migrations branch cheaply
+            "parent_view": dataclasses.asdict(view),
+            "student_plan": student_plan,
+        }
 
         cur = conn.execute(
             "INSERT INTO attempts(student_id, course_id, created_at, responses_json, snapshot_json)"

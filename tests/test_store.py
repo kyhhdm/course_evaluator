@@ -40,14 +40,24 @@ def test_save_and_get_attempt_roundtrips_with_snapshot(tmp_path):
     assert got["course_id"] == "grade5_math"
     assert got["responses"]["EQF-1"] == responses["EQF-1"]      # source of truth stored
     snap = got["snapshot"]
+    assert snap["version"] == 1                                 # snapshot schema version stamped
     assert "parent_view" in snap and "student_plan" in snap
     assert snap["parent_view"]["student_name"] == "Maya"        # name resolved into the view
     assert "strands" in snap["student_plan"] and "steps" in snap["student_plan"]
 
 
 def test_get_attempt_returns_none_for_unknown_id(tmp_path):
-    store.init_db(_db(tmp_path))
-    assert store.get_attempt(999, db_path=_db(tmp_path)) is None
+    db = _db(tmp_path)
+    store.init_db(db)
+    assert store.get_attempt(999, db_path=db) is None
+
+
+def test_save_attempt_raises_for_unknown_student(tmp_path):
+    import pytest
+    db = _db(tmp_path)
+    store.init_db(db)
+    with pytest.raises(ValueError, match="unknown student_id"):
+        store.save_attempt(999, "grade5_math", {}, _grade5(), db_path=db)
 
 
 def test_list_attempts_newest_first_with_summary(tmp_path):
@@ -60,7 +70,7 @@ def test_list_attempts_newest_first_with_summary(tmp_path):
 
     listed = store.list_attempts(sid, db_path=db)
     assert [a["id"] for a in listed] == [a2, a1]                 # newest first
-    assert "areas secure" in listed[0]["summary"]
+    assert listed[0]["summary"] == "2 of 5 areas secure"         # exact summary format locked
 
 
 def test_render_attempt_html_matches_live_and_survives_content_change(tmp_path):
@@ -86,4 +96,5 @@ def test_render_attempt_html_matches_live_and_survives_content_change(tmp_path):
     c.points.clear()
     c.items.clear()
     still = store.render_attempt_html(store.get_attempt(aid, db_path=db))
-    assert "Learning Report for Maya" in still      # frozen titles, no recompute needed
+    assert "Learning Report for Maya" in still      # renders with curriculum cleared
+    assert "Equivalent fractions" in still          # a frozen point title survived the clear
