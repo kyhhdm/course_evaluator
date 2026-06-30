@@ -111,6 +111,23 @@ def test_report_html_shows_per_point_groups_and_strengths():
     assert 'class="focus"' in html                  # Focus section wrapped (page-break guard)
 
 
+def test_render_parent_view_accepts_dataclass_and_dict():
+    import dataclasses
+    from engine.paper import render_parent_view
+    from engine.report_view import build_parent_view
+    c = _curriculum()
+    pa = PointResult("a", 0.9, "Secure", "scored", 2)
+    pb = PointResult("b", 0.4, "Not yet", "scored", 2)
+    strand = StrandResult("Fractions", "Developing", 0.65, "b", [pa, pb])
+    result = EvaluationResult([strand], {"a": pa, "b": pb}, {"A1"})
+    path = [PathStep("b", "Add fractions", ["B1"])]
+    view = build_parent_view(c, result, path, "Sam")
+    html_dc = render_parent_view(view, TEMPLATES)
+    html_dict = render_parent_view(dataclasses.asdict(view), TEMPLATES)
+    assert html_dc == html_dict                       # dict renders identically to dataclass
+    assert "Sam" in html_dc and "Strengths" in html_dc
+
+
 def test_print_surfaces_exclude_practice_items():
     from engine.paper import ordered_items, render_paper_html, render_answer_sheet_template
     points = {"a": KnowledgePoint("a", "Fractions", "Equivalent fractions", "d", (), ())}
