@@ -62,6 +62,21 @@ WeasyPrint also needs system libraries (Pango, cairo, GDK-PixBuf); on Debian/Ubu
 `sudo apt install libpango-1.0-0 libpangoft2-1.0-0 libcairo2 libgdk-pixbuf-2.0-0`.
 The non-PDF commands above (evaluation, `--coverage`) do not require it.
 
+## Online testing web app
+
+Run the web app (self-hosted, dev server):
+
+```bash
+uv add flask          # first time only
+uv run python -m engine.web
+```
+
+Then open http://127.0.0.1:5000 — add a student, take a test one question at a time,
+and view the auto-scored report and past results. Data is stored in
+`var/course_evaluator.db` (override with `COURSE_EVAL_DB`). This uses Flask's development
+server; for anything beyond single-family self-hosting, put a production WSGI server
+(e.g. gunicorn) in front.
+
 ## Adding a course
 
 Copy `curriculum/_template/` and follow `curriculum/_template/AUTHORING.md`.

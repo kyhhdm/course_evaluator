@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Students{% endblock %}
+{% block body %}
+<h1>Students</h1>
+{% if students %}
+<ul>
+{% for s in students %}
+<li><a href="/students/{{ s.id }}">{{ s.name }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No students yet.</p>
+{% endif %}
+<h2>Add a student</h2>
+<form method="post" action="/students">
+<input name="name" placeholder="Student name" required>
+<button class="btn" type="submit">Add</button>
+</form>
+{% endblock %}

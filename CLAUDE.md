@@ -33,8 +33,9 @@ uv run python -m engine.cli --curriculum curriculum/grade5_math --coverage
 ```
 
 Runtime deps: `pyyaml`, `jsonschema`, `jinja2`, `weasyprint` (PDF rendering, confined to
-`engine/pdf.py`). Dev: `pytest`. Python `>=3.10`. Keep dependencies limited to these — adding
-one is a deliberate decision, not a default. Add deps with `uv add <pkg>`.
+`engine/pdf.py`), `flask` (web app, confined to `engine/web.py`). Dev: `pytest`. Python
+`>=3.10`. Keep dependencies limited to these — adding one is a deliberate decision, not a
+default. Add deps with `uv add <pkg>`.
 
 ## Architecture
 
