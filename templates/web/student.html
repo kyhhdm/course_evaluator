@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{{ student.name }}{% endblock %}
+{% block body %}
+<p><a href="/">&larr; All students</a></p>
+<h1>{{ student.name }}</h1>
+<h2>Start a test</h2>
+{% for course in courses %}
+<p><a class="btn" href="/students/{{ student.id }}/test?course={{ course }}&start=1">Start {{ course }}</a></p>
+{% endfor %}
+<h2>Past results</h2>
+{% if attempts %}
+<ul>
+{% for a in attempts %}
+<li><a href="/attempts/{{ a.id }}">{{ a.created_at }} — {{ a.course_id }} — {{ a.summary }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No attempts yet.</p>
+{% endif %}
+{% endblock %}
