@@ -123,6 +123,37 @@ def save_attempt(
         conn.close()
 
 
+def list_attempts(student_id: int, db_path: str | None = None) -> list[dict]:
+    conn = _connect(db_path)
+    try:
+        rows = conn.execute(
+            "SELECT id, course_id, created_at, snapshot_json FROM attempts"
+            " WHERE student_id = ? ORDER BY created_at DESC, id DESC",
+            (student_id,),
+        ).fetchall()
+        out = []
+        for r in rows:
+            pv = json.loads(r["snapshot_json"])["parent_view"]
+            summary = f'{pv["secure_strand_count"]} of {pv["total_strand_count"]} areas secure'
+            out.append(
+                {
+                    "id": r["id"],
+                    "course_id": r["course_id"],
+                    "created_at": r["created_at"],
+                    "summary": summary,
+                }
+            )
+        return out
+    finally:
+        conn.close()
+
+
+def render_attempt_html(attempt: dict, templates_dir: str = "templates") -> str:
+    from engine.paper import render_parent_view
+
+    return render_parent_view(attempt["snapshot"]["parent_view"], templates_dir)
+
+
 def get_attempt(attempt_id: int, db_path: str | None = None) -> dict | None:
     conn = _connect(db_path)
     try:

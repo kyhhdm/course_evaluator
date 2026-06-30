@@ -48,3 +48,42 @@ def test_save_and_get_attempt_roundtrips_with_snapshot(tmp_path):
 def test_get_attempt_returns_none_for_unknown_id(tmp_path):
     store.init_db(_db(tmp_path))
     assert store.get_attempt(999, db_path=_db(tmp_path)) is None
+
+
+def test_list_attempts_newest_first_with_summary(tmp_path):
+    db = _db(tmp_path)
+    sid = store.create_student("Maya", db_path=db)
+    responses = load_yaml(f"{CURRICULUM}/sample_responses.yaml")["responses"]
+    c = _grade5()
+    a1 = store.save_attempt(sid, "grade5_math", responses, c, db_path=db, created_at="2026-01-01T09:00:00")
+    a2 = store.save_attempt(sid, "grade5_math", responses, c, db_path=db, created_at="2026-02-01T09:00:00")
+
+    listed = store.list_attempts(sid, db_path=db)
+    assert [a["id"] for a in listed] == [a2, a1]                 # newest first
+    assert "areas secure" in listed[0]["summary"]
+
+
+def test_render_attempt_html_matches_live_and_survives_content_change(tmp_path):
+    from engine.paper import render_report_html
+    from engine.path import build_path
+    from engine.score import evaluate
+    from engine.paper import drop_blank_responses
+
+    db = _db(tmp_path)
+    sid = store.create_student("Maya", db_path=db)
+    responses = load_yaml(f"{CURRICULUM}/sample_responses.yaml")["responses"]
+    c = _grade5()
+    aid = store.save_attempt(sid, "grade5_math", responses, c, db_path=db)
+
+    # snapshot render matches a live render of the same attempt (key content)
+    clean = drop_blank_responses(responses)
+    live = render_report_html(c, evaluate(c, clean), build_path(c, evaluate(c, clean)), "templates", "Maya")
+    from_snapshot = store.render_attempt_html(store.get_attempt(aid, db_path=db))
+    for marker in ("Learning Report for Maya", "Strengths", "fully Secure in"):
+        assert marker in live and marker in from_snapshot
+
+    # content-drift immunity: mutate the in-memory curriculum, snapshot still renders
+    c.points.clear()
+    c.items.clear()
+    still = store.render_attempt_html(store.get_attempt(aid, db_path=db))
+    assert "Learning Report for Maya" in still      # frozen titles, no recompute needed
