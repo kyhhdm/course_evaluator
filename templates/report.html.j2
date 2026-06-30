@@ -7,26 +7,44 @@
 {% include "print.css" %}
 </style>
 </head>
-<body>
-<h1>Learning Report for {{ name }}</h1>
-<h2>Where {{ name }} stands</h2>
+<body class="report">
+<h1>Learning Report for {{ view.student_name }}</h1>
+<h2>Where {{ view.student_name }} stands</h2>
+{% for g in view.strand_groups %}
+<div class="strand">
+<p><strong>{{ g.strand }}:</strong> {{ g.band or "Not enough evidence yet" }}</p>
 <ul>
-{% for s in strands %}
-<li><strong>{{ s.strand }}:</strong> {{ s.band or "Not enough evidence yet" }}</li>
-{% endfor %}
+{% if g.secure %}
+<li><strong>Secure:</strong> {{ g.secure | join("; ") }}</li>
+{% endif %}
+{% if g.developing %}
+<li><strong>Developing:</strong> {{ g.developing | join("; ") }}</li>
+{% endif %}
+{% if g.not_yet %}
+<li><strong>Not yet:</strong> {{ g.not_yet | join("; ") }}</li>
+{% endif %}
+{% if g.not_assessed %}
+<li><strong>Not assessed:</strong> {{ g.not_assessed | join("; ") }} (too few answers)</li>
+{% endif %}
 </ul>
+</div>
+{% endfor %}
 <h2>What this means</h2>
-<p>{{ name }} is Secure in {{ secure_count }} of {{ strands | length }} area(s).
-{% if focus %}The most useful next focus is <strong>{{ focus[0].title }}</strong>.{% else %}No specific gaps were found right now.{% endif %}</p>
+<p>{{ view.student_name }} is fully Secure in {{ view.secure_strand_count }} of {{ view.total_strand_count }} area(s) (every skill in the area secure). See Strengths below for skill-by-skill wins.
+{% if view.unassessed_skill_count %} {{ view.unassessed_skill_count }} skill(s) couldn't be assessed — too few answers there.{% endif %}</p>
+<h2>Strengths</h2>
+<p>{% if view.strengths.strong_strands %}Strongest in {{ view.strengths.strong_strands | join(" and ") }}. {% endif %}{{ view.secure_skill_count }} of {{ view.assessed_skill_count }} assessed skills are secure{% if view.strengths.highlight_points %}, including {{ view.strengths.highlight_points | join(", ") }}{% endif %}.</p>
+<section class="focus">
 <h2>Focus next</h2>
-{% if focus %}
+{% if view.focus %}
 <ol>
-{% for step in focus %}
+{% for step in view.focus %}
 <li><strong>{{ step.title }}</strong></li>
 {% endfor %}
 </ol>
 {% else %}
 <p>Nothing specific to fix right now — keep practicing to stay sharp.</p>
 {% endif %}
+</section>
 </body>
 </html>

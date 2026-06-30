@@ -96,6 +96,21 @@ def test_report_html_shows_name_band_and_focus():
     assert "Add fractions" in html
 
 
+def test_report_html_shows_per_point_groups_and_strengths():
+    from engine.paper import render_report_html
+    c = _curriculum()
+    pa = PointResult("a", 0.9, "Secure", "scored", 2)
+    pb = PointResult("b", 0.4, "Not yet", "scored", 2)
+    strand = StrandResult("Fractions", "Developing", 0.65, "b", [pa, pb])
+    result = EvaluationResult([strand], {"a": pa, "b": pb}, {"A1"})
+    path = [PathStep("b", "Add fractions", ["B1"])]
+    html = render_report_html(c, result, path, TEMPLATES, "Sam")
+    assert "Secure:" in html and "Strengths" in html
+    assert "assessed skills are secure" in html
+    assert "fully Secure in" in html                # strand-count headline disambiguated
+    assert 'class="focus"' in html                  # Focus section wrapped (page-break guard)
+
+
 def test_print_surfaces_exclude_practice_items():
     from engine.paper import ordered_items, render_paper_html, render_answer_sheet_template
     points = {"a": KnowledgePoint("a", "Fractions", "Equivalent fractions", "d", (), ())}

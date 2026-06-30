@@ -1,21 +1,38 @@
-# Learning Report for {{ name }}
+# Learning Report for {{ view.student_name }}
 
-## Where {{ name }} stands
+## Where {{ view.student_name }} stands
 
-{% for s in strands -%}
-- **{{ s.strand }}**: {{ s.band or "Not enough evidence yet" }}
+{% for g in view.strand_groups %}
+**{{ g.strand }}**: {{ g.band or "Not enough evidence yet" }}
+{% if g.secure %}
+- Secure: {{ g.secure | join("; ") }}
+{% endif %}
+{% if g.developing %}
+- Developing: {{ g.developing | join("; ") }}
+{% endif %}
+{% if g.not_yet %}
+- Not yet: {{ g.not_yet | join("; ") }}
+{% endif %}
+{% if g.not_assessed %}
+- Not assessed: {{ g.not_assessed | join("; ") }} (too few answers)
+{% endif %}
 {% endfor %}
+
 ## What this means
 
-{{ name }} is Secure in {{ secure_count }} of {{ strands | length }} area(s).
-{% if focus %}The most useful next focus is **{{ focus[0].title }}**.{% else %}No specific gaps were found right now.{% endif %}
+{{ view.student_name }} is fully Secure in {{ view.secure_strand_count }} of {{ view.total_strand_count }} area(s) (every skill in the area secure). See Strengths below for skill-by-skill wins.
+{% if view.unassessed_skill_count %}{{ view.unassessed_skill_count }} skill(s) couldn't be assessed — too few answers there.{% endif %}
+
+## Strengths
+
+{% if view.strengths.strong_strands %}Strongest in {{ view.strengths.strong_strands | join(" and ") }}. {% endif %}{{ view.secure_skill_count }} of {{ view.assessed_skill_count }} assessed skills are secure{% if view.strengths.highlight_points %}, including {{ view.strengths.highlight_points | join(", ") }}{% endif %}.
 
 ## Focus next
 
-{% if focus -%}
-{% for step in focus -%}
+{% if view.focus %}
+{% for step in view.focus %}
 {{ loop.index }}. **{{ step.title }}**
-{% endfor -%}
-{% else -%}
+{% endfor %}
+{% else %}
 Nothing specific to fix right now — keep practicing to stay sharp.
 {% endif %}

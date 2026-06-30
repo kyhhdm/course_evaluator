@@ -4,6 +4,8 @@ from jinja2 import Environment, FileSystemLoader
 
 from engine.models import Curriculum, EvaluationResult, PathStep
 
+STUDENT_PLAN_STEPS = 5
+
 
 def _env(templates_dir: str) -> Environment:
     return Environment(
@@ -21,14 +23,11 @@ def render_parent(
     templates_dir: str,
     student_name: str = "Student",
 ) -> str:
-    secure_count = sum(1 for s in result.strands if s.band == curriculum.bands[0].name)
+    from engine.report_view import build_parent_view
+
+    view = build_parent_view(curriculum, result, path, student_name)
     tmpl = _env(templates_dir).get_template("report_parent.md.j2")
-    return tmpl.render(
-        name=student_name,
-        strands=result.strands,
-        focus=path[:3],
-        secure_count=secure_count,
-    )
+    return tmpl.render(view=view)
 
 
 def render_student(
@@ -38,10 +37,10 @@ def render_student(
     templates_dir: str,
     student_name: str = "Student",
 ) -> str:
+    shown = path[:STUDENT_PLAN_STEPS]
+    remainder = max(0, len(path) - STUDENT_PLAN_STEPS)
     tmpl = _env(templates_dir).get_template("report_student.md.j2")
     return tmpl.render(
-        name=student_name,
-        strands=result.strands,
-        path=path,
-        items=curriculum.items,
+        name=student_name, strands=result.strands, path=shown,
+        items=curriculum.items, remainder=remainder,
     )
