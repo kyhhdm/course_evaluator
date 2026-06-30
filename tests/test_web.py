@@ -93,3 +93,11 @@ def test_back_preserves_previous_answer(client):
     r = client.get(f"/students/{sid}/test")
     assert b"Question 1 of" in r.data
     assert b'value="C" checked' in r.data            # Q1 answer preserved
+
+
+def test_unknown_or_traversal_course_is_rejected(client):
+    from engine import store
+    sid = store.create_student("Maya")
+    # path-traversal / unknown course must 404, never 500 or read outside curriculum/
+    assert client.get(f"/students/{sid}/test?course=../../etc").status_code == 404
+    assert client.get(f"/students/{sid}/test?course=nope").status_code == 404

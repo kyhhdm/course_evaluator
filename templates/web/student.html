@@ -5,7 +5,7 @@
 <h1>{{ student.name }}</h1>
 <h2>Start a test</h2>
 {% for course in courses %}
-<p><a class="btn" href="/students/{{ student.id }}/test?course={{ course }}&start=1">Start {{ course }}</a></p>
+<p><a class="btn" href="/students/{{ student.id }}/test?course={{ course }}&amp;start=1">Start {{ course }}</a></p>
 {% endfor %}
 <h2>Past results</h2>
 {% if attempts %}

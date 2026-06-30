@@ -88,8 +88,9 @@ def create_app(secret: str | None = None) -> Flask:
         s = _find_student(student_id)
         courses = list_courses()
         course_id = request.args.get("course") or (courses[0] if courses else None)
-        if course_id is None:
+        if course_id not in courses:  # rejects None and any path-traversal value
             abort(404)
+        curriculum = _load(course_id)
         att = session.get("attempt")
         if (
             request.args.get("start")
@@ -97,7 +98,6 @@ def create_app(secret: str | None = None) -> Flask:
             or att.get("student_id") != student_id
             or att.get("course_id") != course_id
         ):
-            curriculum = _load(course_id)
             att = {
                 "student_id": student_id,
                 "course_id": course_id,
@@ -106,8 +106,9 @@ def create_app(secret: str | None = None) -> Flask:
                 "answers": {},
             }
             session["attempt"] = att
-        curriculum = _load(att["course_id"])
         item_ids = att["item_ids"]
+        if not item_ids:
+            abort(404)
         idx = att["idx"]
         item = curriculum.items[item_ids[idx]]
         return render_template(
