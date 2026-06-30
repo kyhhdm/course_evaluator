@@ -76,6 +76,13 @@ def create_app(secret: str | None = None) -> Flask:
             courses=list_courses(),
         )
 
+    @app.get("/attempts/<int:attempt_id>")
+    def attempt(attempt_id):
+        a = store.get_attempt(attempt_id)
+        if a is None:
+            abort(404)
+        return store.render_attempt_html(a)
+
     return app
 
 
