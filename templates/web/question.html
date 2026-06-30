@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Question {{ idx + 1 }}{% endblock %}
+{% block body %}
+<p>{{ student.name }} — Question {{ idx + 1 }} of {{ total }}</p>
+<div class="progress"><div style="width: {{ (idx + 1) * 100 // total }}%"></div></div>
+<form method="post" action="/students/{{ student.id }}/test">
+<p><strong>{{ item.prompt }}</strong></p>
+{% if item.type == "mcq" %}
+<ul class="options">
+{% for key in item.options | sort %}
+<li><label><input type="radio" name="answer" value="{{ key }}" {% if current_answer == key %}checked{% endif %}> {{ key }}. {{ item.options[key] }}</label></li>
+{% endfor %}
+</ul>
+{% else %}
+<p><input name="answer" value="{{ current_answer }}" placeholder="Your answer"></p>
+{% endif %}
+{% if not is_first %}<button class="btn" type="submit" name="action" value="back">Back</button>{% endif %}
+<button class="btn" type="submit" name="action" value="next">{% if is_last %}Finish{% else %}Next{% endif %}</button>
+</form>
+{% endblock %}

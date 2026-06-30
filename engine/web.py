@@ -83,6 +83,66 @@ def create_app(secret: str | None = None) -> Flask:
             abort(404)
         return store.render_attempt_html(a)
 
+    @app.get("/students/<int:student_id>/test")
+    def take_test(student_id):
+        s = _find_student(student_id)
+        courses = list_courses()
+        course_id = request.args.get("course") or (courses[0] if courses else None)
+        if course_id is None:
+            abort(404)
+        att = session.get("attempt")
+        if (
+            request.args.get("start")
+            or att is None
+            or att.get("student_id") != student_id
+            or att.get("course_id") != course_id
+        ):
+            curriculum = _load(course_id)
+            att = {
+                "student_id": student_id,
+                "course_id": course_id,
+                "item_ids": [it.id for it in ordered_items(curriculum)],
+                "idx": 0,
+                "answers": {},
+            }
+            session["attempt"] = att
+        curriculum = _load(att["course_id"])
+        item_ids = att["item_ids"]
+        idx = att["idx"]
+        item = curriculum.items[item_ids[idx]]
+        return render_template(
+            "question.html",
+            student=s,
+            item=item,
+            idx=idx,
+            total=len(item_ids),
+            current_answer=att["answers"].get(item.id, ""),
+            is_first=(idx == 0),
+            is_last=(idx == len(item_ids) - 1),
+        )
+
+    @app.post("/students/<int:student_id>/test")
+    def submit_answer(student_id):
+        att = session.get("attempt")
+        if att is None or att.get("student_id") != student_id:
+            return redirect(f"/students/{student_id}/test?start=1")
+        item_ids = att["item_ids"]
+        idx = att["idx"]
+        att["answers"][item_ids[idx]] = request.form.get("answer", "")
+        action = request.form.get("action", "next")
+        if action == "back":
+            att["idx"] = max(0, idx - 1)
+            session["attempt"] = att
+            return redirect(f"/students/{student_id}/test")
+        if idx < len(item_ids) - 1:
+            att["idx"] = idx + 1
+            session["attempt"] = att
+            return redirect(f"/students/{student_id}/test")
+        curriculum = _load(att["course_id"])
+        aid = store.save_attempt(student_id, att["course_id"], att["answers"], curriculum)
+        session.pop("attempt", None)
+        return redirect(f"/attempts/{aid}")
+
     return app
 
 

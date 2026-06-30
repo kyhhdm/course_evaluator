@@ -52,3 +52,44 @@ def test_student_history_and_report(client):
 
 def test_unknown_attempt_404(client):
     assert client.get("/attempts/999").status_code == 404
+
+
+def _start(client, name="Maya"):
+    from engine import store
+    sid = store.create_student(name)
+    client.get(f"/students/{sid}/test?start=1")
+    return sid
+
+
+def test_wizard_starts_at_first_question(client):
+    sid = _start(client)
+    r = client.get(f"/students/{sid}/test")
+    assert r.status_code == 200
+    assert b"Question 1 of" in r.data
+
+
+def test_full_wizard_run_saves_attempt_and_redirects_to_report(client):
+    from engine import store
+    from engine.loader import load_course
+    from engine.paper import ordered_items
+
+    sid = _start(client, "Maya")
+    item_ids = [it.id for it in ordered_items(
+        load_course("curriculum/grade5_math", "schemas", "methodology", "standards"))]
+    r = None
+    for _ in item_ids:
+        r = client.post(f"/students/{sid}/test", data={"answer": "A", "action": "next"})
+    assert r.status_code == 302
+    assert "/attempts/" in r.headers["Location"]
+    assert len(store.list_attempts(sid)) == 1
+    report = client.get(r.headers["Location"])
+    assert b"Learning Report for Maya" in report.data
+
+
+def test_back_preserves_previous_answer(client):
+    sid = _start(client)
+    client.post(f"/students/{sid}/test", data={"answer": "C", "action": "next"})   # Q1=C → Q2
+    client.post(f"/students/{sid}/test", data={"answer": "B", "action": "back"})    # Q2=B → back to Q1
+    r = client.get(f"/students/{sid}/test")
+    assert b"Question 1 of" in r.data
+    assert b'value="C" checked' in r.data            # Q1 answer preserved
