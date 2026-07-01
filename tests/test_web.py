@@ -147,3 +147,15 @@ def test_answer_review_legacy_v1_recomputes(client):
 
 def test_unknown_attempt_review_404(client):
     assert client.get("/attempts/999/review").status_code == 404
+
+
+def test_wizard_keeps_non_default_course_across_next(client):
+    # Regression: a non-default course (quickcheck; grade5_math sorts first) must not
+    # reset to the default when the Next redirect omits ?course.
+    from engine import store
+    sid = store.create_student("Demo")
+    q1 = client.get(f"/students/{sid}/test?course=quickcheck&start=1")
+    assert b"Question 1 of 3" in q1.data                      # quickcheck has 3 questions
+    client.post(f"/students/{sid}/test", data={"answer": "A", "action": "next"})
+    q2 = client.get(f"/students/{sid}/test")                  # continue, no ?course (real redirect)
+    assert b"Question 2 of 3" in q2.data                      # still quickcheck, advanced
