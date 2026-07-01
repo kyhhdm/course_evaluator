@@ -570,3 +570,108 @@ items:
     prompt: "Two chords intersect inside a circle. One chord is divided into segments of length 3 and 6. The other chord is divided into segments of length 2 and x. Find x."
     answer: "9"
     lesson_refs: [66]
+  # --- a1-geo-sim (L6, L9) ---
+  - id: A1GSIM-D1
+    role: diagnostic
+    points: [a1-geo-sim]
+    difficulty: 1
+    type: numeric
+    prompt: "Two triangles are similar. The smaller triangle has sides 3, 4, and 5. The corresponding side of the larger triangle that matches the side of length 3 is 6. What is the side of the larger triangle that corresponds to the side of length 4?"
+    answer: "8"
+    lesson_refs: [9]
+  - id: A1GSIM-D2
+    role: diagnostic
+    points: [a1-geo-sim]
+    difficulty: 2
+    type: mcq
+    prompt: "Two similar triangles have a scale factor of 3 (each side of the larger triangle is 3 times the corresponding side of the smaller triangle). If the smaller triangle has a side of length 8, what is the length of the corresponding side of the larger triangle?"
+    options: {A: "24", B: "11", C: "5", D: "16"}
+    answer: "A"
+    lesson_refs: [6]
+  - id: A1GSIM-P1
+    role: practice
+    points: [a1-geo-sim]
+    difficulty: 2
+    type: numeric
+    prompt: "Two triangles are similar. A side of length 10 in the first triangle corresponds to a side of length 6 in the second triangle. Find the side in the second triangle that corresponds to the side of length 15 in the first triangle."
+    answer: "9"
+    lesson_refs: [9]
+  - id: A1GSIM-P2
+    role: practice
+    points: [a1-geo-sim]
+    difficulty: 3
+    type: mcq
+    prompt: "Which of the following conditions is sufficient to guarantee that two triangles are similar?"
+    options: {A: "All corresponding angles are equal", B: "They have equal areas", C: "They have equal perimeters", D: "One pair of corresponding sides is equal"}
+    answer: "A"
+    lesson_refs: [9]
+  # --- a1-geo-trig (L12, L19, L43, L80) ---
+  - id: A1GTRI-D1
+    role: diagnostic
+    points: [a1-geo-trig]
+    difficulty: 1
+    type: numeric
+    prompt: "A right triangle has legs of length 5 and 12. What is the length of the hypotenuse?"
+    answer: "13"
+    lesson_refs: [12]
+  - id: A1GTRI-D2
+    role: diagnostic
+    points: [a1-geo-trig]
+    difficulty: 2
+    type: mcq
+    prompt: "In a 45-45-90 right triangle, each leg has length 7. What is the exact length of the hypotenuse?"
+    options: {A: "7sqrt(2)", B: "14", C: "7", D: "7sqrt(3)"}
+    answer: "A"
+    lesson_refs: [43]
+  - id: A1GTRI-P1
+    role: practice
+    points: [a1-geo-trig]
+    difficulty: 2
+    type: mcq
+    prompt: "In a 30-60-90 right triangle, the shortest side (opposite the 30° angle) has length 5. What is the length of the hypotenuse?"
+    options: {A: "10", B: "5", C: "5sqrt(3)", D: "5sqrt(2)"}
+    answer: "A"
+    lesson_refs: [43]
+  - id: A1GTRI-P2
+    role: practice
+    points: [a1-geo-trig]
+    difficulty: 3
+    type: numeric
+    prompt: "In a right triangle, the hypotenuse is 10 and one acute angle is 30°. What is the length of the side opposite the 30° angle? (Use sin 30° = 0.5; give an exact whole-number answer.)"
+    answer: "5"
+    lesson_refs: [19]
+  # --- a1-geo-measure (L13, L41, L42) ---
+  - id: A1GMEA-D1
+    role: diagnostic
+    points: [a1-geo-measure]
+    difficulty: 1
+    type: numeric
+    prompt: "Find the volume of a rectangular box with length 4, width 3, and height 5."
+    answer: "60"
+    lesson_refs: [13]
+  - id: A1GMEA-D2
+    role: diagnostic
+    points: [a1-geo-measure]
+    difficulty: 2
+    type: mcq
+    prompt: "A right circular cylinder has radius 3 m and height 10 m. What is its volume? Express your answer in terms of π."
+    options: {A: "90π", B: "60π", C: "30π", D: "180π"}
+    answer: "A"
+    lesson_refs: [42]
+  - id: A1GMEA-P1
+    role: practice
+    points: [a1-geo-measure]
+    difficulty: 2
+    type: numeric
+    prompt: "Find the total surface area of a cube with side length 6. (A cube has 6 square faces.)"
+    answer: "216"
+    lesson_refs: [41]
+  - id: A1GMEA-P2
+    role: practice
+    points: [a1-geo-measure]
+    difficulty: 3
+    type: mcq
+    prompt: "A sphere has radius 5. What is its surface area? Express your answer in terms of π."
+    options: {A: "100π", B: "50π", C: "25π", D: "200π"}
+    answer: "A"
+    lesson_refs: [41]

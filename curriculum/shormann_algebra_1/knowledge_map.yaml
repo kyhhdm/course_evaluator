@@ -100,3 +100,22 @@ points:
     description: Identify relationships among inscribed angles, central angles, radii, and chords.
     prerequisites: [a1-geo-def]
     standard_refs: [CCSS.HSG.C.A.2]
+  # --- Strand: Geometry: Similarity, Trig & Measurement ---
+  - id: a1-geo-sim
+    strand: "Geometry: Similarity, Trig & Measurement"
+    title: Similarity and scaling
+    description: Use similarity to decide whether figures are similar and solve scaling problems.
+    prerequisites: [a1-geo-def]
+    standard_refs: [CCSS.HSG.SRT.A.2]
+  - id: a1-geo-trig
+    strand: "Geometry: Similarity, Trig & Measurement"
+    title: Right-triangle trigonometry and the Pythagorean theorem
+    description: Use sine, cosine, tangent, and the Pythagorean theorem to solve right triangles.
+    prerequisites: [a1-geo-sim]
+    standard_refs: [CCSS.HSG.SRT.C.8]
+  - id: a1-geo-measure
+    strand: "Geometry: Similarity, Trig & Measurement"
+    title: Perimeter, area, surface area, and volume
+    description: Compute perimeter, area, surface area, and volume of solids to solve problems.
+    prerequisites: [a1-geo-def, a1-num-units]
+    standard_refs: [CCSS.HSG.GMD.A.3]
