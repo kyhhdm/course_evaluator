@@ -1,0 +1,7 @@
+points:
+  - id: qc-basics
+    strand: Quick Check
+    title: Quick check basics
+    description: A tiny three-question demo used to try the full take-a-test flow quickly.
+    prerequisites: []
+    standard_refs: [CCSS.5.OA.A.1]

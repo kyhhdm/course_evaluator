@@ -1,0 +1,27 @@
+items:
+  # --- qc-basics (diagnostic) ---
+  - id: QC-1
+    points: [qc-basics]
+    difficulty: 1
+    type: mcq
+    role: diagnostic
+    prompt: "2 x (3 + 4) = ?"
+    options: {A: "14", B: "10", C: "24", D: "9"}
+    answer: "A"
+    distractor_feedback: {C: "Multiply by the whole sum in parentheses, not each part separately."}
+  - id: QC-2
+    points: [qc-basics]
+    difficulty: 1
+    type: mcq
+    role: diagnostic
+    prompt: "Which decimal is larger: 0.4 or 0.38?"
+    options: {A: "0.4", B: "0.38", C: "they are equal", D: "cannot tell"}
+    answer: "A"
+    distractor_feedback: {B: "Compare tenths first: 4 tenths is more than 3 tenths."}
+  - id: QC-3
+    points: [qc-basics]
+    difficulty: 1
+    type: numeric
+    role: diagnostic
+    prompt: "10 + 6 / 2 = ?  (divide before adding)"
+    answer: "13"
