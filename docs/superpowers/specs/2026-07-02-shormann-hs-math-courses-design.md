@@ -30,6 +30,73 @@ Deliverables, in order:
   like `CCSS.HSA.SSE.A.1`. Some standards are marked `(+)` (advanced, beyond the
   college-prep core) and fall largely into Precalculus — out of scope here.
 
+### Sources for the Shormann scope
+
+The concrete lesson-level scope below was extracted from Shormann's own
+Teacher's Guides and product pages (July 2026):
+
+- **Teacher's Guide for Shormann Algebra 2** (PDF) — embeds the full 100-lesson
+  "Course Sequence" table; the authoritative source for Algebra 2's scope.
+- **Teacher's Guide for Shormann Algebra 1** (PDF) + the Algebra 1 product page —
+  give a course-level topic list only; Algebra 1's guide does **not** embed a
+  lesson-by-lesson table.
+- The DIVE "Scope and Sequence" knowledge-base article (would hold Algebra 1's
+  lesson list) is bot-blocked (HTTP 403), so Algebra 1's scope is coarser than
+  Algebra 2's. If lesson-level Algebra 1 detail becomes necessary, the eTextbook
+  table of contents is the fallback source.
+
+### Shormann Algebra 1 — published scope (course-level)
+
+100 lessons, 26 quizzes, 4 exams; 1 Algebra 1 + ½ Geometry credit.
+
+- **Algebra:** simplifying algebraic expressions; solving linear equations;
+  solving quadratic equations; linear systems.
+- **Integrated geometry:** proof & logic; Euclidean geometry;
+  perimeter/area/volume; some non-Euclidean geometry.
+- **Other:** measurement; computer math; technology applications; statistics; a
+  gentle introduction to basic calculus.
+
+### Shormann Algebra 2 — published scope (lesson-level)
+
+100 lessons; 1 Algebra 2 + ½ Geometry credit. Lessons 1–25 are titled modules;
+26–100 spiral in new topics incrementally.
+
+- **Numbers (L1–2):** number types, operations, exponents.
+- **Ratio (L3–4):** rational/irrational numbers, complex fractions, logarithms,
+  proportion, rate.
+- **Algebra (L5–8):** rules of algebra, factoring/expanding polynomials, linear &
+  non-linear systems, roots of polynomials, completing the square, fractional
+  exponents.
+- **Geometry (L9–11):** fundamentals, similarity/congruency, inductive &
+  deductive reasoning, Euclid's propositions, circles/angles/segments.
+- **Analytical Geometry (L12–15):** graphing, functions (graphic/symbolic/
+  numeric/verbal), domain & range, parallel/perpendicular lines, inequalities,
+  systems.
+- **Measurement (L16–17):** unit conversions, scientific notation, arc
+  length/sectors, perimeter/area/surface area/volume.
+- **Trigonometry (L18–19):** special triangles, Pythagorean theorem, trig
+  identities, inverse trig, unit circle, sinusoids.
+- **Calculus (L20–22):** limits, derivatives, integrals. *(beyond CCSS)*
+- **Statistics (L23–24):** normal distribution, central tendency, probability,
+  scatterplots / line of best fit.
+- **Computer Math (L25):** sums, sequences, series, matrices.
+- **L26–100 (spiral):** set theory; rational expressions; similar-triangle &
+  circle proofs; composite/inverse/even-odd/piecewise functions; quadratic
+  formula & complex roots; conic sections *(beyond CCSS)*; complex numbers;
+  logarithm laws & equations; exponential growth/decay; radical & rational
+  equations; vectors; polynomial/synthetic division; truth tables & symbolic
+  logic; permutations & combinations; regression; sum/difference of cubes;
+  binomial theorem / Pascal's triangle; plus applied-science problems (gas laws,
+  chemical mixtures, Hardy-Weinberg) *(cross-disciplinary, mostly out of CCSS
+  scope)*.
+
+**CCSS-relevance note:** a substantial part of Algebra 2 sits *outside* CCSS
+high-school math — limits/derivatives/integrals, conic sections, non-Euclidean
+geometry, vectors-as-taught, and the science-application lessons are
+precalculus/calculus or cross-disciplinary. The authored Algebra 2 knowledge
+points therefore draw from its **algebra, functions, geometry-proof, and
+statistics** lessons, not its calculus/conics tail.
+
 ### Engine fit (no code changes required)
 
 - `compute_coverage` filters the catalog by `std.framework == meta.framework and
@@ -62,10 +129,12 @@ A markdown document at `docs/shormann-ccss-alignment.md` containing:
   course(s) teach it (Algebra 1, Algebra 2, or "Precalculus (out of scope)").
 - Honest caveats: Shormann is not Common Core; it interleaves geometry rather
   than isolating it; `(+)` advanced standards map mostly to Precalculus.
-- Sources cited (diveintomath scope-and-sequence docs, teacher guides).
+- Sources cited (Shormann Teacher's Guides + product pages, per the "Sources for
+  the Shormann scope" section above).
 
-Built from Shormann's published Scope & Sequence documents, fetched during
-implementation.
+Built from the lesson-level scope already captured in the Background section — no
+further source-fetching is required, though the report may cite the Algebra 2
+lesson numbers directly (e.g. "L5–8 Algebra → `A-SSE`, `A-APR`, `A-REI`").
 
 ## Part B — Catalog additions
 
@@ -98,19 +167,34 @@ the standard four files, following `curriculum/_template/AUTHORING.md`:
   guard).
 - `sample_responses.yaml` — a sample response set so the CLI can evaluate.
 
-Representative strand structure:
+Representative strand structure, mapped to the published Shormann scope (see
+Background) and the CCSS categories each strand targets:
 
-- **Algebra 1 (with integrated geometry):** expressions & equations; linear
-  functions & graphing; systems of equations; exponents & polynomials;
-  integrated geometry (segments/angles/coordinate geometry basics); data &
-  probability.
-- **Algebra 2 (with integrated geometry):** quadratic functions; polynomial &
-  rational expressions; exponential & logarithmic functions; radicals & complex
-  numbers; integrated geometry (similarity/right-triangle trig/circles);
-  statistics & inference.
+- **Algebra 1 (with integrated geometry):**
+  - expressions & equations *(→ `A-SSE`, `A-CED`, `A-REI`)*
+  - linear functions & graphing *(→ `F-IF`, `F-LE`, `A-REI.D`)*
+  - systems of equations *(→ `A-REI.C`)*
+  - exponents & polynomials *(→ `A-APR`, `N-RN`)*
+  - integrated geometry: segments/angles, perimeter/area/volume, coordinate
+    geometry basics *(→ `G-CO`, `G-GPE`, `G-GMD`)*
+  - data & probability *(→ `S-ID`)*
+- **Algebra 2 (with integrated geometry):** drawn from its algebra, functions,
+  geometry-proof, and statistics lessons (not the calculus/conics tail):
+  - quadratic functions & complex roots *(L34, L62; → `A-REI.B`, `F-IF.C`,
+    `N-CN`)*
+  - polynomial & rational expressions *(L5–8, L28, L37, L56, L86; → `A-APR`,
+    `A-REI.A`)*
+  - exponential & logarithmic functions *(L41, L50, L57, L83–84; → `F-LE`,
+    `F-BF.B`)*
+  - radicals & complex numbers *(L47, L51–52; → `N-RN`, `N-CN`)*
+  - integrated geometry: similarity, right-triangle trig, circle/triangle proofs
+    *(L9–11, L18, L29, L58–60, L89; → `G-SRT`, `G-C`, `G-CO.C`)*
+  - statistics & inference *(L23–24, L76; → `S-ID`, `S-IC`)*
 
 Exact points/items chosen so that between the two courses the authored
-`standard_refs` collectively touch a good spread of the HS catalog band.
+`standard_refs` collectively touch a good spread of the HS catalog band. The
+parenthetical CCSS codes are indicative targets, not a commitment to every
+sub-standard; the exact catalog keys are finalized in Part B during authoring.
 
 ## Part D — Tests
 
