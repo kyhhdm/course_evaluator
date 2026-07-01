@@ -119,3 +119,10 @@ points:
     description: Compute perimeter, area, surface area, and volume of solids to solve problems.
     prerequisites: [a1-geo-def, a1-num-units]
     standard_refs: [CCSS.HSG.GMD.A.3]
+  # --- Strand: Systems of Equations ---
+  - id: a1-systems
+    strand: Systems of Equations
+    title: Solve systems of linear equations
+    description: Solve two-variable linear systems by graphing, substitution, and elimination.
+    prerequisites: [a1-expr-linear, a1-func-graph]
+    standard_refs: [CCSS.HSA.REI.C.6]
