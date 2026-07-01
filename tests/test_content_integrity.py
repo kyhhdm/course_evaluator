@@ -102,6 +102,48 @@ def test_sample_responses_only_reference_real_items(course_dir, curricula):
             f"{course_dir}: response references unknown item {item_id}"
 
 
+# Allowed Shormann lesson numbers per Algebra 1 knowledge point (from the design spec).
+ALLOWED_LESSONS = {
+    "a1-num-realnum": {2, 3},
+    "a1-num-exprad": {3, 30, 31, 32, 33, 58},
+    "a1-num-units": {5, 6, 44, 45},
+    "a1-expr-interpret": {8, 35, 36, 37, 38},
+    "a1-expr-model": {7, 8, 48},
+    "a1-expr-linear": {7, 46},
+    "a1-poly-ops": {37, 38},
+    "a1-poly-factor": {51, 75, 91},
+    "a1-quad-solve": {75, 76, 91, 92},
+    "a1-complex": {92, 95},
+    "a1-func-concept": {15, 52, 53},
+    "a1-func-graph": {16, 55, 56, 57},
+    "a1-func-linexp": {48, 81},
+    "a1-systems": {17, 61, 64, 70},
+    "a1-geo-def": {9, 10, 11},
+    "a1-geo-proof": {10, 66, 67, 68},
+    "a1-geo-circle": {40, 66},
+    "a1-geo-sim": {6, 9},
+    "a1-geo-trig": {12, 19, 43, 80},
+    "a1-geo-measure": {13, 41, 42},
+    "a1-data-display": {23},
+    "a1-data-scatter": {24, 94},
+    "a1-data-interpret": {24, 94},
+}
+
+
+def test_shormann_alg1_items_cite_consistent_lessons(curricula):
+    """Every Algebra 1 item cites >=1 lesson in 1..100, consistent with its point."""
+    course = curricula["curriculum/shormann_algebra_1"]
+    for item in course.items.values():
+        for pt in item.points:
+            if pt in ALLOWED_LESSONS:
+                assert item.lesson_refs, f"{item.id} has no lesson_refs"
+                for L in item.lesson_refs:
+                    assert 1 <= L <= 100, f"{item.id} lesson {L} out of range"
+                    assert L in ALLOWED_LESSONS[pt], (
+                        f"{item.id} cites lesson {L} not allowed for {pt}"
+                    )
+
+
 @pytest.mark.parametrize("course_dir", COURSE_DIRS)
 def test_mcq_options_have_no_duplicate_values(course_dir, curricula):
     def parse_option(s):

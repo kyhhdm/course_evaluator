@@ -1,37 +1,20 @@
 points:
-  - id: a1-expr
-    strand: Expressions & Equations
-    title: Expressions and linear equations
-    description: Interpret algebraic expressions and solve one-variable linear equations.
+  # --- Strand: Number, Ratio & Quantity ---
+  - id: a1-num-realnum
+    strand: Number, Ratio & Quantity
+    title: Real numbers, absolute value, and order
+    description: Classify real numbers, compare and order them, and evaluate absolute value and order of operations.
     prerequisites: []
-    standard_refs: [CCSS.HSA.SSE.A.1, CCSS.HSA.CED.A.1, CCSS.HSA.REI.B.3]
-  - id: a1-linear
-    strand: Linear Functions & Graphing
-    title: Linear functions and their graphs
-    description: Use function notation and interpret slope and intercepts of linear functions.
-    prerequisites: [a1-expr]
-    standard_refs: [CCSS.HSF.IF.A.1, CCSS.HSF.IF.B.4, CCSS.HSF.LE.A.2]
-  - id: a1-systems
-    strand: Systems of Equations
-    title: Systems of linear equations
-    description: Solve pairs of linear equations in two variables.
-    prerequisites: [a1-linear]
-    standard_refs: [CCSS.HSA.REI.C.6]
-  - id: a1-poly
-    strand: Exponents & Polynomials
-    title: Exponents and polynomial operations
-    description: Apply exponent rules and add, subtract, and multiply polynomials.
-    prerequisites: [a1-expr]
-    standard_refs: [CCSS.HSA.APR.A.1, CCSS.HSN.RN.A.2]
-  - id: a1-geometry
-    strand: Integrated Geometry
-    title: Geometry foundations and measurement
-    description: Use precise definitions and compute perimeter, area, and volume.
-    prerequisites: []
-    standard_refs: [CCSS.HSG.CO.A.1, CCSS.HSG.GMD.A.3]
-  - id: a1-data
-    strand: Data & Probability
-    title: Describing data
-    description: Represent and summarize single-variable numeric data.
-    prerequisites: []
-    standard_refs: [CCSS.HSS.ID.A.1]
+    standard_refs: []
+  - id: a1-num-exprad
+    strand: Number, Ratio & Quantity
+    title: Exponents, radicals, and scientific notation
+    description: Apply exponent rules (whole, fractional, variable), simplify radicals, and convert scientific notation.
+    prerequisites: [a1-num-realnum]
+    standard_refs: [CCSS.HSN.RN.A.2]
+  - id: a1-num-units
+    strand: Number, Ratio & Quantity
+    title: Units, measurement, and proportional reasoning
+    description: Use units and unit conversions to guide solutions and reason with rates, percent, and proportion.
+    prerequisites: [a1-num-realnum]
+    standard_refs: [CCSS.HSN.Q.A.1]

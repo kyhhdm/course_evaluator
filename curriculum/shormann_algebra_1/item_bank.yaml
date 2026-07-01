@@ -1,190 +1,107 @@
 items:
-  # --- a1-expr ---
-  - id: A1EXPR-D1
+  # --- a1-num-realnum (L2-3) ---
+  - id: A1NUMRE-D1
     role: diagnostic
-    points: [a1-expr]
+    points: [a1-num-realnum]
     difficulty: 1
-    type: mcq
-    prompt: "In the expression 3x + 7, what is the coefficient of x?"
-    options: {A: "3", B: "7", C: "x", D: "10"}
-    answer: "A"
-    distractor_feedback: {B: "7 is the constant term, not the coefficient of x."}
-  - id: A1EXPR-D2
+    type: numeric
+    prompt: "Evaluate |{-8}|."
+    answer: "8"
+    lesson_refs: [3]
+  - id: A1NUMRE-D2
     role: diagnostic
-    points: [a1-expr]
+    points: [a1-num-realnum]
+    difficulty: 2
+    type: mcq
+    prompt: "Which list is ordered from least to greatest?"
+    options: {A: "-3, -1, 0, 2", B: "0, -1, -3, 2", C: "2, 0, -1, -3", D: "-1, -3, 0, 2"}
+    answer: "A"
+    lesson_refs: [2]
+  - id: A1NUMRE-P1
+    role: practice
+    points: [a1-num-realnum]
     difficulty: 2
     type: numeric
-    prompt: "Solve for x: 2x + 5 = 17. Enter x."
+    prompt: "Evaluate 3 + 2 * 4^2 - 5."
+    answer: "30"
+    lesson_refs: [3]
+  - id: A1NUMRE-P2
+    role: practice
+    points: [a1-num-realnum]
+    difficulty: 1
+    type: mcq
+    prompt: "Which number is irrational?"
+    options: {A: "sqrt(2)", B: "1/3", C: "-4", D: "0.25"}
+    answer: "A"
+    lesson_refs: [2]
+  # --- a1-num-exprad (L3, 30-33, 58) ---
+  - id: A1NUMEX-D1
+    role: diagnostic
+    points: [a1-num-exprad]
+    difficulty: 1
+    type: mcq
+    prompt: "Simplify x^3 * x^4."
+    options: {A: "x^7", B: "x^12", C: "2x^7", D: "x^(-1)"}
+    answer: "A"
+    lesson_refs: [30]
+  - id: A1NUMEX-D2
+    role: diagnostic
+    points: [a1-num-exprad]
+    difficulty: 2
+    type: mcq
+    prompt: "Which expression equals 0.00345 written in scientific notation?"
+    options: {A: "3.45 x 10^(-3)", B: "34.5 x 10^(-4)", C: "3.45 x 10^3", D: "0.345 x 10^(-2)"}
+    answer: "A"
+    lesson_refs: [33]
+  - id: A1NUMEX-P1
+    role: practice
+    points: [a1-num-exprad]
+    difficulty: 2
+    type: numeric
+    prompt: "Simplify sqrt(36). Enter the integer result."
     answer: "6"
-  - id: A1EXPR-P1
+    lesson_refs: [31]
+  - id: A1NUMEX-P2
     role: practice
-    points: [a1-expr]
-    difficulty: 1
-    type: mcq
-    prompt: "Which equation models 'five more than twice a number n is 19'?"
-    options: {A: "2n + 5 = 19", B: "5n + 2 = 19", C: "2n - 5 = 19", D: "2(n + 5) = 19"}
-    answer: "A"
-  - id: A1EXPR-P2
-    role: practice
-    points: [a1-expr]
-    difficulty: 2
-    type: numeric
-    prompt: "Solve for x: 3(x - 4) = 18. Enter x."
-    answer: "10"
-  # --- a1-linear ---
-  - id: A1LIN-D1
-    role: diagnostic
-    points: [a1-linear]
-    difficulty: 1
-    type: mcq
-    prompt: "What is the slope of the line y = 4x - 3?"
-    options: {A: "4", B: "-3", C: "3", D: "1/4"}
-    answer: "A"
-  - id: A1LIN-D2
-    role: diagnostic
-    points: [a1-linear]
-    difficulty: 2
-    type: mcq
-    prompt: "What is the y-intercept of the line y = 4x - 3?"
-    options: {A: "-3", B: "4", C: "3", D: "0"}
-    answer: "A"
-  - id: A1LIN-P1
-    role: practice
-    points: [a1-linear]
-    difficulty: 2
-    type: numeric
-    prompt: "For f(x) = 2x + 1, what is f(5)?"
-    answer: "11"
-  - id: A1LIN-P2
-    role: practice
-    points: [a1-linear]
-    difficulty: 2
-    type: mcq
-    prompt: "A line passes through (0, 2) with slope 3. Which equation is it?"
-    options: {A: "y = 3x + 2", B: "y = 2x + 3", C: "y = 3x - 2", D: "y = x + 3"}
-    answer: "A"
-  # --- a1-systems ---
-  - id: A1SYS-D1
-    role: diagnostic
-    points: [a1-systems]
-    difficulty: 2
-    type: mcq
-    prompt: "Solve the system y = x + 1 and y = 2x - 1. What is x?"
-    options: {A: "2", B: "1", C: "3", D: "-2"}
-    answer: "A"
-  - id: A1SYS-D2
-    role: diagnostic
-    points: [a1-systems]
-    difficulty: 2
-    type: numeric
-    prompt: "For the system x + y = 10 and x - y = 4, what is x?"
-    answer: "7"
-  - id: A1SYS-P1
-    role: practice
-    points: [a1-systems]
+    points: [a1-num-exprad]
     difficulty: 3
-    type: numeric
-    prompt: "For the system x + y = 10 and x - y = 4, what is y?"
-    answer: "3"
-  - id: A1SYS-P2
-    role: practice
-    points: [a1-systems]
-    difficulty: 2
     type: mcq
-    prompt: "How many solutions does a system of two parallel, non-identical lines have?"
-    options: {A: "None", B: "One", C: "Two", D: "Infinitely many"}
+    prompt: "Which expression is the simplified form of sqrt(48)?"
+    options: {A: "4*sqrt(3)", B: "6*sqrt(2)", C: "2*sqrt(12)", D: "3*sqrt(4)"}
     answer: "A"
-  # --- a1-poly ---
-  - id: A1POLY-D1
+    lesson_refs: [32]
+  # --- a1-num-units (L5-6, 44-45) ---
+  - id: A1NUMUN-D1
     role: diagnostic
-    points: [a1-poly]
-    difficulty: 1
-    type: mcq
-    prompt: "Simplify x^2 * x^3."
-    options: {A: "x^5", B: "x^6", C: "x^1", D: "2x^5"}
-    answer: "A"
-  - id: A1POLY-D2
-    role: diagnostic
-    points: [a1-poly]
-    difficulty: 2
-    type: mcq
-    prompt: "Add (2x + 3) + (5x - 1)."
-    options: {A: "7x + 2", B: "7x + 4", C: "10x - 3", D: "7x - 2"}
-    answer: "A"
-  - id: A1POLY-P1
-    role: practice
-    points: [a1-poly]
+    points: [a1-num-units]
     difficulty: 1
     type: numeric
-    prompt: "Evaluate 2^5."
-    answer: "32"
-  - id: A1POLY-P2
-    role: practice
-    points: [a1-poly]
+    prompt: "What is 25% of 80?"
+    answer: "20"
+    lesson_refs: [5]
+  - id: A1NUMUN-D2
+    role: diagnostic
+    points: [a1-num-units]
     difficulty: 2
     type: mcq
-    prompt: "Multiply (x + 2)(x + 3)."
-    options: {A: "x^2 + 5x + 6", B: "x^2 + 6x + 6", C: "x^2 + 5x + 5", D: "x^2 + 6"}
+    prompt: "Use a unit multiplier to convert 3.5 km to meters. Which answer is correct?"
+    options: {A: "3500", B: "350", C: "35000", D: "0.35"}
     answer: "A"
-  # --- a1-geometry ---
-  - id: A1GEO-D1
-    role: diagnostic
-    points: [a1-geometry]
-    difficulty: 1
-    type: mcq
-    prompt: "Two lines that never meet and stay the same distance apart are called:"
-    options: {A: "parallel", B: "perpendicular", C: "intersecting", D: "skew"}
-    answer: "A"
-  - id: A1GEO-D2
-    role: diagnostic
-    points: [a1-geometry]
+    lesson_refs: [44]
+  - id: A1NUMUN-P1
+    role: practice
+    points: [a1-num-units]
     difficulty: 2
     type: numeric
-    prompt: "A rectangular box measures 2 by 3 by 4. What is its volume?"
-    answer: "24"
-  - id: A1GEO-P1
+    prompt: "A car travels 150 miles in 3 hours. What is its average speed in miles per hour?"
+    answer: "50"
+    lesson_refs: [6]
+  - id: A1NUMUN-P2
     role: practice
-    points: [a1-geometry]
-    difficulty: 1
+    points: [a1-num-units]
+    difficulty: 3
     type: mcq
-    prompt: "Perpendicular lines meet at an angle of:"
-    options: {A: "90 degrees", B: "45 degrees", C: "180 degrees", D: "60 degrees"}
+    prompt: "Use unit multipliers to convert 2 feet to centimeters (1 ft = 12 in, 1 in = 2.54 cm). Which answer is correct?"
+    options: {A: "60.96", B: "50.80", C: "24", D: "76.2"}
     answer: "A"
-  - id: A1GEO-P2
-    role: practice
-    points: [a1-geometry]
-    difficulty: 2
-    type: numeric
-    prompt: "A cube has side length 3. What is its volume?"
-    answer: "27"
-  # --- a1-data ---
-  - id: A1DATA-D1
-    role: diagnostic
-    points: [a1-data]
-    difficulty: 1
-    type: numeric
-    prompt: "Find the mean of 4, 6, 8, and 10."
-    answer: "7"
-  - id: A1DATA-D2
-    role: diagnostic
-    points: [a1-data]
-    difficulty: 2
-    type: mcq
-    prompt: "Which display best shows the distribution of a single numeric variable?"
-    options: {A: "histogram", B: "scatter plot", C: "pie chart of names", D: "road map"}
-    answer: "A"
-  - id: A1DATA-P1
-    role: practice
-    points: [a1-data]
-    difficulty: 1
-    type: numeric
-    prompt: "Find the median of 3, 5, and 9."
-    answer: "5"
-  - id: A1DATA-P2
-    role: practice
-    points: [a1-data]
-    difficulty: 2
-    type: mcq
-    prompt: "What is the range of the data set 2, 5, 9?"
-    options: {A: "7", B: "9", C: "2", D: "5"}
-    answer: "A"
+    lesson_refs: [44]
