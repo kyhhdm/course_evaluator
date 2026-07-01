@@ -81,7 +81,26 @@ def create_app(secret: str | None = None) -> Flask:
         a = store.get_attempt(attempt_id)
         if a is None:
             abort(404)
-        return store.render_attempt_html(a)
+        nav = (
+            f'<p><a href="/students/{a["student_id"]}">&larr; Student</a> &middot; '
+            f'<a href="/attempts/{attempt_id}/review">Answer review</a></p>'
+        )
+        return store.render_attempt_html(a, nav_html=nav)
+
+    @app.get("/attempts/<int:attempt_id>/review")
+    def attempt_review(attempt_id):
+        a = store.get_attempt(attempt_id)
+        if a is None:
+            abort(404)
+        review = a["snapshot"].get("review")
+        if review is None:  # legacy v1 attempt: recompute from stored responses
+            if a["course_id"] not in list_courses():
+                abort(404)
+            from engine.review import build_review
+
+            review = build_review(_load(a["course_id"]), a["responses"])
+        student = _find_student(a["student_id"])
+        return render_template("review.html", student=student, attempt=a, review=review)
 
     @app.get("/students/<int:student_id>/test")
     def take_test(student_id):

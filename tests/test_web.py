@@ -101,3 +101,49 @@ def test_unknown_or_traversal_course_is_rejected(client):
     # path-traversal / unknown course must 404, never 500 or read outside curriculum/
     assert client.get(f"/students/{sid}/test?course=../../etc").status_code == 404
     assert client.get(f"/students/{sid}/test?course=nope").status_code == 404
+
+
+def test_answer_review_page_and_report_link(client):
+    from engine import store
+    from engine.loader import load_course, load_yaml
+
+    sid = store.create_student("Leo")
+    c = load_course("curriculum/grade5_math", "schemas", "methodology", "standards")
+    resp = load_yaml("curriculum/grade5_math/sample_responses.yaml")["responses"]
+    aid = store.save_attempt(sid, "grade5_math", resp, c)
+
+    review = client.get(f"/attempts/{aid}/review")
+    assert review.status_code == 200
+    assert b"Answer review" in review.data
+    assert ("✓".encode() in review.data) or ("✗".encode() in review.data)  # a ✓ or ✗
+    report = client.get(f"/attempts/{aid}")
+    assert f"/attempts/{aid}/review".encode() in report.data                          # link on report
+
+
+def test_answer_review_legacy_v1_recomputes(client):
+    import json
+    import os
+    import sqlite3
+    from engine import store
+    from engine.loader import load_course, load_yaml
+
+    sid = store.create_student("Leo")
+    c = load_course("curriculum/grade5_math", "schemas", "methodology", "standards")
+    resp = load_yaml("curriculum/grade5_math/sample_responses.yaml")["responses"]
+    aid = store.save_attempt(sid, "grade5_math", resp, c)
+
+    # Simulate a legacy v1 snapshot with no frozen review.
+    snap = store.get_attempt(aid)["snapshot"]
+    snap.pop("review", None)
+    snap["version"] = 1
+    conn = sqlite3.connect(os.environ["COURSE_EVAL_DB"])
+    conn.execute("UPDATE attempts SET snapshot_json = ? WHERE id = ?", (json.dumps(snap), aid))
+    conn.commit()
+    conn.close()
+
+    r = client.get(f"/attempts/{aid}/review")
+    assert r.status_code == 200 and b"Answer review" in r.data   # rebuilt via recompute
+
+
+def test_unknown_attempt_review_404(client):
+    assert client.get("/attempts/999/review").status_code == 404
