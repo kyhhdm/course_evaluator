@@ -37,3 +37,28 @@ points:
     description: Solve one-variable linear equations, including multi-step and variables on both sides.
     prerequisites: [a1-expr-interpret]
     standard_refs: [CCSS.HSA.REI.B.3]
+  # --- Strand: Polynomials & Quadratics ---
+  - id: a1-poly-ops
+    strand: Polynomials & Quadratics
+    title: Polynomial operations
+    description: Add, subtract, and multiply polynomials and recognize closure.
+    prerequisites: [a1-expr-interpret, a1-num-exprad]
+    standard_refs: [CCSS.HSA.APR.A.1]
+  - id: a1-poly-factor
+    strand: Polynomials & Quadratics
+    title: Factoring and equivalent forms
+    description: Factor quadratic expressions and choose an equivalent form that reveals properties.
+    prerequisites: [a1-poly-ops]
+    standard_refs: [CCSS.HSA.SSE.B.3]
+  - id: a1-quad-solve
+    strand: Polynomials & Quadratics
+    title: Solve quadratic equations
+    description: Solve quadratics by factoring, completing the square, and the quadratic formula.
+    prerequisites: [a1-poly-factor, a1-expr-linear]
+    standard_refs: [CCSS.HSA.REI.B.4]
+  - id: a1-complex
+    strand: Polynomials & Quadratics
+    title: Complex numbers and complex solutions
+    description: Understand the imaginary unit i and find complex solutions of quadratics.
+    prerequisites: [a1-quad-solve]
+    standard_refs: [CCSS.HSN.CN.A.1, CCSS.HSN.CN.C.7]

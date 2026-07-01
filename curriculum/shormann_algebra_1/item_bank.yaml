@@ -210,3 +210,145 @@ items:
     options: {A: "3", B: "9", C: "1", D: "-3"}
     answer: "A"
     lesson_refs: [46]
+  # --- a1-poly-ops (L37, L38) ---
+  - id: A1POLYO-D1
+    role: diagnostic
+    points: [a1-poly-ops]
+    difficulty: 1
+    type: numeric
+    prompt: "Add the polynomials: (2x + 3) + (5x - 1). What is the coefficient of x in the result?"
+    answer: "7"
+    lesson_refs: [37]
+  - id: A1POLYO-D2
+    role: diagnostic
+    points: [a1-poly-ops]
+    difficulty: 2
+    type: mcq
+    prompt: "Which expression equals (x + 2)(x + 3)?"
+    options: {A: "x^2 + 5x + 6", B: "x^2 + 6x + 5", C: "x^2 + 5x + 5", D: "x^2 + 6x + 6"}
+    answer: "A"
+    lesson_refs: [37]
+  - id: A1POLYO-P1
+    role: practice
+    points: [a1-poly-ops]
+    difficulty: 2
+    type: numeric
+    prompt: "Subtract the polynomials: (4x^2 - 3x + 7) - (x^2 + 2x - 1). What is the constant term of the result?"
+    answer: "8"
+    lesson_refs: [38]
+  - id: A1POLYO-P2
+    role: practice
+    points: [a1-poly-ops]
+    difficulty: 3
+    type: mcq
+    prompt: "Which expression equals (2x - 1)(x + 4)?"
+    options: {A: "2x^2 + 7x - 4", B: "2x^2 - 7x - 4", C: "2x^2 + 7x + 4", D: "2x^2 + 8x - 4"}
+    answer: "A"
+    lesson_refs: [37]
+  # --- a1-poly-factor (L51, L75, L91) ---
+  - id: A1POLYF-D1
+    role: diagnostic
+    points: [a1-poly-factor]
+    difficulty: 1
+    type: mcq
+    prompt: "Which pair of binomials is the factored form of x^2 + 5x + 6?"
+    options: {A: "(x + 2)(x + 3)", B: "(x + 1)(x + 6)", C: "(x + 2)(x + 4)", D: "(x - 2)(x - 3)"}
+    answer: "A"
+    lesson_refs: [51]
+  - id: A1POLYF-D2
+    role: diagnostic
+    points: [a1-poly-factor]
+    difficulty: 2
+    type: numeric
+    prompt: "Factor x^2 - 7x + 12 = 0 and find the larger root."
+    answer: "4"
+    lesson_refs: [75]
+  - id: A1POLYF-P1
+    role: practice
+    points: [a1-poly-factor]
+    difficulty: 2
+    type: mcq
+    prompt: "Which is the factored form of x^2 - x - 6?"
+    options: {A: "(x - 3)(x + 2)", B: "(x + 3)(x - 2)", C: "(x - 6)(x + 1)", D: "(x + 6)(x - 1)"}
+    answer: "A"
+    lesson_refs: [51]
+  - id: A1POLYF-P2
+    role: practice
+    points: [a1-poly-factor]
+    difficulty: 3
+    type: numeric
+    prompt: "Factor x^2 + x - 12 = 0 and find the positive root."
+    answer: "3"
+    lesson_refs: [75]
+  # --- a1-quad-solve (L75, L76, L91, L92) ---
+  - id: A1QUAD-D1
+    role: diagnostic
+    points: [a1-quad-solve]
+    difficulty: 1
+    type: numeric
+    prompt: "Solve by factoring: x^2 - 5x + 6 = 0. What is the larger root?"
+    answer: "3"
+    lesson_refs: [75]
+  - id: A1QUAD-D2
+    role: diagnostic
+    points: [a1-quad-solve]
+    difficulty: 2
+    type: numeric
+    prompt: "Solve by factoring: x^2 - 6x + 9 = 0. The equation has a repeated root. What is that root?"
+    answer: "3"
+    lesson_refs: [76]
+  - id: A1QUAD-P1
+    role: practice
+    points: [a1-quad-solve]
+    difficulty: 2
+    type: mcq
+    prompt: "Use the quadratic formula to solve x^2 - 7x + 10 = 0. What is the larger root?"
+    options: {A: "5", B: "2", C: "7", D: "10"}
+    answer: "A"
+    lesson_refs: [92]
+  - id: A1QUAD-P2
+    role: practice
+    points: [a1-quad-solve]
+    difficulty: 3
+    type: mcq
+    prompt: "Use completing the square to solve x^2 + 4x - 5 = 0. Which lists both roots correctly?"
+    options: {A: "x = 1 and x = -5", B: "x = 5 and x = -1", C: "x = -1 and x = -5", D: "x = 1 and x = 5"}
+    answer: "A"
+    lesson_refs: [91]
+  # --- a1-complex (L92, L95) ---
+  - id: A1CPLX-D1
+    role: diagnostic
+    points: [a1-complex]
+    difficulty: 1
+    type: mcq
+    prompt: "What is the value of i^2?"
+    options: {A: "-1", B: "1", C: "i", D: "-i"}
+    answer: "A"
+    lesson_refs: [92]
+  - id: A1CPLX-D2
+    role: diagnostic
+    points: [a1-complex]
+    difficulty: 2
+    type: mcq
+    prompt: "Solve x^2 + 1 = 0. Which lists the two roots correctly?"
+    options: {A: "i and -i", B: "1 and -1", C: "sqrt(1) and -sqrt(1)", D: "i and i"}
+    answer: "A"
+    lesson_refs: [92]
+  - id: A1CPLX-P1
+    role: practice
+    points: [a1-complex]
+    difficulty: 2
+    type: mcq
+    prompt: "Use the quadratic formula to solve x^2 + 4 = 0. Which lists both complex roots?"
+    options: {A: "2i and -2i", B: "4i and -4i", C: "2 and -2", D: "sqrt(4) and -sqrt(4)"}
+    answer: "A"
+    lesson_refs: [92]
+  - id: A1CPLX-P2
+    role: practice
+    points: [a1-complex]
+    difficulty: 3
+    type: mcq
+    prompt: "Use the quadratic formula to find the complex roots of x^2 - 2x + 5 = 0. Which answer is correct?"
+    options: {A: "1 + 2i and 1 - 2i", B: "2 + i and 2 - i", C: "-1 + 2i and -1 - 2i", D: "1 + 4i and 1 - 4i"}
+    answer: "A"
+    lesson_refs: [95]
