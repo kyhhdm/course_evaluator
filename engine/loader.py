@@ -45,6 +45,7 @@ def _build_items(ib: dict) -> dict[str, Item]:
             options=it.get("options", {}),
             distractor_feedback=it.get("distractor_feedback", {}),
             role=it.get("role", "diagnostic"),
+            lesson_refs=it.get("lesson_refs", []),
         )
         for it in ib["items"]
     }

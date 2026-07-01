@@ -17,7 +17,8 @@
           "answer": {"type": "string"},
           "options": {"type": "object", "additionalProperties": {"type": "string"}},
           "distractor_feedback": {"type": "object", "additionalProperties": {"type": "string"}},
-          "role": {"enum": ["diagnostic", "practice"]}
+          "role": {"enum": ["diagnostic", "practice"]},
+          "lesson_refs": {"type": "array", "items": {"type": "integer", "minimum": 1}}
         },
         "additionalProperties": false
       }

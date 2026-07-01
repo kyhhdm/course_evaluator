@@ -64,6 +64,14 @@ def test_curriculum_accepts_meta_and_defaults_none():
     assert c2.meta.grade == "5"
 
 
+def test_item_lesson_refs_field():
+    """Item accepts lesson_refs; defaults to empty list."""
+    from engine.models import Item
+    base = dict(id="X", points=("p",), difficulty=1, type="numeric", prompt="q", answer="1")
+    assert Item(**base).lesson_refs == []
+    assert Item(**base, lesson_refs=[43, 80]).lesson_refs == [43, 80]
+
+
 def test_items_for_point_filters_by_role():
     points = {"a": KnowledgePoint("a", "Number", "A", "d", (), ("X",))}
     items = {
