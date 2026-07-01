@@ -62,3 +62,22 @@ points:
     description: Understand the imaginary unit i and find complex solutions of quadratics.
     prerequisites: [a1-quad-solve]
     standard_refs: [CCSS.HSN.CN.A.1, CCSS.HSN.CN.C.7]
+  # --- Strand: Functions & Modeling ---
+  - id: a1-func-concept
+    strand: Functions & Modeling
+    title: Function concept, notation, domain and range
+    description: Use function notation, evaluate functions, and identify domain and range.
+    prerequisites: [a1-expr-linear]
+    standard_refs: [CCSS.HSF.IF.A.1]
+  - id: a1-func-graph
+    strand: Functions & Modeling
+    title: Graph key features and transformations
+    description: Interpret intercepts, slope, and increasing/decreasing behavior, and describe the effect of shifts on a graph.
+    prerequisites: [a1-func-concept]
+    standard_refs: [CCSS.HSF.IF.B.4, CCSS.HSF.BF.B.3]
+  - id: a1-func-linexp
+    strand: Functions & Modeling
+    title: Linear versus exponential; constructing models
+    description: Distinguish linear from exponential situations and construct a linear or exponential model from data.
+    prerequisites: [a1-func-concept]
+    standard_refs: [CCSS.HSF.LE.A.1, CCSS.HSF.LE.A.2]

@@ -352,3 +352,114 @@ items:
     options: {A: "1 + 2i and 1 - 2i", B: "2 + i and 2 - i", C: "-1 + 2i and -1 - 2i", D: "1 + 4i and 1 - 4i"}
     answer: "A"
     lesson_refs: [95]
+  # --- a1-func-concept (L15, L52, L53) ---
+  - id: A1FUNC-D1
+    role: diagnostic
+    points: [a1-func-concept]
+    difficulty: 1
+    type: mcq
+    prompt: "If f(x) = 2x + 1, what is f(5)?"
+    options: {A: "11", B: "9", C: "13", D: "7"}
+    answer: "A"
+    lesson_refs: [15]
+  - id: A1FUNC-D2
+    role: diagnostic
+    points: [a1-func-concept]
+    difficulty: 2
+    type: mcq
+    prompt: "What is the domain of f(x) = sqrt(x - 3)?"
+    options: {A: "x >= 3", B: "x >= 0", C: "x > 3", D: "all real numbers"}
+    answer: "A"
+    lesson_refs: [15]
+  - id: A1FUNC-P1
+    role: practice
+    points: [a1-func-concept]
+    difficulty: 2
+    type: mcq
+    prompt: "If g(x) = x^2 - 3x + 2, what is g(-1)?"
+    options: {A: "6", B: "0", C: "4", D: "-2"}
+    answer: "A"
+    lesson_refs: [15]
+  - id: A1FUNC-P2
+    role: practice
+    points: [a1-func-concept]
+    difficulty: 2
+    type: mcq
+    prompt: "Which describes the range of f(x) = x^2?"
+    options: {A: "y >= 0", B: "all real numbers", C: "y > 0", D: "y <= 0"}
+    answer: "A"
+    lesson_refs: [52]
+  # --- a1-func-graph (L16, L55, L56, L57) ---
+  - id: A1FGRA-D1
+    role: diagnostic
+    points: [a1-func-graph]
+    difficulty: 1
+    type: mcq
+    prompt: "For the line y = 4x - 3, what is the slope?"
+    options: {A: "4", B: "-3", C: "3", D: "-4"}
+    answer: "A"
+    lesson_refs: [16]
+  - id: A1FGRA-D2
+    role: diagnostic
+    points: [a1-func-graph]
+    difficulty: 2
+    type: mcq
+    prompt: "The graph of f(x) = x^2 is shifted up 3 units. Which equation represents the new graph?"
+    options: {A: "g(x) = x^2 + 3", B: "g(x) = x^2 - 3", C: "g(x) = (x + 3)^2", D: "g(x) = (x - 3)^2"}
+    answer: "A"
+    lesson_refs: [57]
+  - id: A1FGRA-P1
+    role: practice
+    points: [a1-func-graph]
+    difficulty: 2
+    type: mcq
+    prompt: "What is the x-intercept of the line y = 3x - 6?"
+    options: {A: "2", B: "-2", C: "6", D: "-6"}
+    answer: "A"
+    lesson_refs: [16]
+  - id: A1FGRA-P2
+    role: practice
+    points: [a1-func-graph]
+    difficulty: 3
+    type: mcq
+    prompt: "The graph of f(x) = |x| is shifted 2 units to the right. Where is the vertex of the new graph?"
+    options: {A: "(2, 0)", B: "(-2, 0)", C: "(0, 2)", D: "(0, -2)"}
+    answer: "A"
+    lesson_refs: [57]
+  # --- a1-func-linexp (L48, L81) ---
+  - id: A1FLE-D1
+    role: diagnostic
+    points: [a1-func-linexp]
+    difficulty: 2
+    type: mcq
+    prompt: "Which table shows an exponential pattern (constant ratio) rather than a linear pattern (constant difference)?"
+    options: {A: "x: 0,1,2,3  f(x): 1,3,9,27", B: "x: 0,1,2,3  f(x): 2,5,8,11", C: "x: 0,1,2,3  f(x): 4,7,10,13", D: "x: 0,1,2,3  f(x): 0,4,8,12"}
+    answer: "A"
+    lesson_refs: [81]
+  - id: A1FLE-D2
+    role: diagnostic
+    points: [a1-func-linexp]
+    difficulty: 2
+    type: mcq
+    prompt: "A line passes through (0, 1) and (2, 7). Which equation fits this line?"
+    options: {A: "y = 3x + 1", B: "y = 2x + 1", C: "y = 3x - 1", D: "y = 6x + 1"}
+    answer: "A"
+    lesson_refs: [48]
+  - id: A1FLE-P1
+    role: practice
+    points: [a1-func-linexp]
+    difficulty: 2
+    type: mcq
+    prompt: "A population doubles every year starting at 50. Which type of function best models this situation?"
+    options: {A: "Exponential", B: "Linear", C: "Quadratic", D: "Square root"}
+    answer: "A"
+    lesson_refs: [48]
+  - id: A1FLE-P2
+    role: practice
+    points: [a1-func-linexp]
+    difficulty: 3
+    type: mcq
+    prompt: "A line passes through (1, 5) and (3, 11). Which equation represents this line?"
+    options: {A: "y = 3x + 2", B: "y = 2x + 3", C: "y = 3x - 2", D: "y = 6x - 1"}
+    answer: "A"
+    lesson_refs: [48]
