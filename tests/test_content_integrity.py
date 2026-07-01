@@ -9,6 +9,7 @@ STANDARDS_DIR = "standards"
 # Courses covered by the content-integrity gate. Later courses are appended here.
 COURSE_DIRS = [
     "curriculum/grade5_math",
+    "curriculum/shormann_algebra_1",
 ]
 
 
