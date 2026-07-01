@@ -50,7 +50,7 @@ items:
     difficulty: 2
     type: mcq
     prompt: "Which expression equals 0.00345 written in scientific notation?"
-    options: {A: "3.45 x 10^(-3)", B: "34.5 x 10^(-4)", C: "3.45 x 10^3", D: "0.345 x 10^(-2)"}
+    options: {A: "3.45 x 10^(-3)", B: "3.45 x 10^(-4)", C: "3.45 x 10^3", D: "0.345 x 10^(-2)"}
     answer: "A"
     lesson_refs: [33]
   - id: A1NUMEX-P1
@@ -67,9 +67,9 @@ items:
     difficulty: 3
     type: mcq
     prompt: "Which expression is the simplified form of sqrt(48)?"
-    options: {A: "4*sqrt(3)", B: "6*sqrt(2)", C: "2*sqrt(12)", D: "3*sqrt(4)"}
+    options: {A: "4*sqrt(3)", B: "6*sqrt(2)", C: "2*sqrt(6)", D: "3*sqrt(4)"}
     answer: "A"
-    lesson_refs: [32]
+    lesson_refs: [31]
   # --- a1-num-units (L5-6, 44-45) ---
   - id: A1NUMUN-D1
     role: diagnostic
