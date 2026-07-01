@@ -331,7 +331,7 @@ items:
     difficulty: 2
     type: mcq
     prompt: "Solve x^2 + 1 = 0. Which lists the two roots correctly?"
-    options: {A: "i and -i", B: "1 and -1", C: "sqrt(1) and -sqrt(1)", D: "i and i"}
+    options: {A: "i and -i", B: "1 and -1", C: "i and 1", D: "2i and -2i"}
     answer: "A"
     lesson_refs: [92]
   - id: A1CPLX-P1
@@ -340,7 +340,7 @@ items:
     difficulty: 2
     type: mcq
     prompt: "Use the quadratic formula to solve x^2 + 4 = 0. Which lists both complex roots?"
-    options: {A: "2i and -2i", B: "4i and -4i", C: "2 and -2", D: "sqrt(4) and -sqrt(4)"}
+    options: {A: "2i and -2i", B: "4i and -4i", C: "2 and -2", D: "2i and 2"}
     answer: "A"
     lesson_refs: [92]
   - id: A1CPLX-P2
@@ -453,7 +453,7 @@ items:
     prompt: "A population doubles every year starting at 50. Which type of function best models this situation?"
     options: {A: "Exponential", B: "Linear", C: "Quadratic", D: "Square root"}
     answer: "A"
-    lesson_refs: [48]
+    lesson_refs: [81]
   - id: A1FLE-P2
     role: practice
     points: [a1-func-linexp]
@@ -532,7 +532,7 @@ items:
     difficulty: 3
     type: mcq
     prompt: "Which congruency theorem applies when two sides and the included angle of one triangle are equal to two sides and the included angle of another triangle?"
-    options: {A: "SAS", B: "SSS", C: "HL", D: "AAAS"}
+    options: {A: "SAS", B: "SSS", C: "HL", D: "AAS"}
     answer: "A"
     lesson_refs: [68]
   # --- a1-geo-circle (L40, L66) ---

@@ -144,6 +144,13 @@ def test_shormann_alg1_items_cite_consistent_lessons(curricula):
                     )
 
 
+def test_shormann_alg1_only_foundational_point_has_no_standard(curricula):
+    """Guard against accidental empty standard_refs: only the foundational point should have none."""
+    course = curricula["curriculum/shormann_algebra_1"]
+    empty = {pid for pid, p in course.points.items() if not p.standard_refs}
+    assert empty == {"a1-num-realnum"}
+
+
 @pytest.mark.parametrize("course_dir", COURSE_DIRS)
 def test_mcq_options_have_no_duplicate_values(course_dir, curricula):
     def parse_option(s):

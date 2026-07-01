@@ -57,7 +57,6 @@ def test_grade5_math_real_coverage():
 def test_shormann_alg1_full_coverage():
     """Algebra 1 covers all 25 HS CCSS standards."""
     from engine.loader import load_course
-    from engine.coverage import compute_coverage
     course = load_course("curriculum/shormann_algebra_1", "schemas", "methodology", "standards")
     report = compute_coverage(course)
     assert report.total == 25
