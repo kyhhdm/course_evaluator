@@ -18,3 +18,22 @@ points:
     description: Use units and unit conversions to guide solutions and reason with rates, percent, and proportion.
     prerequisites: [a1-num-realnum]
     standard_refs: [CCSS.HSN.Q.A.1]
+  # --- Strand: Expressions & Equations ---
+  - id: a1-expr-interpret
+    strand: Expressions & Equations
+    title: Interpret and simplify expressions
+    description: Interpret parts of an algebraic expression and simplify using the commutative, associative, and distributive properties.
+    prerequisites: [a1-num-realnum]
+    standard_refs: [CCSS.HSA.SSE.A.1]
+  - id: a1-expr-model
+    strand: Expressions & Equations
+    title: Model situations with equations
+    description: Create one-variable equations from word problems and use them to solve.
+    prerequisites: [a1-expr-interpret]
+    standard_refs: [CCSS.HSA.CED.A.1]
+  - id: a1-expr-linear
+    strand: Expressions & Equations
+    title: Solve linear equations
+    description: Solve one-variable linear equations, including multi-step and variables on both sides.
+    prerequisites: [a1-expr-interpret]
+    standard_refs: [CCSS.HSA.REI.B.3]

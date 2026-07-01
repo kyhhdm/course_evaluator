@@ -105,3 +105,108 @@ items:
     options: {A: "60.96", B: "50.80", C: "24", D: "76.2"}
     answer: "A"
     lesson_refs: [44]
+  # --- a1-expr-interpret (L8, 35, 36, 37, 38) ---
+  - id: A1EXPRI-D1
+    role: diagnostic
+    points: [a1-expr-interpret]
+    difficulty: 1
+    type: numeric
+    prompt: "In the expression 5x, what is the coefficient of x?"
+    answer: "5"
+    lesson_refs: [8]
+  - id: A1EXPRI-D2
+    role: diagnostic
+    points: [a1-expr-interpret]
+    difficulty: 2
+    type: mcq
+    prompt: "Which expression is the expanded form of 3(2x - 4)?"
+    options: {A: "6x - 12", B: "6x - 4", C: "2x - 12", D: "6x + 12"}
+    answer: "A"
+    lesson_refs: [8]
+  - id: A1EXPRI-P1
+    role: practice
+    points: [a1-expr-interpret]
+    difficulty: 2
+    type: numeric
+    prompt: "Simplify 4x + 3 + 2x - 7, then evaluate at x = 2."
+    answer: "8"
+    lesson_refs: [35]
+  - id: A1EXPRI-P2
+    role: practice
+    points: [a1-expr-interpret]
+    difficulty: 3
+    type: mcq
+    prompt: "Which expression is the fully simplified form of 2(x + 3) + 4x - 1?"
+    options: {A: "6x + 5", B: "6x + 7", C: "4x + 5", D: "6x - 1"}
+    answer: "A"
+    lesson_refs: [37]
+  # --- a1-expr-model (L7, 8, 48) ---
+  - id: A1EXPRM-D1
+    role: diagnostic
+    points: [a1-expr-model]
+    difficulty: 1
+    type: numeric
+    prompt: "The product of 5 and a number is 35. Find the number."
+    answer: "7"
+    lesson_refs: [7]
+  - id: A1EXPRM-D2
+    role: diagnostic
+    points: [a1-expr-model]
+    difficulty: 2
+    type: mcq
+    prompt: "Which equation models the statement '8 less than twice a number is 14'?"
+    options: {A: "2N - 8 = 14", B: "8 - 2N = 14", C: "2N + 8 = 14", D: "2(N - 8) = 14"}
+    answer: "A"
+    lesson_refs: [8]
+  - id: A1EXPRM-P1
+    role: practice
+    points: [a1-expr-model]
+    difficulty: 2
+    type: numeric
+    prompt: "A farmer earns $4 per basket of berries plus a $10 base pay. If she earned $50 total, how many baskets did she pick?"
+    answer: "10"
+    lesson_refs: [8]
+  - id: A1EXPRM-P2
+    role: practice
+    points: [a1-expr-model]
+    difficulty: 3
+    type: mcq
+    prompt: "Which equation models 'three times the sum of a number and 5 equals 24'?"
+    options: {A: "3(N + 5) = 24", B: "3N + 5 = 24", C: "3N - 5 = 24", D: "3(N - 5) = 24"}
+    answer: "A"
+    lesson_refs: [8]
+  # --- a1-expr-linear (L7, 46) ---
+  - id: A1EXPRL-D1
+    role: diagnostic
+    points: [a1-expr-linear]
+    difficulty: 1
+    type: numeric
+    prompt: "Solve for x: 3x + 7 = 22."
+    answer: "5"
+    lesson_refs: [7]
+  - id: A1EXPRL-D2
+    role: diagnostic
+    points: [a1-expr-linear]
+    difficulty: 2
+    type: mcq
+    prompt: "Solve for x: 2x - 5 = 3x + 1. Which value is correct?"
+    options: {A: "-6", B: "6", C: "-4", D: "4"}
+    answer: "A"
+    lesson_refs: [46]
+  - id: A1EXPRL-P1
+    role: practice
+    points: [a1-expr-linear]
+    difficulty: 2
+    type: numeric
+    prompt: "Solve for x: 4(x - 2) = 2x + 6."
+    answer: "7"
+    lesson_refs: [46]
+  - id: A1EXPRL-P2
+    role: practice
+    points: [a1-expr-linear]
+    difficulty: 3
+    type: mcq
+    prompt: "Solve for x: 3(2x + 1) - x = 2(x + 6). Which value is correct?"
+    options: {A: "3", B: "9", C: "1", D: "-3"}
+    answer: "A"
+    lesson_refs: [46]
