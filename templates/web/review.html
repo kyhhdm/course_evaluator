@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Answer review{% endblock %}
+{% block body %}
+<p><a href="/attempts/{{ attempt.id }}">&larr; Back to report</a> &middot; <a href="/students/{{ student.id }}">{{ student.name }}</a></p>
+<h1>Answer review — {{ student.name }}</h1>
+{% for strand in review %}
+<h2>{{ strand.strand }}</h2>
+{% for pg in strand.points %}
+<h3>{{ pg.title }} — {{ pg.correct_count }} of {{ pg.total }} correct</h3>
+{% for q in pg.questions %}
+<div class="q" style="margin: .6rem 0; padding-left: .6rem; border-left: 3px solid #ccc;">
+<p><strong>{{ q.prompt }}</strong></p>
+{% if q.status == "skipped" %}
+<p>Skipped. Correct answer: {{ q.correct_answer }}{% if q.correct_answer_text %} ({{ q.correct_answer_text }}){% endif %}</p>
+{% elif q.is_correct %}
+<p>✓ Your answer: {{ q.student_answer }}{% if q.student_answer_text %} ({{ q.student_answer_text }}){% endif %}</p>
+{% else %}
+<p>✗ Your answer: {{ q.student_answer }}{% if q.student_answer_text %} ({{ q.student_answer_text }}){% endif %}</p>
+<p>Correct answer: {{ q.correct_answer }}{% if q.correct_answer_text %} ({{ q.correct_answer_text }}){% endif %}</p>
+{% if q.feedback %}<p><em>{{ q.feedback }}</em></p>{% endif %}
+{% endif %}
+</div>
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% endblock %}

@@ -84,6 +84,7 @@ def save_attempt(
     from engine.paper import drop_blank_responses
     from engine.path import build_path
     from engine.report_view import build_parent_view
+    from engine.review import build_review
     from engine.score import evaluate
 
     clean = drop_blank_responses(responses)
@@ -113,9 +114,10 @@ def save_attempt(
             ],
         }
         snapshot = {
-            "version": 1,  # snapshot schema version; lets future migrations branch cheaply
+            "version": 2,  # v2 adds the frozen per-question review
             "parent_view": dataclasses.asdict(view),
             "student_plan": student_plan,
+            "review": build_review(curriculum, clean),
         }
 
         cur = conn.execute(
@@ -154,10 +156,10 @@ def list_attempts(student_id: int, db_path: str | None = None) -> list[dict]:
         conn.close()
 
 
-def render_attempt_html(attempt: dict, templates_dir: str = "templates") -> str:
+def render_attempt_html(attempt: dict, templates_dir: str = "templates", nav_html: str = "") -> str:
     from engine.paper import render_parent_view
 
-    return render_parent_view(attempt["snapshot"]["parent_view"], templates_dir)
+    return render_parent_view(attempt["snapshot"]["parent_view"], templates_dir, nav_html)
 
 
 def get_attempt(attempt_id: int, db_path: str | None = None) -> dict | None:
