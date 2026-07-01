@@ -140,3 +140,133 @@ standards:
     grade: 5
     domain: Geometry
     description: "Classify two-dimensional figures in a hierarchy based on properties."
+  # --- High School: Number & Quantity ---
+  CCSS.HSN.Q.A.1:
+    framework: CCSS-Math
+    grade: HS
+    domain: Number & Quantity
+    description: "Use units to guide the solution of problems; choose and interpret scale and the origin in graphs and data displays."
+  CCSS.HSN.RN.A.2:
+    framework: CCSS-Math
+    grade: HS
+    domain: Number & Quantity
+    description: "Rewrite expressions involving radicals and rational exponents using the properties of exponents."
+  CCSS.HSN.CN.A.1:
+    framework: CCSS-Math
+    grade: HS
+    domain: Number & Quantity
+    description: "Know there is a complex number i with i^2 = -1, and that every complex number has the form a + bi."
+  CCSS.HSN.CN.C.7:
+    framework: CCSS-Math
+    grade: HS
+    domain: Number & Quantity
+    description: "Solve quadratic equations with real coefficients that have complex solutions."
+  # --- High School: Algebra ---
+  CCSS.HSA.SSE.A.1:
+    framework: CCSS-Math
+    grade: HS
+    domain: Algebra
+    description: "Interpret expressions that represent a quantity in terms of its context (terms, factors, and coefficients)."
+  CCSS.HSA.SSE.B.3:
+    framework: CCSS-Math
+    grade: HS
+    domain: Algebra
+    description: "Choose and produce an equivalent form of an expression to reveal properties (factoring, completing the square)."
+  CCSS.HSA.APR.A.1:
+    framework: CCSS-Math
+    grade: HS
+    domain: Algebra
+    description: "Add, subtract, and multiply polynomials; understand that polynomials form a closed system under these operations."
+  CCSS.HSA.CED.A.1:
+    framework: CCSS-Math
+    grade: HS
+    domain: Algebra
+    description: "Create equations and inequalities in one variable and use them to solve problems."
+  CCSS.HSA.REI.B.3:
+    framework: CCSS-Math
+    grade: HS
+    domain: Algebra
+    description: "Solve linear equations and inequalities in one variable."
+  CCSS.HSA.REI.B.4:
+    framework: CCSS-Math
+    grade: HS
+    domain: Algebra
+    description: "Solve quadratic equations by inspection, completing the square, the quadratic formula, and factoring."
+  CCSS.HSA.REI.C.6:
+    framework: CCSS-Math
+    grade: HS
+    domain: Algebra
+    description: "Solve systems of linear equations exactly and approximately, focusing on pairs in two variables."
+  # --- High School: Functions ---
+  CCSS.HSF.IF.A.1:
+    framework: CCSS-Math
+    grade: HS
+    domain: Functions
+    description: "Understand that a function assigns to each input exactly one output; use function notation."
+  CCSS.HSF.IF.B.4:
+    framework: CCSS-Math
+    grade: HS
+    domain: Functions
+    description: "For a function that models a relationship, interpret key features of graphs and tables (intercepts, intervals, extrema)."
+  CCSS.HSF.BF.B.3:
+    framework: CCSS-Math
+    grade: HS
+    domain: Functions
+    description: "Identify the effect on the graph of replacing f(x) by f(x)+k, k*f(x), f(kx), and f(x+k)."
+  CCSS.HSF.LE.A.1:
+    framework: CCSS-Math
+    grade: HS
+    domain: Functions
+    description: "Distinguish between situations that can be modeled with linear functions and with exponential functions."
+  CCSS.HSF.LE.A.2:
+    framework: CCSS-Math
+    grade: HS
+    domain: Functions
+    description: "Construct linear and exponential functions given a graph, a table, or a description of a relationship."
+  # --- High School: Geometry ---
+  CCSS.HSG.CO.A.1:
+    framework: CCSS-Math
+    grade: HS
+    domain: Geometry
+    description: "Know precise definitions of angle, circle, perpendicular line, parallel line, and line segment."
+  CCSS.HSG.CO.C.10:
+    framework: CCSS-Math
+    grade: HS
+    domain: Geometry
+    description: "Prove theorems about triangles (e.g., angle sum, base angles of isosceles triangles, midsegment)."
+  CCSS.HSG.SRT.A.2:
+    framework: CCSS-Math
+    grade: HS
+    domain: Geometry
+    description: "Use similarity transformations to decide whether triangles are similar; explain the AA similarity criterion."
+  CCSS.HSG.SRT.C.8:
+    framework: CCSS-Math
+    grade: HS
+    domain: Geometry
+    description: "Use trigonometric ratios and the Pythagorean Theorem to solve right triangles in applied problems."
+  CCSS.HSG.C.A.2:
+    framework: CCSS-Math
+    grade: HS
+    domain: Geometry
+    description: "Identify and describe relationships among inscribed angles, radii, and chords of a circle."
+  CCSS.HSG.GMD.A.3:
+    framework: CCSS-Math
+    grade: HS
+    domain: Geometry
+    description: "Use volume formulas for cylinders, pyramids, cones, and spheres to solve problems."
+  # --- High School: Statistics & Probability ---
+  CCSS.HSS.ID.A.1:
+    framework: CCSS-Math
+    grade: HS
+    domain: Statistics & Probability
+    description: "Represent data with plots on the real number line (dot plots, histograms, and box plots)."
+  CCSS.HSS.ID.B.6:
+    framework: CCSS-Math
+    grade: HS
+    domain: Statistics & Probability
+    description: "Represent data on two quantitative variables on a scatter plot and fit a function to the data."
+  CCSS.HSS.ID.C.7:
+    framework: CCSS-Math
+    grade: HS
+    domain: Statistics & Probability
+    description: "Interpret the slope and the intercept of a linear model in the context of the data."

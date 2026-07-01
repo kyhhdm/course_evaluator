@@ -18,6 +18,33 @@ The CCSS mathematics standards were adopted in 2010 and have not been revised si
 these are the current, stable text. © NGA Center for Best Practices & CCSSO; reproduced
 for reference under the CCSS public license (attribution required, which this note provides).
 
+## Shormann Math — high-school course scope
+
+Source documents for the **Shormann Algebra 1 & 2 courses** (`../../curriculum/shormann_algebra_1`,
+`../../curriculum/shormann_algebra_2`) and the crosswalk in
+`../../docs/shormann-ccss-alignment.md`. These describe the vendor's course scope; they are
+*not* a CCSS source (Shormann is not Common Core) and were used only to model the courses'
+strands/knowledge points, not to verify `ccss_math.yaml`.
+
+- **`Shormann_Algebra1_TeacherGuide.pdf`** — *Teacher Guide for Shormann Algebra 1 with
+  Integrated Geometry*. Course-level scope, credits (1 Algebra 1 + ½ Geometry), and schedule.
+  Retrieved 2026-07-02 from
+  <https://diveintomath.com/content/Teacher's%20Guides/Teacher%20Guide%20for%20Shormann%20Algebra%201.pdf>
+- **`Shormann_Algebra2_TeacherGuide.pdf`** — *Teacher Guide for Shormann Algebra 2 with
+  Integrated Geometry*. Contains the full **100-lesson Course Sequence table** (the
+  authoritative lesson-level scope) plus credits (1 Algebra 2 + ½ Geometry).
+  Retrieved 2026-07-02 from
+  <https://diveintomath.com/content/Teacher's%20Guides/Teacher%20Guide%20for%20Shormann%20Algebra%202.pdf>
+- **`Shormann_Algebra2_ScopeAndSequence.pdf`** — DIVE's published *Scope and Sequence for
+  Shormann Algebra 2 with Integrated Geometry*: a granular topic outline (Arithmetic →
+  Whole Numbers → Fractions → …). Complements the Teacher Guide's lesson table.
+  Retrieved 2026-07-02 from diveintomath.com's Scope & Sequence resources.
+
+The Algebra 1 lesson-by-lesson scope is coarser than Algebra 2's because Algebra 1's Teacher
+Guide carries a course-level description rather than a lesson table, and DIVE's online
+Algebra 1 Scope & Sequence article blocks automated retrieval (HTTP 403). © Digital
+Interactive Video Education (DIVE / diveintomath.com); reproduced here for reference.
+
 ## Verification
 
 `standards/ccss_math.yaml` was cross-checked against the documents above: all 26 Grade-5

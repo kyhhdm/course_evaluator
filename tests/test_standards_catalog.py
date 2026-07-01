@@ -44,3 +44,35 @@ def test_catalog_includes_grade4_prerequisite():
     cat = load_catalog(CATALOG, SCHEMA)
     assert "CCSS.4.NF.A.1" in cat
     assert cat["CCSS.4.NF.A.1"].grade == "4"
+
+
+# The curated CCSS high-school Math band this project authors HS courses against.
+# Pins the catalog so any added/dropped/renamed HS code fails the build.
+OFFICIAL_HS_CCSS_MATH = frozenset({
+    "CCSS.HSN.Q.A.1", "CCSS.HSN.RN.A.2", "CCSS.HSN.CN.A.1", "CCSS.HSN.CN.C.7",
+    "CCSS.HSA.SSE.A.1", "CCSS.HSA.SSE.B.3", "CCSS.HSA.APR.A.1", "CCSS.HSA.CED.A.1",
+    "CCSS.HSA.REI.B.3", "CCSS.HSA.REI.B.4", "CCSS.HSA.REI.C.6",
+    "CCSS.HSF.IF.A.1", "CCSS.HSF.IF.B.4", "CCSS.HSF.BF.B.3",
+    "CCSS.HSF.LE.A.1", "CCSS.HSF.LE.A.2",
+    "CCSS.HSG.CO.A.1", "CCSS.HSG.CO.C.10", "CCSS.HSG.SRT.A.2", "CCSS.HSG.SRT.C.8",
+    "CCSS.HSG.C.A.2", "CCSS.HSG.GMD.A.3",
+    "CCSS.HSS.ID.A.1", "CCSS.HSS.ID.B.6", "CCSS.HSS.ID.C.7",
+})
+
+
+def test_catalog_hs_codes_match_official_set():
+    cat = load_catalog(CATALOG, SCHEMA)
+    hs = {c for c, s in cat.items() if s.grade == "HS"}
+    missing = OFFICIAL_HS_CCSS_MATH - hs
+    extra = hs - OFFICIAL_HS_CCSS_MATH
+    assert not missing, f"catalog is missing official HS codes: {sorted(missing)}"
+    assert not extra, f"catalog has non-official HS codes: {sorted(extra)}"
+
+
+def test_catalog_hs_entries_are_well_formed():
+    cat = load_catalog(CATALOG, SCHEMA)
+    for code in OFFICIAL_HS_CCSS_MATH:
+        std = cat[code]
+        assert std.framework == "CCSS-Math", code
+        assert std.grade == "HS", code
+        assert std.domain and std.description, code
