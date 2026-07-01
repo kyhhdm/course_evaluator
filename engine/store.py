@@ -156,10 +156,10 @@ def list_attempts(student_id: int, db_path: str | None = None) -> list[dict]:
         conn.close()
 
 
-def render_attempt_html(attempt: dict, templates_dir: str = "templates") -> str:
+def render_attempt_html(attempt: dict, templates_dir: str = "templates", nav_html: str = "") -> str:
     from engine.paper import render_parent_view
 
-    return render_parent_view(attempt["snapshot"]["parent_view"], templates_dir)
+    return render_parent_view(attempt["snapshot"]["parent_view"], templates_dir, nav_html)
 
 
 def get_attempt(attempt_id: int, db_path: str | None = None) -> dict | None:

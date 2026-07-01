@@ -77,9 +77,9 @@ def drop_blank_responses(raw: dict) -> dict:
     return {k: v for k, v in raw.items() if v is not None and str(v).strip() != ""}
 
 
-def render_parent_view(view, templates_dir: str) -> str:
+def render_parent_view(view, templates_dir: str, nav_html: str = "") -> str:
     tmpl = _env(templates_dir).get_template("report.html.j2")
-    return tmpl.render(view=view)
+    return tmpl.render(view=view, nav_html=nav_html)
 
 
 def render_report_html(

@@ -144,3 +144,15 @@ def test_print_surfaces_exclude_practice_items():
     assert "Practice prompt hidden" not in html
     blank = render_answer_sheet_template(c)
     assert "P1" not in blank and "D1" in blank
+
+
+def test_render_parent_view_injects_nav_html_and_defaults_empty():
+    from engine.paper import render_parent_view
+    from engine.report_view import build_parent_view
+    c = _curriculum()
+    pa = PointResult("a", 0.9, "Secure", "scored", 2)
+    strand = StrandResult("Fractions", "Secure", 0.9, "a", [pa])
+    result = EvaluationResult([strand], {"a": pa}, set())
+    view = build_parent_view(c, result, [], "Sam")
+    assert "NAVMARK" in render_parent_view(view, TEMPLATES, nav_html="<p>NAVMARK</p>")
+    assert "NAVMARK" not in render_parent_view(view, TEMPLATES)   # default is empty
