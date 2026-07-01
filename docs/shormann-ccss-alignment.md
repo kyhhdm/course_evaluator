@@ -55,9 +55,20 @@ The CCSS high-school standards for the categories above are cataloged in
 `standards/ccss_math.yaml` with `grade: "HS"`. The two authored courses
 (`curriculum/shormann_algebra_1`, `curriculum/shormann_algebra_2`) reference their
 slice of that band; run `--coverage` on either to see the covered/missing split.
-Together the two courses cover 24 of the 25 standards in the band; one standard
-(`CCSS.HSN.Q.A.1`, N-Q — modeling with units) remains intentionally uncovered by
-the representative content.
+
+**Algebra 1 alone covers all 25 standards in the HS band** (25 / 25, 100.0%).
+`CCSS.HSN.Q.A.1` (N-Q — modeling with units) is covered by the measurement/units
+lessons authored in Algebra 1 (`a1-num-units`).
+
+Several standards are intentionally referenced by both Algebra 1 and Algebra 2
+(e.g. `CCSS.HSA.SSE.A.1`, `CCSS.HSA.CED.A.1`, `CCSS.HSG.CO.A.1`). This overlap
+is deliberate: Shormann's integrated design revisits and deepens topics across years,
+so the same CCSS standard is addressed at different levels of complexity in each course.
+
+**Note:** Shormann Algebra 1 also teaches topics with no CCSS high-school equivalent —
+history of mathematics, introductory calculus concepts, computer/binary math, and
+applied-science problems (Punnett squares, gas laws). These are left without
+`standard_refs` in the evaluator and do not appear in the coverage count.
 
 ## Sources
 
