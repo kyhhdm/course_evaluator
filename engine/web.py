@@ -106,17 +106,21 @@ def create_app(secret: str | None = None) -> Flask:
     def take_test(student_id):
         s = _find_student(student_id)
         courses = list_courses()
-        course_id = request.args.get("course") or (courses[0] if courses else None)
-        if course_id not in courses:  # rejects None and any path-traversal value
-            abort(404)
-        curriculum = _load(course_id)
         att = session.get("attempt")
+        requested = request.args.get("course")
+        # (Re)seed only on an explicit start, a missing/other-student session, or an
+        # explicit course switch — NOT when the course is merely defaulted (the Next
+        # redirect omits ?course, which must continue the in-progress course).
         if (
             request.args.get("start")
             or att is None
             or att.get("student_id") != student_id
-            or att.get("course_id") != course_id
+            or (requested is not None and requested != att.get("course_id"))
         ):
+            course_id = requested or (courses[0] if courses else None)
+            if course_id not in courses:  # rejects None and any path-traversal value
+                abort(404)
+            curriculum = _load(course_id)
             att = {
                 "student_id": student_id,
                 "course_id": course_id,
@@ -125,6 +129,11 @@ def create_app(secret: str | None = None) -> Flask:
                 "answers": {},
             }
             session["attempt"] = att
+        else:
+            course_id = att["course_id"]
+            if course_id not in courses:  # course removed since the attempt started
+                abort(404)
+            curriculum = _load(course_id)
         item_ids = att["item_ids"]
         if not item_ids:
             abort(404)
