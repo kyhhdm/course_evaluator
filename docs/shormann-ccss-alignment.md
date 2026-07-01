@@ -55,8 +55,9 @@ The CCSS high-school standards for the categories above are cataloged in
 `standards/ccss_math.yaml` with `grade: "HS"`. The two authored courses
 (`curriculum/shormann_algebra_1`, `curriculum/shormann_algebra_2`) reference their
 slice of that band; run `--coverage` on either to see the covered/missing split.
-Together the two courses cover most of the band; a few standards (e.g. `N-Q`)
-remain intentionally uncovered by the representative content.
+Together the two courses cover 24 of the 25 standards in the band; one standard
+(`CCSS.HSN.Q.A.1`, N-Q — modeling with units) remains intentionally uncovered by
+the representative content.
 
 ## Sources
 
