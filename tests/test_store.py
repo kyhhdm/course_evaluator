@@ -40,7 +40,7 @@ def test_save_and_get_attempt_roundtrips_with_snapshot(tmp_path):
     assert got["course_id"] == "grade5_math"
     assert got["responses"]["EQF-1"] == responses["EQF-1"]      # source of truth stored
     snap = got["snapshot"]
-    assert snap["version"] == 1                                 # snapshot schema version stamped
+    assert snap["version"] == 2                                 # snapshot schema version stamped
     assert "parent_view" in snap and "student_plan" in snap
     assert snap["parent_view"]["student_name"] == "Maya"        # name resolved into the view
     assert "strands" in snap["student_plan"] and "steps" in snap["student_plan"]
@@ -98,3 +98,16 @@ def test_render_attempt_html_matches_live_and_survives_content_change(tmp_path):
     still = store.render_attempt_html(store.get_attempt(aid, db_path=db))
     assert "Learning Report for Maya" in still      # renders with curriculum cleared
     assert "Equivalent fractions" in still          # a frozen point title survived the clear
+
+
+def test_save_attempt_freezes_review_v2(tmp_path):
+    db = _db(tmp_path)
+    sid = store.create_student("Maya", db_path=db)
+    responses = load_yaml(f"{CURRICULUM}/sample_responses.yaml")["responses"]
+    aid = store.save_attempt(sid, "grade5_math", responses, _grade5(), db_path=db)
+    snap = store.get_attempt(aid, db_path=db)["snapshot"]
+    assert snap["version"] == 2
+    assert isinstance(snap["review"], list) and snap["review"]
+    assert snap["review"][0]["strand"]
+    q = snap["review"][0]["points"][0]["questions"][0]
+    assert {"id", "prompt", "is_correct", "status", "correct_answer"} <= set(q)
