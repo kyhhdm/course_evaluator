@@ -10,6 +10,7 @@ STANDARDS_DIR = "standards"
 COURSE_DIRS = [
     "curriculum/grade5_math",
     "curriculum/shormann_algebra_1",
+    "curriculum/shormann_algebra_2",
 ]
 
 

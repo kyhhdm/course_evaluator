@@ -1,0 +1,188 @@
+items:
+  # --- a2-quadratics ---
+  - id: A2QUAD-D1
+    role: diagnostic
+    points: [a2-quadratics]
+    difficulty: 2
+    type: numeric
+    prompt: "Solve x^2 = 49. Enter the positive solution."
+    answer: "7"
+  - id: A2QUAD-D2
+    role: diagnostic
+    points: [a2-quadratics]
+    difficulty: 2
+    type: mcq
+    prompt: "Factor x^2 + 5x + 6."
+    options: {A: "(x + 2)(x + 3)", B: "(x + 1)(x + 6)", C: "(x + 2)(x + 4)", D: "(x - 2)(x - 3)"}
+    answer: "A"
+  - id: A2QUAD-P1
+    role: practice
+    points: [a2-quadratics]
+    difficulty: 3
+    type: mcq
+    prompt: "Solve x^2 + 1 = 0 over the complex numbers."
+    options: {A: "x = +/- i", B: "x = +/- 1", C: "x = 0", D: "no solution exists"}
+    answer: "A"
+  - id: A2QUAD-P2
+    role: practice
+    points: [a2-quadratics]
+    difficulty: 2
+    type: numeric
+    prompt: "One root of x^2 - 7x + 12 = 0 is 3. What is the other root?"
+    answer: "4"
+  # --- a2-poly-rational ---
+  - id: A2POLY-D1
+    role: diagnostic
+    points: [a2-poly-rational]
+    difficulty: 2
+    type: mcq
+    prompt: "Multiply (x + 4)(x - 4)."
+    options: {A: "x^2 - 16", B: "x^2 + 16", C: "x^2 - 8x - 16", D: "x^2 - 8"}
+    answer: "A"
+  - id: A2POLY-D2
+    role: diagnostic
+    points: [a2-poly-rational]
+    difficulty: 2
+    type: mcq
+    prompt: "Simplify (x^2 - 9)/(x - 3) for x not equal to 3."
+    options: {A: "x + 3", B: "x - 3", C: "x^2 - 3", D: "x + 9"}
+    answer: "A"
+  - id: A2POLY-P1
+    role: practice
+    points: [a2-poly-rational]
+    difficulty: 2
+    type: mcq
+    prompt: "Factor completely: x^2 - 6x + 9."
+    options: {A: "(x - 3)^2", B: "(x + 3)^2", C: "(x - 3)(x + 3)", D: "(x - 9)(x - 1)"}
+    answer: "A"
+  - id: A2POLY-P2
+    role: practice
+    points: [a2-poly-rational]
+    difficulty: 2
+    type: numeric
+    prompt: "Evaluate the polynomial x^2 - 2x + 1 at x = 5."
+    answer: "16"
+  # --- a2-exp-log ---
+  - id: A2EXP-D1
+    role: diagnostic
+    points: [a2-exp-log]
+    difficulty: 2
+    type: mcq
+    prompt: "Which function is exponential?"
+    options: {A: "y = 2^x", B: "y = 2x", C: "y = x^2", D: "y = 2x + 1"}
+    answer: "A"
+  - id: A2EXP-D2
+    role: diagnostic
+    points: [a2-exp-log]
+    difficulty: 2
+    type: numeric
+    prompt: "Evaluate 3^4."
+    answer: "81"
+  - id: A2EXP-P1
+    role: practice
+    points: [a2-exp-log]
+    difficulty: 2
+    type: numeric
+    prompt: "A population starts at 500 and doubles each year. What is it after 2 years?"
+    answer: "2000"
+  - id: A2EXP-P2
+    role: practice
+    points: [a2-exp-log]
+    difficulty: 3
+    type: mcq
+    prompt: "The graph of y = 2^x + 3 is the graph of y = 2^x shifted:"
+    options: {A: "up 3", B: "down 3", C: "right 3", D: "left 3"}
+    answer: "A"
+  # --- a2-radicals-complex ---
+  - id: A2RAD-D1
+    role: diagnostic
+    points: [a2-radicals-complex]
+    difficulty: 1
+    type: numeric
+    prompt: "Simplify the square root of 64."
+    answer: "8"
+  - id: A2RAD-D2
+    role: diagnostic
+    points: [a2-radicals-complex]
+    difficulty: 2
+    type: mcq
+    prompt: "Rewrite 8^(1/3) as an integer."
+    options: {A: "2", B: "4", C: "3", D: "8"}
+    answer: "A"
+  - id: A2RAD-P1
+    role: practice
+    points: [a2-radicals-complex]
+    difficulty: 2
+    type: mcq
+    prompt: "What is i^2?"
+    options: {A: "-1", B: "1", C: "i", D: "-i"}
+    answer: "A"
+  - id: A2RAD-P2
+    role: practice
+    points: [a2-radicals-complex]
+    difficulty: 2
+    type: numeric
+    prompt: "Write the square root of 50 as k times the square root of 2. What is k?"
+    answer: "5"
+  # --- a2-geometry ---
+  - id: A2GEO-D1
+    role: diagnostic
+    points: [a2-geometry]
+    difficulty: 2
+    type: numeric
+    prompt: "A right triangle has legs 3 and 4. What is the length of the hypotenuse?"
+    answer: "5"
+  - id: A2GEO-D2
+    role: diagnostic
+    points: [a2-geometry]
+    difficulty: 2
+    type: mcq
+    prompt: "Two triangles with two pairs of congruent angles are always:"
+    options: {A: "similar", B: "congruent", C: "unrelated", D: "equilateral"}
+    answer: "A"
+  - id: A2GEO-P1
+    role: practice
+    points: [a2-geometry]
+    difficulty: 2
+    type: numeric
+    prompt: "A right triangle has legs 6 and 8. What is the length of the hypotenuse?"
+    answer: "10"
+  - id: A2GEO-P2
+    role: practice
+    points: [a2-geometry]
+    difficulty: 3
+    type: mcq
+    prompt: "An inscribed angle that subtends a diameter (semicircle) measures:"
+    options: {A: "90 degrees", B: "45 degrees", C: "180 degrees", D: "60 degrees"}
+    answer: "A"
+  # --- a2-stats ---
+  - id: A2STAT-D1
+    role: diagnostic
+    points: [a2-stats]
+    difficulty: 2
+    type: mcq
+    prompt: "On a scatter plot, a line of best fit is used to:"
+    options: {A: "model the trend between two variables", B: "list the raw data", C: "sort names alphabetically", D: "draw a circle"}
+    answer: "A"
+  - id: A2STAT-D2
+    role: diagnostic
+    points: [a2-stats]
+    difficulty: 2
+    type: mcq
+    prompt: "In the linear model y = 3x + 5, the slope 3 represents:"
+    options: {A: "the rate of change of y per unit x", B: "the starting value of y", C: "the value of y when x = 5", D: "the total of the data"}
+    answer: "A"
+  - id: A2STAT-P1
+    role: practice
+    points: [a2-stats]
+    difficulty: 2
+    type: numeric
+    prompt: "In the linear model y = 3x + 5, what is y when x = 4?"
+    answer: "17"
+  - id: A2STAT-P2
+    role: practice
+    points: [a2-stats]
+    difficulty: 2
+    type: numeric
+    prompt: "In the linear model y = 3x + 5, what is the y-intercept?"
+    answer: "5"

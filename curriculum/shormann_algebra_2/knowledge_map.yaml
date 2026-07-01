@@ -1,0 +1,37 @@
+points:
+  - id: a2-quadratics
+    strand: Quadratic Functions
+    title: Quadratic equations and complex roots
+    description: Solve quadratics by factoring and formula, including cases with complex solutions.
+    prerequisites: []
+    standard_refs: [CCSS.HSA.REI.B.4, CCSS.HSA.SSE.B.3, CCSS.HSN.CN.C.7]
+  - id: a2-poly-rational
+    strand: Polynomial & Rational Expressions
+    title: Polynomial and rational expressions
+    description: Multiply and factor polynomials and simplify rational expressions.
+    prerequisites: [a2-quadratics]
+    standard_refs: [CCSS.HSA.APR.A.1, CCSS.HSA.SSE.B.3]
+  - id: a2-exp-log
+    strand: Exponential & Logarithmic Functions
+    title: Exponential functions and growth
+    description: Distinguish and construct exponential models and transform their graphs.
+    prerequisites: []
+    standard_refs: [CCSS.HSF.LE.A.1, CCSS.HSF.LE.A.2, CCSS.HSF.BF.B.3]
+  - id: a2-radicals-complex
+    strand: Radicals & Complex Numbers
+    title: Radicals and complex numbers
+    description: Simplify radicals and rational exponents and work with complex numbers.
+    prerequisites: []
+    standard_refs: [CCSS.HSN.RN.A.2, CCSS.HSN.CN.A.1]
+  - id: a2-geometry
+    strand: Integrated Geometry
+    title: Similarity, right-triangle trig, and circles
+    description: Prove triangle theorems and use similarity, right-triangle trig, and circle relationships.
+    prerequisites: []
+    standard_refs: [CCSS.HSG.SRT.A.2, CCSS.HSG.SRT.C.8, CCSS.HSG.C.A.2, CCSS.HSG.CO.C.10]
+  - id: a2-stats
+    strand: Statistics & Inference
+    title: Bivariate data and linear models
+    description: Fit and interpret linear models for two-variable data.
+    prerequisites: []
+    standard_refs: [CCSS.HSS.ID.B.6, CCSS.HSS.ID.C.7]
