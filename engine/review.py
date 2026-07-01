@@ -24,7 +24,14 @@ def build_review(curriculum: Curriculum, responses: dict) -> list[dict]:
                 if ok:
                     correct_count += 1
                 if item.type == "mcq":
-                    student_text = "" if skipped else item.options.get(str(resp), "")
+                    # option keys are uppercase letters; is_correct is case-insensitive,
+                    # so resolve the option text case-insensitively too.
+                    if skipped:
+                        student_text = ""
+                    else:
+                        student_text = item.options.get(str(resp)) or item.options.get(
+                            str(resp).strip().upper(), ""
+                        )
                     correct_text = item.options.get(item.answer, "")
                 else:
                     student_text = "" if skipped else str(resp)

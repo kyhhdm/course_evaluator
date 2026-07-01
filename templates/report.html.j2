@@ -8,7 +8,7 @@
 </style>
 </head>
 <body class="report">
-{{ nav_html | safe }}
+{% if nav_html %}{{ nav_html | safe }}{% endif %}
 <h1>Learning Report for {{ view.student_name }}</h1>
 <h2>Where {{ view.student_name }} stands</h2>
 {% for g in view.strand_groups %}

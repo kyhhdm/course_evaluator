@@ -31,3 +31,13 @@ def test_build_review_groups_marks_and_explains():
     assert q["Q3"]["correct_answer_text"] == "4"
     assert q["Q4"]["status"] == "skipped" and not q["Q4"]["is_correct"]
     assert q["Q4"]["student_answer"] == ""
+
+
+def test_mcq_option_text_is_case_insensitive():
+    from engine.models import Band, Curriculum, Item, KnowledgePoint
+    points = {"a": KnowledgePoint("a", "S", "P", "d", (), ())}
+    items = {"Q": Item("Q", ("a",), 1, "mcq", "?", "B", {"A": "aye", "B": "bee"}, {})}
+    c = Curriculum(points=points, items=items, bands=(Band("Secure", 0.8),), standards={})
+    # lowercase "b" is correct (is_correct is case-insensitive) and resolves the option text
+    q = build_review(c, {"Q": "b"})[0]["points"][0]["questions"][0]
+    assert q["is_correct"] and q["student_answer_text"] == "bee"
