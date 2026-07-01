@@ -50,7 +50,7 @@ items:
     difficulty: 2
     type: mcq
     prompt: "Which expression equals 0.00345 written in scientific notation?"
-    options: {A: "3.45 x 10^(-3)", B: "3.45 x 10^(-4)", C: "3.45 x 10^3", D: "0.345 x 10^(-2)"}
+    options: {A: "3.45 x 10^(-3)", B: "3.45 x 10^(-4)", C: "3.45 x 10^3", D: "3.45 x 10^(-2)"}
     answer: "A"
     lesson_refs: [33]
   - id: A1NUMEX-P1
