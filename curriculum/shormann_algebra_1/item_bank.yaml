@@ -463,3 +463,110 @@ items:
     options: {A: "y = 3x + 2", B: "y = 2x + 3", C: "y = 3x - 2", D: "y = 6x - 1"}
     answer: "A"
     lesson_refs: [48]
+  # --- a1-geo-def (L9, L10, L11) ---
+  - id: A1GDEF-D1
+    role: diagnostic
+    points: [a1-geo-def]
+    difficulty: 1
+    type: mcq
+    prompt: "Which of the following best defines an angle in geometry?"
+    options: {A: "Two rays in the same plane sharing a common endpoint and not overlapping", B: "Two parallel lines in the same plane", C: "A flat surface having length and width only", D: "A line segment with two endpoints"}
+    answer: "A"
+    lesson_refs: [9]
+  - id: A1GDEF-D2
+    role: diagnostic
+    points: [a1-geo-def]
+    difficulty: 2
+    type: mcq
+    prompt: "Two lines are perpendicular to each other. Which statement must be true?"
+    options: {A: "They intersect forming four right angles", B: "They never intersect", C: "They form two obtuse angles", D: "They share more than one point"}
+    answer: "A"
+    lesson_refs: [9]
+  - id: A1GDEF-P1
+    role: practice
+    points: [a1-geo-def]
+    difficulty: 1
+    type: mcq
+    prompt: "Which of the following best defines parallel lines?"
+    options: {A: "Two lines in the same plane that never intersect", B: "Two lines that meet at a right angle", C: "Two rays sharing a common endpoint", D: "Two lines that intersect at exactly one point"}
+    answer: "A"
+    lesson_refs: [9]
+  - id: A1GDEF-P2
+    role: practice
+    points: [a1-geo-def]
+    difficulty: 2
+    type: mcq
+    prompt: "A right angle is formed when two lines intersect. How many right angles are formed at that intersection?"
+    options: {A: "4", B: "1", C: "2", D: "3"}
+    answer: "A"
+    lesson_refs: [9]
+  # --- a1-geo-proof (L10, L66, L67, L68) ---
+  - id: A1GPRF-D1
+    role: diagnostic
+    points: [a1-geo-proof]
+    difficulty: 1
+    type: numeric
+    prompt: "Two angles of a triangle measure 47° and 83°. What is the measure of the third angle in degrees?"
+    answer: "50"
+    lesson_refs: [68]
+  - id: A1GPRF-D2
+    role: diagnostic
+    points: [a1-geo-proof]
+    difficulty: 2
+    type: mcq
+    prompt: "In an isosceles triangle, one of the base angles measures 35°. What is the measure of the angle at the apex (vertex angle)?"
+    options: {A: "110", B: "35", C: "70", D: "145"}
+    answer: "A"
+    lesson_refs: [68]
+  - id: A1GPRF-P1
+    role: practice
+    points: [a1-geo-proof]
+    difficulty: 2
+    type: numeric
+    prompt: "In a triangle, one angle is twice the smallest angle, and the third angle is 60°. What is the measure of the smallest angle in degrees?"
+    answer: "40"
+    lesson_refs: [66]
+  - id: A1GPRF-P2
+    role: practice
+    points: [a1-geo-proof]
+    difficulty: 3
+    type: mcq
+    prompt: "Which congruency theorem applies when two sides and the included angle of one triangle are equal to two sides and the included angle of another triangle?"
+    options: {A: "SAS", B: "SSS", C: "HL", D: "AAAS"}
+    answer: "A"
+    lesson_refs: [68]
+  # --- a1-geo-circle (L40, L66) ---
+  - id: A1GCIR-D1
+    role: diagnostic
+    points: [a1-geo-circle]
+    difficulty: 1
+    type: numeric
+    prompt: "A central angle of a circle measures 80°. An inscribed angle intercepts the same arc. What is the measure of the inscribed angle in degrees?"
+    answer: "40"
+    lesson_refs: [40]
+  - id: A1GCIR-D2
+    role: diagnostic
+    points: [a1-geo-circle]
+    difficulty: 2
+    type: mcq
+    prompt: "An inscribed angle in a circle intercepts an arc of 110°. What is the measure of the inscribed angle?"
+    options: {A: "55", B: "110", C: "220", D: "90"}
+    answer: "A"
+    lesson_refs: [40]
+  - id: A1GCIR-P1
+    role: practice
+    points: [a1-geo-circle]
+    difficulty: 2
+    type: mcq
+    prompt: "Which statement correctly describes the inscribed angle theorem?"
+    options: {A: "An inscribed angle equals half the measure of the arc it intercepts", B: "An inscribed angle equals the measure of the arc it intercepts", C: "An inscribed angle equals twice the measure of the arc it intercepts", D: "An inscribed angle equals the central angle minus 90°"}
+    answer: "A"
+    lesson_refs: [40]
+  - id: A1GCIR-P2
+    role: practice
+    points: [a1-geo-circle]
+    difficulty: 3
+    type: numeric
+    prompt: "Two chords intersect inside a circle. One chord is divided into segments of length 3 and 6. The other chord is divided into segments of length 2 and x. Find x."
+    answer: "9"
+    lesson_refs: [66]

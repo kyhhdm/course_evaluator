@@ -81,3 +81,22 @@ points:
     description: Distinguish linear from exponential situations and construct a linear or exponential model from data.
     prerequisites: [a1-func-concept]
     standard_refs: [CCSS.HSF.LE.A.1, CCSS.HSF.LE.A.2]
+  # --- Strand: Geometry: Reasoning & Proof ---
+  - id: a1-geo-def
+    strand: "Geometry: Reasoning & Proof"
+    title: Precise geometric definitions
+    description: Know precise definitions of angle, parallel, perpendicular, and related terms.
+    prerequisites: []
+    standard_refs: [CCSS.HSG.CO.A.1]
+  - id: a1-geo-proof
+    strand: "Geometry: Reasoning & Proof"
+    title: Triangle theorems and proof
+    description: Use deductive and inductive reasoning to prove theorems about triangles (angle sum, isosceles base angles).
+    prerequisites: [a1-geo-def]
+    standard_refs: [CCSS.HSG.CO.C.10]
+  - id: a1-geo-circle
+    strand: "Geometry: Reasoning & Proof"
+    title: Circle angle relationships
+    description: Identify relationships among inscribed angles, central angles, radii, and chords.
+    prerequisites: [a1-geo-def]
+    standard_refs: [CCSS.HSG.C.A.2]
