@@ -712,3 +712,114 @@ items:
     options: {A: "(3, 1)", B: "(1, 3)", C: "(4, -1)", D: "(2, 3)"}
     answer: "A"
     lesson_refs: [70]
+  # --- a1-data-display (L23) ---
+  - id: A1DDIS-D1
+    role: diagnostic
+    points: [a1-data-display]
+    difficulty: 1
+    type: mcq
+    prompt: "Find the mean of the data set: 4, 7, 7, 9, 13."
+    options: {A: "7", B: "8", C: "9", D: "6"}
+    answer: "B"
+    lesson_refs: [23]
+  - id: A1DDIS-D2
+    role: diagnostic
+    points: [a1-data-display]
+    difficulty: 2
+    type: mcq
+    prompt: "For the data set 4, 7, 7, 9, 13 — which value is the median?"
+    options: {A: "4", B: "9", C: "7", D: "13"}
+    answer: "C"
+    lesson_refs: [23]
+  - id: A1DDIS-P1
+    role: practice
+    points: [a1-data-display]
+    difficulty: 2
+    type: mcq
+    prompt: "For the data set 4, 7, 7, 9, 13 — what is the range?"
+    options: {A: "6", B: "7", C: "4", D: "9"}
+    answer: "D"
+    lesson_refs: [23]
+  - id: A1DDIS-P2
+    role: practice
+    points: [a1-data-display]
+    difficulty: 2
+    type: mcq
+    prompt: "A researcher collects 30 temperature measurements and wants to show how frequently values fall in each 5-degree interval. Which display is most appropriate?"
+    options: {A: "Scatter plot", B: "Line graph", C: "Histogram", D: "Box plot"}
+    answer: "C"
+    lesson_refs: [23]
+  # --- a1-data-scatter (L24, L94) ---
+  - id: A1DSCA-D1
+    role: diagnostic
+    points: [a1-data-scatter]
+    difficulty: 1
+    type: mcq
+    prompt: "A scatter plot shows that as study time (x) increases, test score (y) also increases. What type of association does this scatter plot show?"
+    options: {A: "No association", B: "Negative association", C: "Non-linear association", D: "Positive association"}
+    answer: "D"
+    lesson_refs: [24]
+  - id: A1DSCA-D2
+    role: diagnostic
+    points: [a1-data-scatter]
+    difficulty: 2
+    type: mcq
+    prompt: "A spring is stretched different distances by adding masses. The data follows a linear pattern. The slope of the best-fit line through the spring-mass data is approximately 2 (cm per kg) and the line passes through the origin. What does the model predict for the stretch when 5 kg is added?"
+    options: {A: "5 cm", B: "7 cm", C: "10 cm", D: "2 cm"}
+    answer: "C"
+    lesson_refs: [24]
+  - id: A1DSCA-P1
+    role: practice
+    points: [a1-data-scatter]
+    difficulty: 2
+    type: mcq
+    prompt: "When drawing a line of best fit on a scatter plot, which description best characterizes a good fit line?"
+    options: {A: "Passes through all data points", B: "Passes only through the first and last data points", C: "Has roughly equal numbers of data points above and below the line", D: "Passes only through the highest and lowest points"}
+    answer: "C"
+    lesson_refs: [24]
+  - id: A1DSCA-P2
+    role: practice
+    points: [a1-data-scatter]
+    difficulty: 3
+    type: mcq
+    prompt: "Bivariate data is collected and plotted. One student draws a best-fit line with equation y = 3x + 1 and another draws y = 3x + 4. The actual data cluster near y = 3x + 2. Which statement is most accurate?"
+    options: {A: "Both lines are equally good fits", B: "y = 3x + 1 is a better fit because it has a smaller intercept", C: "y = 3x + 4 is a better fit because it has a larger intercept", D: "y = 3x + 2 would be the best fit because it is closest to the cluster of data"}
+    answer: "D"
+    lesson_refs: [24]
+  # --- a1-data-interpret (L24, L94) ---
+  - id: A1DINT-D1
+    role: diagnostic
+    points: [a1-data-interpret]
+    difficulty: 2
+    type: mcq
+    prompt: "A linear model for the total cost (in dollars) of ordering items is cost = 2x + 5, where x is the number of items ordered. What does the slope 2 represent in this context?"
+    options: {A: "The total cost when no items are ordered", B: "The cost per additional item ordered", C: "The number of items in a standard order", D: "The maximum cost allowed"}
+    answer: "B"
+    lesson_refs: [24]
+  - id: A1DINT-D2
+    role: diagnostic
+    points: [a1-data-interpret]
+    difficulty: 2
+    type: mcq
+    prompt: "Using the model cost = 2x + 5, where x is the number of items ordered and cost is in dollars, what does the y-intercept 5 represent?"
+    options: {A: "The cost per item", B: "The number of free items included", C: "The fixed base cost when zero items are ordered", D: "The maximum number of items that can be ordered"}
+    answer: "C"
+    lesson_refs: [24]
+  - id: A1DINT-P1
+    role: practice
+    points: [a1-data-interpret]
+    difficulty: 2
+    type: mcq
+    prompt: "A linear model for a car's fuel remaining (in gallons) after driving x miles is: fuel = -0.04x + 12. What does the slope -0.04 represent?"
+    options: {A: "The car starts with 0.04 gallons", B: "The car uses 0.04 gallons per mile driven", C: "The car has 12 miles of range", D: "The car gains 0.04 gallons per mile"}
+    answer: "B"
+    lesson_refs: [24]
+  - id: A1DINT-P2
+    role: practice
+    points: [a1-data-interpret]
+    difficulty: 3
+    type: mcq
+    prompt: "A researcher fits a line to data comparing hours of sunlight (x) and plant height in cm (y): height = 1.5x + 3. Which interpretation of the intercept 3 is correct?"
+    options: {A: "The plant grows 3 cm per hour of sunlight", B: "The plant needs 3 hours of sunlight to survive", C: "The predicted height when sunlight hours equal zero is 3 cm", D: "The plant height increases by 3 cm for each additional hour of sunlight"}
+    answer: "C"
+    lesson_refs: [24]

@@ -126,3 +126,22 @@ points:
     description: Solve two-variable linear systems by graphing, substitution, and elimination.
     prerequisites: [a1-expr-linear, a1-func-graph]
     standard_refs: [CCSS.HSA.REI.C.6]
+  # --- Strand: Data, Statistics & Probability ---
+  - id: a1-data-display
+    strand: Data, Statistics & Probability
+    title: Data displays and summary statistics
+    description: Represent single-variable data with plots and summarize with mean, median, mode, and range.
+    prerequisites: []
+    standard_refs: [CCSS.HSS.ID.A.1]
+  - id: a1-data-scatter
+    strand: Data, Statistics & Probability
+    title: Scatter plots and line of best fit
+    description: Represent bivariate data on a scatter plot and fit a linear function.
+    prerequisites: [a1-data-display]
+    standard_refs: [CCSS.HSS.ID.B.6]
+  - id: a1-data-interpret
+    strand: Data, Statistics & Probability
+    title: Interpret slope and intercept of a linear model
+    description: Interpret the slope and intercept of a fitted linear model in context.
+    prerequisites: [a1-data-scatter, a1-func-graph]
+    standard_refs: [CCSS.HSS.ID.C.7]
