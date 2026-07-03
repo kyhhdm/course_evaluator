@@ -14,7 +14,7 @@
           "title": {"type": "string"},
           "description": {"type": "string"},
           "prerequisites": {"type": "array", "items": {"type": "string"}},
-          "standard_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+          "standard_refs": {"type": "array", "items": {"type": "string"}}
         },
         "additionalProperties": false
       }

@@ -1,190 +1,825 @@
 items:
-  # --- a1-expr ---
-  - id: A1EXPR-D1
+  # --- a1-num-realnum (L2-3) ---
+  - id: A1NUMRE-D1
     role: diagnostic
-    points: [a1-expr]
+    points: [a1-num-realnum]
     difficulty: 1
-    type: mcq
-    prompt: "In the expression 3x + 7, what is the coefficient of x?"
-    options: {A: "3", B: "7", C: "x", D: "10"}
-    answer: "A"
-    distractor_feedback: {B: "7 is the constant term, not the coefficient of x."}
-  - id: A1EXPR-D2
+    type: numeric
+    prompt: "Evaluate |{-8}|."
+    answer: "8"
+    lesson_refs: [3]
+  - id: A1NUMRE-D2
     role: diagnostic
-    points: [a1-expr]
+    points: [a1-num-realnum]
+    difficulty: 2
+    type: mcq
+    prompt: "Which list is ordered from least to greatest?"
+    options: {A: "-3, -1, 0, 2", B: "0, -1, -3, 2", C: "2, 0, -1, -3", D: "-1, -3, 0, 2"}
+    answer: "A"
+    lesson_refs: [2]
+  - id: A1NUMRE-P1
+    role: practice
+    points: [a1-num-realnum]
     difficulty: 2
     type: numeric
-    prompt: "Solve for x: 2x + 5 = 17. Enter x."
+    prompt: "Evaluate 3 + 2 * 4^2 - 5."
+    answer: "30"
+    lesson_refs: [3]
+  - id: A1NUMRE-P2
+    role: practice
+    points: [a1-num-realnum]
+    difficulty: 1
+    type: mcq
+    prompt: "Which number is irrational?"
+    options: {A: "sqrt(2)", B: "1/3", C: "-4", D: "0.25"}
+    answer: "A"
+    lesson_refs: [2]
+  # --- a1-num-exprad (L3, 30-33, 58) ---
+  - id: A1NUMEX-D1
+    role: diagnostic
+    points: [a1-num-exprad]
+    difficulty: 1
+    type: mcq
+    prompt: "Simplify x^3 * x^4."
+    options: {A: "x^7", B: "x^12", C: "2x^7", D: "x^(-1)"}
+    answer: "A"
+    lesson_refs: [30]
+  - id: A1NUMEX-D2
+    role: diagnostic
+    points: [a1-num-exprad]
+    difficulty: 2
+    type: mcq
+    prompt: "Which expression equals 0.00345 written in scientific notation?"
+    options: {A: "3.45 x 10^(-3)", B: "3.45 x 10^(-4)", C: "3.45 x 10^3", D: "3.45 x 10^(-2)"}
+    answer: "A"
+    lesson_refs: [33]
+  - id: A1NUMEX-P1
+    role: practice
+    points: [a1-num-exprad]
+    difficulty: 2
+    type: numeric
+    prompt: "Simplify sqrt(36). Enter the integer result."
     answer: "6"
-  - id: A1EXPR-P1
+    lesson_refs: [31]
+  - id: A1NUMEX-P2
     role: practice
-    points: [a1-expr]
-    difficulty: 1
+    points: [a1-num-exprad]
+    difficulty: 3
     type: mcq
-    prompt: "Which equation models 'five more than twice a number n is 19'?"
-    options: {A: "2n + 5 = 19", B: "5n + 2 = 19", C: "2n - 5 = 19", D: "2(n + 5) = 19"}
+    prompt: "Which expression is the simplified form of sqrt(48)?"
+    options: {A: "4*sqrt(3)", B: "6*sqrt(2)", C: "2*sqrt(6)", D: "3*sqrt(4)"}
     answer: "A"
-  - id: A1EXPR-P2
+    lesson_refs: [31]
+  # --- a1-num-units (L5-6, 44-45) ---
+  - id: A1NUMUN-D1
+    role: diagnostic
+    points: [a1-num-units]
+    difficulty: 1
+    type: numeric
+    prompt: "What is 25% of 80?"
+    answer: "20"
+    lesson_refs: [5]
+  - id: A1NUMUN-D2
+    role: diagnostic
+    points: [a1-num-units]
+    difficulty: 2
+    type: mcq
+    prompt: "Use a unit multiplier to convert 3.5 km to meters. Which answer is correct?"
+    options: {A: "3500", B: "350", C: "35000", D: "0.35"}
+    answer: "A"
+    lesson_refs: [44]
+  - id: A1NUMUN-P1
     role: practice
-    points: [a1-expr]
+    points: [a1-num-units]
     difficulty: 2
     type: numeric
-    prompt: "Solve for x: 3(x - 4) = 18. Enter x."
+    prompt: "A car travels 150 miles in 3 hours. What is its average speed in miles per hour?"
+    answer: "50"
+    lesson_refs: [6]
+  - id: A1NUMUN-P2
+    role: practice
+    points: [a1-num-units]
+    difficulty: 3
+    type: mcq
+    prompt: "Use unit multipliers to convert 2 feet to centimeters (1 ft = 12 in, 1 in = 2.54 cm). Which answer is correct?"
+    options: {A: "60.96", B: "50.80", C: "24", D: "76.2"}
+    answer: "A"
+    lesson_refs: [44]
+  # --- a1-expr-interpret (L8, 35, 36, 37, 38) ---
+  - id: A1EXPRI-D1
+    role: diagnostic
+    points: [a1-expr-interpret]
+    difficulty: 1
+    type: numeric
+    prompt: "In the expression 5x, what is the coefficient of x?"
+    answer: "5"
+    lesson_refs: [8]
+  - id: A1EXPRI-D2
+    role: diagnostic
+    points: [a1-expr-interpret]
+    difficulty: 2
+    type: mcq
+    prompt: "Which expression is the expanded form of 3(2x - 4)?"
+    options: {A: "6x - 12", B: "6x - 4", C: "2x - 12", D: "6x + 12"}
+    answer: "A"
+    lesson_refs: [8]
+  - id: A1EXPRI-P1
+    role: practice
+    points: [a1-expr-interpret]
+    difficulty: 2
+    type: numeric
+    prompt: "Simplify 4x + 3 + 2x - 7, then evaluate at x = 2."
+    answer: "8"
+    lesson_refs: [35]
+  - id: A1EXPRI-P2
+    role: practice
+    points: [a1-expr-interpret]
+    difficulty: 3
+    type: mcq
+    prompt: "Which expression is the fully simplified form of 2(x + 3) + 4x - 1?"
+    options: {A: "6x + 5", B: "6x + 7", C: "4x + 5", D: "6x - 1"}
+    answer: "A"
+    lesson_refs: [37]
+  # --- a1-expr-model (L7, 8, 48) ---
+  - id: A1EXPRM-D1
+    role: diagnostic
+    points: [a1-expr-model]
+    difficulty: 1
+    type: numeric
+    prompt: "The product of 5 and a number is 35. Find the number."
+    answer: "7"
+    lesson_refs: [7]
+  - id: A1EXPRM-D2
+    role: diagnostic
+    points: [a1-expr-model]
+    difficulty: 2
+    type: mcq
+    prompt: "Which equation models the statement '8 less than twice a number is 14'?"
+    options: {A: "2N - 8 = 14", B: "8 - 2N = 14", C: "2N + 8 = 14", D: "2(N - 8) = 14"}
+    answer: "A"
+    lesson_refs: [8]
+  - id: A1EXPRM-P1
+    role: practice
+    points: [a1-expr-model]
+    difficulty: 2
+    type: numeric
+    prompt: "A farmer earns $4 per basket of berries plus a $10 base pay. If she earned $50 total, how many baskets did she pick?"
     answer: "10"
-  # --- a1-linear ---
-  - id: A1LIN-D1
-    role: diagnostic
-    points: [a1-linear]
-    difficulty: 1
+    lesson_refs: [8]
+  - id: A1EXPRM-P2
+    role: practice
+    points: [a1-expr-model]
+    difficulty: 3
     type: mcq
-    prompt: "What is the slope of the line y = 4x - 3?"
-    options: {A: "4", B: "-3", C: "3", D: "1/4"}
+    prompt: "Which equation models 'three times the sum of a number and 5 equals 24'?"
+    options: {A: "3(N + 5) = 24", B: "3N + 5 = 24", C: "3N - 5 = 24", D: "3(N - 5) = 24"}
     answer: "A"
-  - id: A1LIN-D2
+    lesson_refs: [8]
+  # --- a1-expr-linear (L7, 46) ---
+  - id: A1EXPRL-D1
     role: diagnostic
-    points: [a1-linear]
+    points: [a1-expr-linear]
+    difficulty: 1
+    type: numeric
+    prompt: "Solve for x: 3x + 7 = 22."
+    answer: "5"
+    lesson_refs: [7]
+  - id: A1EXPRL-D2
+    role: diagnostic
+    points: [a1-expr-linear]
     difficulty: 2
     type: mcq
-    prompt: "What is the y-intercept of the line y = 4x - 3?"
-    options: {A: "-3", B: "4", C: "3", D: "0"}
+    prompt: "Solve for x: 2x - 5 = 3x + 1. Which value is correct?"
+    options: {A: "-6", B: "6", C: "-4", D: "4"}
     answer: "A"
-  - id: A1LIN-P1
+    lesson_refs: [46]
+  - id: A1EXPRL-P1
     role: practice
-    points: [a1-linear]
+    points: [a1-expr-linear]
     difficulty: 2
     type: numeric
-    prompt: "For f(x) = 2x + 1, what is f(5)?"
-    answer: "11"
-  - id: A1LIN-P2
+    prompt: "Solve for x: 4(x - 2) = 2x + 6."
+    answer: "7"
+    lesson_refs: [46]
+  - id: A1EXPRL-P2
     role: practice
-    points: [a1-linear]
+    points: [a1-expr-linear]
+    difficulty: 3
+    type: mcq
+    prompt: "Solve for x: 3(2x + 1) - x = 2(x + 6). Which value is correct?"
+    options: {A: "3", B: "9", C: "1", D: "-3"}
+    answer: "A"
+    lesson_refs: [46]
+  # --- a1-poly-ops (L37, L38) ---
+  - id: A1POLYO-D1
+    role: diagnostic
+    points: [a1-poly-ops]
+    difficulty: 1
+    type: numeric
+    prompt: "Add the polynomials: (2x + 3) + (5x - 1). What is the coefficient of x in the result?"
+    answer: "7"
+    lesson_refs: [37]
+  - id: A1POLYO-D2
+    role: diagnostic
+    points: [a1-poly-ops]
     difficulty: 2
     type: mcq
-    prompt: "A line passes through (0, 2) with slope 3. Which equation is it?"
-    options: {A: "y = 3x + 2", B: "y = 2x + 3", C: "y = 3x - 2", D: "y = x + 3"}
+    prompt: "Which expression equals (x + 2)(x + 3)?"
+    options: {A: "x^2 + 5x + 6", B: "x^2 + 6x + 5", C: "x^2 + 5x + 5", D: "x^2 + 6x + 6"}
     answer: "A"
-  # --- a1-systems ---
+    lesson_refs: [37]
+  - id: A1POLYO-P1
+    role: practice
+    points: [a1-poly-ops]
+    difficulty: 2
+    type: numeric
+    prompt: "Subtract the polynomials: (4x^2 - 3x + 7) - (x^2 + 2x - 1). What is the constant term of the result?"
+    answer: "8"
+    lesson_refs: [38]
+  - id: A1POLYO-P2
+    role: practice
+    points: [a1-poly-ops]
+    difficulty: 3
+    type: mcq
+    prompt: "Which expression equals (2x - 1)(x + 4)?"
+    options: {A: "2x^2 + 7x - 4", B: "2x^2 - 7x - 4", C: "2x^2 + 7x + 4", D: "2x^2 + 8x - 4"}
+    answer: "A"
+    lesson_refs: [37]
+  # --- a1-poly-factor (L51, L75, L91) ---
+  - id: A1POLYF-D1
+    role: diagnostic
+    points: [a1-poly-factor]
+    difficulty: 1
+    type: mcq
+    prompt: "Which pair of binomials is the factored form of x^2 + 5x + 6?"
+    options: {A: "(x + 2)(x + 3)", B: "(x + 1)(x + 6)", C: "(x + 2)(x + 4)", D: "(x - 2)(x - 3)"}
+    answer: "A"
+    lesson_refs: [51]
+  - id: A1POLYF-D2
+    role: diagnostic
+    points: [a1-poly-factor]
+    difficulty: 2
+    type: numeric
+    prompt: "Factor x^2 - 7x + 12 = 0 and find the larger root."
+    answer: "4"
+    lesson_refs: [75]
+  - id: A1POLYF-P1
+    role: practice
+    points: [a1-poly-factor]
+    difficulty: 2
+    type: mcq
+    prompt: "Which is the factored form of x^2 - x - 6?"
+    options: {A: "(x - 3)(x + 2)", B: "(x + 3)(x - 2)", C: "(x - 6)(x + 1)", D: "(x + 6)(x - 1)"}
+    answer: "A"
+    lesson_refs: [51]
+  - id: A1POLYF-P2
+    role: practice
+    points: [a1-poly-factor]
+    difficulty: 3
+    type: numeric
+    prompt: "Factor x^2 + x - 12 = 0 and find the positive root."
+    answer: "3"
+    lesson_refs: [75]
+  # --- a1-quad-solve (L75, L76, L91, L92) ---
+  - id: A1QUAD-D1
+    role: diagnostic
+    points: [a1-quad-solve]
+    difficulty: 1
+    type: numeric
+    prompt: "Solve by factoring: x^2 - 5x + 6 = 0. What is the larger root?"
+    answer: "3"
+    lesson_refs: [75]
+  - id: A1QUAD-D2
+    role: diagnostic
+    points: [a1-quad-solve]
+    difficulty: 2
+    type: numeric
+    prompt: "Solve by factoring: x^2 - 6x + 9 = 0. The equation has a repeated root. What is that root?"
+    answer: "3"
+    lesson_refs: [76]
+  - id: A1QUAD-P1
+    role: practice
+    points: [a1-quad-solve]
+    difficulty: 2
+    type: mcq
+    prompt: "Use the quadratic formula to solve x^2 - 7x + 10 = 0. What is the larger root?"
+    options: {A: "5", B: "2", C: "7", D: "10"}
+    answer: "A"
+    lesson_refs: [92]
+  - id: A1QUAD-P2
+    role: practice
+    points: [a1-quad-solve]
+    difficulty: 3
+    type: mcq
+    prompt: "Use completing the square to solve x^2 + 4x - 5 = 0. Which lists both roots correctly?"
+    options: {A: "x = 1 and x = -5", B: "x = 5 and x = -1", C: "x = -1 and x = -5", D: "x = 1 and x = 5"}
+    answer: "A"
+    lesson_refs: [91]
+  # --- a1-complex (L92, L95) ---
+  - id: A1CPLX-D1
+    role: diagnostic
+    points: [a1-complex]
+    difficulty: 1
+    type: mcq
+    prompt: "What is the value of i^2?"
+    options: {A: "-1", B: "1", C: "i", D: "-i"}
+    answer: "A"
+    lesson_refs: [92]
+  - id: A1CPLX-D2
+    role: diagnostic
+    points: [a1-complex]
+    difficulty: 2
+    type: mcq
+    prompt: "Solve x^2 + 1 = 0. Which lists the two roots correctly?"
+    options: {A: "i and -i", B: "1 and -1", C: "i and 1", D: "2i and -2i"}
+    answer: "A"
+    lesson_refs: [92]
+  - id: A1CPLX-P1
+    role: practice
+    points: [a1-complex]
+    difficulty: 2
+    type: mcq
+    prompt: "Use the quadratic formula to solve x^2 + 4 = 0. Which lists both complex roots?"
+    options: {A: "2i and -2i", B: "4i and -4i", C: "2 and -2", D: "2i and 2"}
+    answer: "A"
+    lesson_refs: [92]
+  - id: A1CPLX-P2
+    role: practice
+    points: [a1-complex]
+    difficulty: 3
+    type: mcq
+    prompt: "Use the quadratic formula to find the complex roots of x^2 - 2x + 5 = 0. Which answer is correct?"
+    options: {A: "1 + 2i and 1 - 2i", B: "2 + i and 2 - i", C: "-1 + 2i and -1 - 2i", D: "1 + 4i and 1 - 4i"}
+    answer: "A"
+    lesson_refs: [95]
+  # --- a1-func-concept (L15, L52, L53) ---
+  - id: A1FUNC-D1
+    role: diagnostic
+    points: [a1-func-concept]
+    difficulty: 1
+    type: mcq
+    prompt: "If f(x) = 2x + 1, what is f(5)?"
+    options: {A: "11", B: "9", C: "13", D: "7"}
+    answer: "A"
+    lesson_refs: [15]
+  - id: A1FUNC-D2
+    role: diagnostic
+    points: [a1-func-concept]
+    difficulty: 2
+    type: mcq
+    prompt: "What is the domain of f(x) = sqrt(x - 3)?"
+    options: {A: "x >= 3", B: "x >= 0", C: "x > 3", D: "all real numbers"}
+    answer: "A"
+    lesson_refs: [15]
+  - id: A1FUNC-P1
+    role: practice
+    points: [a1-func-concept]
+    difficulty: 2
+    type: mcq
+    prompt: "If g(x) = x^2 - 3x + 2, what is g(-1)?"
+    options: {A: "6", B: "0", C: "4", D: "-2"}
+    answer: "A"
+    lesson_refs: [15]
+  - id: A1FUNC-P2
+    role: practice
+    points: [a1-func-concept]
+    difficulty: 2
+    type: mcq
+    prompt: "Which describes the range of f(x) = x^2?"
+    options: {A: "y >= 0", B: "all real numbers", C: "y > 0", D: "y <= 0"}
+    answer: "A"
+    lesson_refs: [52]
+  # --- a1-func-graph (L16, L55, L56, L57) ---
+  - id: A1FGRA-D1
+    role: diagnostic
+    points: [a1-func-graph]
+    difficulty: 1
+    type: mcq
+    prompt: "For the line y = 4x - 3, what is the slope?"
+    options: {A: "4", B: "-3", C: "3", D: "-4"}
+    answer: "A"
+    lesson_refs: [16]
+  - id: A1FGRA-D2
+    role: diagnostic
+    points: [a1-func-graph]
+    difficulty: 2
+    type: mcq
+    prompt: "The graph of f(x) = x^2 is shifted up 3 units. Which equation represents the new graph?"
+    options: {A: "g(x) = x^2 + 3", B: "g(x) = x^2 - 3", C: "g(x) = (x + 3)^2", D: "g(x) = (x - 3)^2"}
+    answer: "A"
+    lesson_refs: [57]
+  - id: A1FGRA-P1
+    role: practice
+    points: [a1-func-graph]
+    difficulty: 2
+    type: mcq
+    prompt: "What is the x-intercept of the line y = 3x - 6?"
+    options: {A: "2", B: "-2", C: "6", D: "-6"}
+    answer: "A"
+    lesson_refs: [16]
+  - id: A1FGRA-P2
+    role: practice
+    points: [a1-func-graph]
+    difficulty: 3
+    type: mcq
+    prompt: "The graph of f(x) = |x| is shifted 2 units to the right. Where is the vertex of the new graph?"
+    options: {A: "(2, 0)", B: "(-2, 0)", C: "(0, 2)", D: "(0, -2)"}
+    answer: "A"
+    lesson_refs: [57]
+  # --- a1-func-linexp (L48, L81) ---
+  - id: A1FLE-D1
+    role: diagnostic
+    points: [a1-func-linexp]
+    difficulty: 2
+    type: mcq
+    prompt: "Which table shows an exponential pattern (constant ratio) rather than a linear pattern (constant difference)?"
+    options: {A: "x: 0,1,2,3  f(x): 1,3,9,27", B: "x: 0,1,2,3  f(x): 2,5,8,11", C: "x: 0,1,2,3  f(x): 4,7,10,13", D: "x: 0,1,2,3  f(x): 0,4,8,12"}
+    answer: "A"
+    lesson_refs: [81]
+  - id: A1FLE-D2
+    role: diagnostic
+    points: [a1-func-linexp]
+    difficulty: 2
+    type: mcq
+    prompt: "A line passes through (0, 1) and (2, 7). Which equation fits this line?"
+    options: {A: "y = 3x + 1", B: "y = 2x + 1", C: "y = 3x - 1", D: "y = 6x + 1"}
+    answer: "A"
+    lesson_refs: [48]
+  - id: A1FLE-P1
+    role: practice
+    points: [a1-func-linexp]
+    difficulty: 2
+    type: mcq
+    prompt: "A population doubles every year starting at 50. Which type of function best models this situation?"
+    options: {A: "Exponential", B: "Linear", C: "Quadratic", D: "Square root"}
+    answer: "A"
+    lesson_refs: [81]
+  - id: A1FLE-P2
+    role: practice
+    points: [a1-func-linexp]
+    difficulty: 3
+    type: mcq
+    prompt: "A line passes through (1, 5) and (3, 11). Which equation represents this line?"
+    options: {A: "y = 3x + 2", B: "y = 2x + 3", C: "y = 3x - 2", D: "y = 6x - 1"}
+    answer: "A"
+    lesson_refs: [48]
+  # --- a1-geo-def (L9, L10, L11) ---
+  - id: A1GDEF-D1
+    role: diagnostic
+    points: [a1-geo-def]
+    difficulty: 1
+    type: mcq
+    prompt: "Which of the following best defines an angle in geometry?"
+    options: {A: "Two rays in the same plane sharing a common endpoint and not overlapping", B: "Two parallel lines in the same plane", C: "A flat surface having length and width only", D: "A line segment with two endpoints"}
+    answer: "A"
+    lesson_refs: [9]
+  - id: A1GDEF-D2
+    role: diagnostic
+    points: [a1-geo-def]
+    difficulty: 2
+    type: mcq
+    prompt: "Two lines are perpendicular to each other. Which statement must be true?"
+    options: {A: "They intersect forming four right angles", B: "They never intersect", C: "They form two obtuse angles", D: "They share more than one point"}
+    answer: "A"
+    lesson_refs: [9]
+  - id: A1GDEF-P1
+    role: practice
+    points: [a1-geo-def]
+    difficulty: 1
+    type: mcq
+    prompt: "Which of the following best defines parallel lines?"
+    options: {A: "Two lines in the same plane that never intersect", B: "Two lines that meet at a right angle", C: "Two rays sharing a common endpoint", D: "Two lines that intersect at exactly one point"}
+    answer: "A"
+    lesson_refs: [9]
+  - id: A1GDEF-P2
+    role: practice
+    points: [a1-geo-def]
+    difficulty: 2
+    type: mcq
+    prompt: "A right angle is formed when two lines intersect. How many right angles are formed at that intersection?"
+    options: {A: "4", B: "1", C: "2", D: "3"}
+    answer: "A"
+    lesson_refs: [9]
+  # --- a1-geo-proof (L10, L66, L67, L68) ---
+  - id: A1GPRF-D1
+    role: diagnostic
+    points: [a1-geo-proof]
+    difficulty: 1
+    type: numeric
+    prompt: "Two angles of a triangle measure 47° and 83°. What is the measure of the third angle in degrees?"
+    answer: "50"
+    lesson_refs: [68]
+  - id: A1GPRF-D2
+    role: diagnostic
+    points: [a1-geo-proof]
+    difficulty: 2
+    type: mcq
+    prompt: "In an isosceles triangle, one of the base angles measures 35°. What is the measure of the angle at the apex (vertex angle)?"
+    options: {A: "110", B: "35", C: "70", D: "145"}
+    answer: "A"
+    lesson_refs: [68]
+  - id: A1GPRF-P1
+    role: practice
+    points: [a1-geo-proof]
+    difficulty: 2
+    type: numeric
+    prompt: "In a triangle, one angle is twice the smallest angle, and the third angle is 60°. What is the measure of the smallest angle in degrees?"
+    answer: "40"
+    lesson_refs: [66]
+  - id: A1GPRF-P2
+    role: practice
+    points: [a1-geo-proof]
+    difficulty: 3
+    type: mcq
+    prompt: "Which congruency theorem applies when two sides and the included angle of one triangle are equal to two sides and the included angle of another triangle?"
+    options: {A: "SAS", B: "SSS", C: "HL", D: "AAS"}
+    answer: "A"
+    lesson_refs: [68]
+  # --- a1-geo-circle (L40, L66) ---
+  - id: A1GCIR-D1
+    role: diagnostic
+    points: [a1-geo-circle]
+    difficulty: 1
+    type: numeric
+    prompt: "A central angle of a circle measures 80°. An inscribed angle intercepts the same arc. What is the measure of the inscribed angle in degrees?"
+    answer: "40"
+    lesson_refs: [40]
+  - id: A1GCIR-D2
+    role: diagnostic
+    points: [a1-geo-circle]
+    difficulty: 2
+    type: mcq
+    prompt: "An inscribed angle in a circle intercepts an arc of 110°. What is the measure of the inscribed angle?"
+    options: {A: "55", B: "110", C: "220", D: "90"}
+    answer: "A"
+    lesson_refs: [40]
+  - id: A1GCIR-P1
+    role: practice
+    points: [a1-geo-circle]
+    difficulty: 2
+    type: mcq
+    prompt: "Which statement correctly describes the inscribed angle theorem?"
+    options: {A: "An inscribed angle equals half the measure of the arc it intercepts", B: "An inscribed angle equals the measure of the arc it intercepts", C: "An inscribed angle equals twice the measure of the arc it intercepts", D: "An inscribed angle equals the central angle minus 90°"}
+    answer: "A"
+    lesson_refs: [40]
+  - id: A1GCIR-P2
+    role: practice
+    points: [a1-geo-circle]
+    difficulty: 3
+    type: numeric
+    prompt: "Two chords intersect inside a circle. One chord is divided into segments of length 3 and 6. The other chord is divided into segments of length 2 and x. Find x."
+    answer: "9"
+    lesson_refs: [66]
+  # --- a1-geo-sim (L6, L9) ---
+  - id: A1GSIM-D1
+    role: diagnostic
+    points: [a1-geo-sim]
+    difficulty: 1
+    type: numeric
+    prompt: "Two triangles are similar. The smaller triangle has sides 3, 4, and 5. The corresponding side of the larger triangle that matches the side of length 3 is 6. What is the side of the larger triangle that corresponds to the side of length 4?"
+    answer: "8"
+    lesson_refs: [9]
+  - id: A1GSIM-D2
+    role: diagnostic
+    points: [a1-geo-sim]
+    difficulty: 2
+    type: mcq
+    prompt: "Two similar triangles have a scale factor of 3 (each side of the larger triangle is 3 times the corresponding side of the smaller triangle). If the smaller triangle has a side of length 8, what is the length of the corresponding side of the larger triangle?"
+    options: {A: "24", B: "11", C: "5", D: "16"}
+    answer: "A"
+    lesson_refs: [6]
+  - id: A1GSIM-P1
+    role: practice
+    points: [a1-geo-sim]
+    difficulty: 2
+    type: numeric
+    prompt: "Two triangles are similar. A side of length 10 in the first triangle corresponds to a side of length 6 in the second triangle. Find the side in the second triangle that corresponds to the side of length 15 in the first triangle."
+    answer: "9"
+    lesson_refs: [9]
+  - id: A1GSIM-P2
+    role: practice
+    points: [a1-geo-sim]
+    difficulty: 3
+    type: mcq
+    prompt: "Which of the following conditions is sufficient to guarantee that two triangles are similar?"
+    options: {A: "All corresponding angles are equal", B: "They have equal areas", C: "They have equal perimeters", D: "One pair of corresponding sides is equal"}
+    answer: "A"
+    lesson_refs: [9]
+  # --- a1-geo-trig (L12, L19, L43, L80) ---
+  - id: A1GTRI-D1
+    role: diagnostic
+    points: [a1-geo-trig]
+    difficulty: 1
+    type: numeric
+    prompt: "A right triangle has legs of length 5 and 12. What is the length of the hypotenuse?"
+    answer: "13"
+    lesson_refs: [12]
+  - id: A1GTRI-D2
+    role: diagnostic
+    points: [a1-geo-trig]
+    difficulty: 2
+    type: mcq
+    prompt: "In a 45-45-90 right triangle, each leg has length 7. What is the exact length of the hypotenuse?"
+    options: {A: "7sqrt(2)", B: "14", C: "7", D: "7sqrt(3)"}
+    answer: "A"
+    lesson_refs: [43]
+  - id: A1GTRI-P1
+    role: practice
+    points: [a1-geo-trig]
+    difficulty: 2
+    type: mcq
+    prompt: "In a 30-60-90 right triangle, the shortest side (opposite the 30° angle) has length 5. What is the length of the hypotenuse?"
+    options: {A: "10", B: "5", C: "5sqrt(3)", D: "5sqrt(2)"}
+    answer: "A"
+    lesson_refs: [43]
+  - id: A1GTRI-P2
+    role: practice
+    points: [a1-geo-trig]
+    difficulty: 3
+    type: numeric
+    prompt: "In a right triangle, the hypotenuse is 10 and one acute angle is 30°. What is the length of the side opposite the 30° angle? (Use sin 30° = 0.5; give an exact whole-number answer.)"
+    answer: "5"
+    lesson_refs: [19]
+  # --- a1-geo-measure (L13, L41, L42) ---
+  - id: A1GMEA-D1
+    role: diagnostic
+    points: [a1-geo-measure]
+    difficulty: 1
+    type: numeric
+    prompt: "Find the volume of a rectangular box with length 4, width 3, and height 5."
+    answer: "60"
+    lesson_refs: [13]
+  - id: A1GMEA-D2
+    role: diagnostic
+    points: [a1-geo-measure]
+    difficulty: 2
+    type: mcq
+    prompt: "A right circular cylinder has radius 3 m and height 10 m. What is its volume? Express your answer in terms of π."
+    options: {A: "90π", B: "60π", C: "30π", D: "180π"}
+    answer: "A"
+    lesson_refs: [42]
+  - id: A1GMEA-P1
+    role: practice
+    points: [a1-geo-measure]
+    difficulty: 2
+    type: numeric
+    prompt: "Find the total surface area of a cube with side length 6. (A cube has 6 square faces.)"
+    answer: "216"
+    lesson_refs: [41]
+  - id: A1GMEA-P2
+    role: practice
+    points: [a1-geo-measure]
+    difficulty: 3
+    type: mcq
+    prompt: "A sphere has radius 5. What is its surface area? Express your answer in terms of π."
+    options: {A: "100π", B: "50π", C: "25π", D: "200π"}
+    answer: "A"
+    lesson_refs: [41]
+  # --- a1-systems (L17, L61, L64, L70) ---
   - id: A1SYS-D1
     role: diagnostic
     points: [a1-systems]
-    difficulty: 2
+    difficulty: 1
     type: mcq
-    prompt: "Solve the system y = x + 1 and y = 2x - 1. What is x?"
-    options: {A: "2", B: "1", C: "3", D: "-2"}
+    prompt: "Use substitution to solve the system: y = x + 1 and y = 2x − 1. Which ordered pair (x, y) is the solution?"
+    options: {A: "(2, 3)", B: "(1, 2)", C: "(3, 4)", D: "(0, 1)"}
     answer: "A"
+    lesson_refs: [64]
   - id: A1SYS-D2
     role: diagnostic
     points: [a1-systems]
     difficulty: 2
-    type: numeric
-    prompt: "For the system x + y = 10 and x - y = 4, what is x?"
-    answer: "7"
+    type: mcq
+    prompt: "Two lines in a system of equations are parallel and not the same line. How many solutions does the system have?"
+    options: {A: "None", B: "Exactly one", C: "Exactly two", D: "Infinitely many"}
+    answer: "A"
+    lesson_refs: [61]
   - id: A1SYS-P1
     role: practice
     points: [a1-systems]
-    difficulty: 3
-    type: numeric
-    prompt: "For the system x + y = 10 and x - y = 4, what is y?"
-    answer: "3"
+    difficulty: 2
+    type: mcq
+    prompt: "Solve the system x + y = 10 and x − y = 4 by addition (elimination). Which ordered pair (x, y) is the solution?"
+    options: {A: "(7, 3)", B: "(3, 7)", C: "(6, 4)", D: "(8, 2)"}
+    answer: "A"
+    lesson_refs: [70]
   - id: A1SYS-P2
     role: practice
     points: [a1-systems]
-    difficulty: 2
+    difficulty: 3
     type: mcq
-    prompt: "How many solutions does a system of two parallel, non-identical lines have?"
-    options: {A: "None", B: "One", C: "Two", D: "Infinitely many"}
+    prompt: "Use elimination to solve: 2x + y = 7 and x − y = 2. Which ordered pair (x, y) is the solution?"
+    options: {A: "(3, 1)", B: "(1, 3)", C: "(4, -1)", D: "(2, 3)"}
     answer: "A"
-  # --- a1-poly ---
-  - id: A1POLY-D1
+    lesson_refs: [70]
+  # --- a1-data-display (L23) ---
+  - id: A1DDIS-D1
     role: diagnostic
-    points: [a1-poly]
+    points: [a1-data-display]
     difficulty: 1
     type: mcq
-    prompt: "Simplify x^2 * x^3."
-    options: {A: "x^5", B: "x^6", C: "x^1", D: "2x^5"}
-    answer: "A"
-  - id: A1POLY-D2
+    prompt: "Find the mean of the data set: 4, 7, 7, 9, 13."
+    options: {A: "7", B: "8", C: "9", D: "6"}
+    answer: "B"
+    lesson_refs: [23]
+  - id: A1DDIS-D2
     role: diagnostic
-    points: [a1-poly]
+    points: [a1-data-display]
     difficulty: 2
     type: mcq
-    prompt: "Add (2x + 3) + (5x - 1)."
-    options: {A: "7x + 2", B: "7x + 4", C: "10x - 3", D: "7x - 2"}
-    answer: "A"
-  - id: A1POLY-P1
+    prompt: "For the data set 4, 7, 7, 9, 13 — which value is the median?"
+    options: {A: "4", B: "9", C: "7", D: "13"}
+    answer: "C"
+    lesson_refs: [23]
+  - id: A1DDIS-P1
     role: practice
-    points: [a1-poly]
-    difficulty: 1
-    type: numeric
-    prompt: "Evaluate 2^5."
-    answer: "32"
-  - id: A1POLY-P2
-    role: practice
-    points: [a1-poly]
+    points: [a1-data-display]
     difficulty: 2
     type: mcq
-    prompt: "Multiply (x + 2)(x + 3)."
-    options: {A: "x^2 + 5x + 6", B: "x^2 + 6x + 6", C: "x^2 + 5x + 5", D: "x^2 + 6"}
-    answer: "A"
-  # --- a1-geometry ---
-  - id: A1GEO-D1
-    role: diagnostic
-    points: [a1-geometry]
-    difficulty: 1
-    type: mcq
-    prompt: "Two lines that never meet and stay the same distance apart are called:"
-    options: {A: "parallel", B: "perpendicular", C: "intersecting", D: "skew"}
-    answer: "A"
-  - id: A1GEO-D2
-    role: diagnostic
-    points: [a1-geometry]
-    difficulty: 2
-    type: numeric
-    prompt: "A rectangular box measures 2 by 3 by 4. What is its volume?"
-    answer: "24"
-  - id: A1GEO-P1
+    prompt: "For the data set 4, 7, 7, 9, 13 — what is the range?"
+    options: {A: "6", B: "7", C: "4", D: "9"}
+    answer: "D"
+    lesson_refs: [23]
+  - id: A1DDIS-P2
     role: practice
-    points: [a1-geometry]
+    points: [a1-data-display]
+    difficulty: 2
+    type: mcq
+    prompt: "A researcher collects 30 temperature measurements and wants to show how frequently values fall in each 5-degree interval. Which display is most appropriate?"
+    options: {A: "Scatter plot", B: "Line graph", C: "Histogram", D: "Box plot"}
+    answer: "C"
+    lesson_refs: [23]
+  # --- a1-data-scatter (L24, L94) ---
+  - id: A1DSCA-D1
+    role: diagnostic
+    points: [a1-data-scatter]
     difficulty: 1
     type: mcq
-    prompt: "Perpendicular lines meet at an angle of:"
-    options: {A: "90 degrees", B: "45 degrees", C: "180 degrees", D: "60 degrees"}
-    answer: "A"
-  - id: A1GEO-P2
-    role: practice
-    points: [a1-geometry]
-    difficulty: 2
-    type: numeric
-    prompt: "A cube has side length 3. What is its volume?"
-    answer: "27"
-  # --- a1-data ---
-  - id: A1DATA-D1
+    prompt: "A scatter plot shows that as study time (x) increases, test score (y) also increases. What type of association does this scatter plot show?"
+    options: {A: "No association", B: "Negative association", C: "Non-linear association", D: "Positive association"}
+    answer: "D"
+    lesson_refs: [24]
+  - id: A1DSCA-D2
     role: diagnostic
-    points: [a1-data]
-    difficulty: 1
-    type: numeric
-    prompt: "Find the mean of 4, 6, 8, and 10."
-    answer: "7"
-  - id: A1DATA-D2
-    role: diagnostic
-    points: [a1-data]
+    points: [a1-data-scatter]
     difficulty: 2
     type: mcq
-    prompt: "Which display best shows the distribution of a single numeric variable?"
-    options: {A: "histogram", B: "scatter plot", C: "pie chart of names", D: "road map"}
-    answer: "A"
-  - id: A1DATA-P1
+    prompt: "A spring is stretched different distances by adding masses. The data follows a linear pattern. The slope of the best-fit line through the spring-mass data is approximately 2 (cm per kg) and the line passes through the origin. What does the model predict for the stretch when 5 kg is added?"
+    options: {A: "5 cm", B: "7 cm", C: "10 cm", D: "2 cm"}
+    answer: "C"
+    lesson_refs: [24]
+  - id: A1DSCA-P1
     role: practice
-    points: [a1-data]
-    difficulty: 1
-    type: numeric
-    prompt: "Find the median of 3, 5, and 9."
-    answer: "5"
-  - id: A1DATA-P2
-    role: practice
-    points: [a1-data]
+    points: [a1-data-scatter]
     difficulty: 2
     type: mcq
-    prompt: "What is the range of the data set 2, 5, 9?"
-    options: {A: "7", B: "9", C: "2", D: "5"}
-    answer: "A"
+    prompt: "When drawing a line of best fit on a scatter plot, which description best characterizes a good fit line?"
+    options: {A: "Passes through all data points", B: "Passes only through the first and last data points", C: "Has roughly equal numbers of data points above and below the line", D: "Passes only through the highest and lowest points"}
+    answer: "C"
+    lesson_refs: [24]
+  - id: A1DSCA-P2
+    role: practice
+    points: [a1-data-scatter]
+    difficulty: 3
+    type: mcq
+    prompt: "Bivariate data is collected and plotted. One student draws a best-fit line with equation y = 3x + 1 and another draws y = 3x + 4. The actual data cluster near y = 3x + 2. Which statement is most accurate?"
+    options: {A: "Both lines are equally good fits", B: "y = 3x + 1 is a better fit because it has a smaller intercept", C: "y = 3x + 4 is a better fit because it has a larger intercept", D: "y = 3x + 2 would be the best fit because it is closest to the cluster of data"}
+    answer: "D"
+    lesson_refs: [24]
+  # --- a1-data-interpret (L24, L94) ---
+  - id: A1DINT-D1
+    role: diagnostic
+    points: [a1-data-interpret]
+    difficulty: 2
+    type: mcq
+    prompt: "A linear model for the total cost (in dollars) of ordering items is cost = 2x + 5, where x is the number of items ordered. What does the slope 2 represent in this context?"
+    options: {A: "The total cost when no items are ordered", B: "The cost per additional item ordered", C: "The number of items in a standard order", D: "The maximum cost allowed"}
+    answer: "B"
+    lesson_refs: [24]
+  - id: A1DINT-D2
+    role: diagnostic
+    points: [a1-data-interpret]
+    difficulty: 2
+    type: mcq
+    prompt: "Using the model cost = 2x + 5, where x is the number of items ordered and cost is in dollars, what does the y-intercept 5 represent?"
+    options: {A: "The cost per item", B: "The number of free items included", C: "The fixed base cost when zero items are ordered", D: "The maximum number of items that can be ordered"}
+    answer: "C"
+    lesson_refs: [24]
+  - id: A1DINT-P1
+    role: practice
+    points: [a1-data-interpret]
+    difficulty: 2
+    type: mcq
+    prompt: "A linear model for a car's fuel remaining (in gallons) after driving x miles is: fuel = -0.04x + 12. What does the slope -0.04 represent?"
+    options: {A: "The car starts with 0.04 gallons", B: "The car uses 0.04 gallons per mile driven", C: "The car has 12 miles of range", D: "The car gains 0.04 gallons per mile"}
+    answer: "B"
+    lesson_refs: [24]
+  - id: A1DINT-P2
+    role: practice
+    points: [a1-data-interpret]
+    difficulty: 3
+    type: mcq
+    prompt: "A researcher fits a line to data comparing hours of sunlight (x) and plant height in cm (y): height = 1.5x + 3. Which interpretation of the intercept 3 is correct?"
+    options: {A: "The plant grows 3 cm per hour of sunlight", B: "The plant needs 3 hours of sunlight to survive", C: "The predicted height when sunlight hours equal zero is 3 cm", D: "The plant height increases by 3 cm for each additional hour of sunlight"}
+    answer: "C"
+    lesson_refs: [24]

@@ -63,6 +63,13 @@ def test_load_course_wires_everything(tmp_path):
     assert [b.name for b in c.bands] == ["Secure", "Developing", "Not yet"]
 
 
+def test_existing_items_default_empty_lesson_refs():
+    """Courses without lesson_refs load with an empty list (no breakage)."""
+    from engine.loader import load_course
+    c = load_course("curriculum/grade5_math", "schemas", "methodology", "standards")
+    assert all(it.lesson_refs == [] for it in c.items.values())
+
+
 def test_items_get_role_with_default_diagnostic():
     from engine.loader import load_course
     c = load_course("curriculum/grade5_math", "schemas", "methodology", "standards")

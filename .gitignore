@@ -7,3 +7,5 @@ __pycache__/
 *.egg-info/
 build/
 var/
+# Copyrighted source material (Shormann eTextbooks) — referenced by lesson number, not redistributed
+asset/

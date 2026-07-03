@@ -1,25 +1,128 @@
 responses:
-  A1EXPR-D1: "A"
-  A1EXPR-D2: "6"
-  A1EXPR-P1: "A"
-  A1EXPR-P2: "10"
-  A1LIN-D1: "A"
-  A1LIN-D2: "A"
-  A1LIN-P1: "11"
-  A1LIN-P2: "A"
-  A1SYS-D1: "B"
-  A1SYS-D2: "7"
-  A1SYS-P1: "3"
+  # --- Strand 1: Number & Quantity (NUM) — all correct → Secure ---
+  # a1-num-realnum (all correct)
+  A1NUMRE-D1: "8"
+  A1NUMRE-D2: "A"
+  A1NUMRE-P1: "30"
+  A1NUMRE-P2: "A"
+  # a1-num-exprad (all correct)
+  A1NUMEX-D1: "A"
+  A1NUMEX-D2: "A"
+  A1NUMEX-P1: "6"
+  A1NUMEX-P2: "A"
+  # a1-num-units (all correct)
+  A1NUMUN-D1: "20"
+  A1NUMUN-D2: "A"
+  A1NUMUN-P1: "50"
+  A1NUMUN-P2: "A"
+
+  # --- Strand 2: Expressions & Equations (EXPR) — mixed → Developing ---
+  # a1-expr-interpret: D1 correct, D2 wrong, P1 correct, P2 wrong
+  A1EXPRI-D1: "5"
+  A1EXPRI-D2: "B"
+  A1EXPRI-P1: "8"
+  A1EXPRI-P2: "C"
+  # a1-expr-model: D1 correct, D2 wrong, P1 wrong, P2 correct
+  A1EXPRM-D1: "7"
+  A1EXPRM-D2: "C"
+  A1EXPRM-P1: "5"
+  A1EXPRM-P2: "A"
+  # a1-expr-linear: D1 correct, D2 wrong, P1 correct, P2 wrong
+  A1EXPRL-D1: "5"
+  A1EXPRL-D2: "B"
+  A1EXPRL-P1: "7"
+  A1EXPRL-P2: "B"
+
+  # --- Strand 3: Polynomials (POLY) — all correct → Secure ---
+  # a1-poly-ops (all correct)
+  A1POLYO-D1: "7"
+  A1POLYO-D2: "A"
+  A1POLYO-P1: "8"
+  A1POLYO-P2: "A"
+  # a1-poly-factor (all correct)
+  A1POLYF-D1: "A"
+  A1POLYF-D2: "4"
+  A1POLYF-P1: "A"
+  A1POLYF-P2: "3"
+
+  # --- Strand 4: Quadratics & Complex (QUAD) — mixed → Developing ---
+  # a1-quad-solve: D1 correct, D2 wrong, P1 correct, P2 wrong
+  A1QUAD-D1: "3"
+  A1QUAD-D2: "5"
+  A1QUAD-P1: "A"
+  A1QUAD-P2: "B"
+  # a1-complex: D1 correct, D2 wrong, P1 wrong, P2 correct
+  A1CPLX-D1: "A"
+  A1CPLX-D2: "B"
+  A1CPLX-P1: "B"
+  A1CPLX-P2: "A"
+
+  # --- Strand 5: Functions (FUNC) — func-concept Developing, func-graph Developing,
+  #     func-linexp: only 1 item answered → insufficient_evidence ---
+  # a1-func-concept: D1 correct, D2 wrong, P1 correct, P2 wrong
+  A1FUNC-D1: "A"
+  A1FUNC-D2: "B"
+  A1FUNC-P1: "A"
+  A1FUNC-P2: "B"
+  # a1-func-graph: D1 correct, D2 wrong, P1 correct, P2 wrong
+  A1FGRA-D1: "A"
+  A1FGRA-D2: "B"
+  A1FGRA-P1: "A"
+  A1FGRA-P2: "B"
+  # a1-func-linexp: only D1 answered → insufficient_evidence (< 2 items)
+  A1FLE-D1: "A"
+
+  # --- Strand 6: Geometry (GEO) — mix of Secure and Developing ---
+  # a1-geo-def: all correct → Secure
+  A1GDEF-D1: "A"
+  A1GDEF-D2: "A"
+  A1GDEF-P1: "A"
+  A1GDEF-P2: "A"
+  # a1-geo-proof: D1 correct, D2 wrong, P1 correct, P2 wrong → Developing
+  A1GPRF-D1: "50"
+  A1GPRF-D2: "B"
+  A1GPRF-P1: "40"
+  A1GPRF-P2: "B"
+  # a1-geo-circle: all correct → Secure
+  A1GCIR-D1: "40"
+  A1GCIR-D2: "A"
+  A1GCIR-P1: "A"
+  A1GCIR-P2: "9"
+  # a1-geo-sim: D1 correct, D2 wrong, P1 correct, P2 wrong → Developing
+  A1GSIM-D1: "8"
+  A1GSIM-D2: "B"
+  A1GSIM-P1: "9"
+  A1GSIM-P2: "B"
+  # a1-geo-trig: all correct → Secure
+  A1GTRI-D1: "13"
+  A1GTRI-D2: "A"
+  A1GTRI-P1: "A"
+  A1GTRI-P2: "5"
+  # a1-geo-measure: D1 correct, D2 wrong, P1 correct, P2 wrong → Developing
+  A1GMEA-D1: "60"
+  A1GMEA-D2: "B"
+  A1GMEA-P1: "216"
+  A1GMEA-P2: "B"
+
+  # --- Strand 7: Systems (SYS) — all correct → Secure ---
+  A1SYS-D1: "A"
+  A1SYS-D2: "A"
+  A1SYS-P1: "A"
   A1SYS-P2: "A"
-  A1POLY-D1: "A"
-  A1POLY-D2: "A"
-  A1POLY-P1: "32"
-  A1POLY-P2: "A"
-  A1GEO-D1: "A"
-  A1GEO-D2: "24"
-  A1GEO-P1: "A"
-  A1GEO-P2: "27"
-  A1DATA-D1: "7"
-  A1DATA-D2: "A"
-  A1DATA-P1: "5"
-  A1DATA-P2: "C"
+
+  # --- Strand 8: Data & Statistics (DATA) — mixed → Developing ---
+  # a1-data-display: correct answers are B, C, D, C — answer D1 wrong, rest correct
+  A1DDIS-D1: "A"
+  A1DDIS-D2: "C"
+  A1DDIS-P1: "D"
+  A1DDIS-P2: "C"
+  # a1-data-scatter: correct answers are D, C, C, D — D1 wrong, rest correct
+  A1DSCA-D1: "A"
+  A1DSCA-D2: "C"
+  A1DSCA-P1: "C"
+  A1DSCA-P2: "D"
+  # a1-data-interpret: correct answers are B, C, B, C — all correct → Secure
+  A1DINT-D1: "B"
+  A1DINT-D2: "C"
+  A1DINT-P1: "B"
+  A1DINT-P2: "C"
